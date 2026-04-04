@@ -1,4 +1,5 @@
 # Documento de Requisitos de Producto (PRD)
+
 ## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
 | **Versión** | 2.0 |
@@ -12,20 +13,27 @@
 ## 1. Resumen Ejecutivo
 
 ### 1.1 Propósito
+
 Desarrollar una plataforma SaaS multi-tenant para la gestión integral de Organizaciones No Gubernamentales (ONGs), permitiendo administrar eventos, donaciones, ayuda social, rescate ecológico, rifas digitales, recaudación de fondos, y administración de socios, clientes y proveedores.
 
 ### 1.2 Problema a Resolver
+
 Las ONGs carecen de sistemas internos de administración que les permitan gestionar de manera eficiente sus operaciones diarias, incluyendo:
+
 - Gestión de socios, voluntarios y beneficiarios
 - Administración de eventos y recaudación de fondos
 - Control de donaciones y transparencia financiera
 - Organización de actividades de ayuda social y ecológica
 - Digitalización de rifas y otras actividades de fundraising
+- **Registro y estudio de especies nativas, flora y fauna**
+- **Seguimiento de poblaciones y evaluación de impacto ambiental**
 
 ### 1.3 Visión del Producto
+
 Convertirse en la plataforma líder para la gestión de ONGs en la región, ofreciendo una solución todo-en-uno que permita a las organizaciones enfocarse en su misión social en lugar de en tareas administrativas.
 
 ### 1.4 Modelo de Negocio
+
 - **SaaS Multi-tenant**: Múltiples ONGs comparten la misma infraestructura
 - **Plan Freemium**: Funcionalidades básicas gratuitas
 - **Planes Premium**: Funcionalidades avanzadas por suscripción mensual/anual
@@ -36,9 +44,11 @@ Convertirse en la plataforma líder para la gestión de ONGs en la región, ofre
 ## 2. Objetivos del Producto
 
 ### 2.1 Objetivo Principal
+
 Crear una plataforma SaaS que centralice y automatice la gestión operativa de ONGs, mejorando su eficiencia y transparencia.
 
 ### 2.2 Objetivos Específicos
+
 | ID | Objetivo | Prioridad |
 |----|----------|-----------|
 | OE1 | Proveer administración completa de socios y voluntarios | Alta (MVP) |
@@ -49,6 +59,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | OE6 | Administrar proveedores y compras | Media |
 | OE7 | Generar reportes automáticos para transparencia | Alta |
 | OE8 | Proveer landing page personalizada por ONG | Media |
+| OE9 | Crear biblioteca técnica de especies nativas (flora y fauna) | Alta |
+| OE10 | Implementar sistema de seguimiento de poblaciones y evaluación de impacto ambiental | Alta |
 
 ---
 
@@ -125,7 +137,25 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Galería de Proyectos** | Fotos antes/después | Media |
 | **Certificados de Participación** | Para voluntarios en actividades ecológicas | Baja |
 
-### 3.7 Módulo de Administración (CRM)
+### 3.7 Módulo de Biblioteca Técnica de Especies Nativas e Impacto Ambiental
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Catálogo de Flora Nativa** | Base de datos de árboles, plantas y vegetación autóctona con fichas técnicas | Alta |
+| **Catálogo de Fauna Nativa** | Registro de especies animales, hábitat y estado de conservación | Alta |
+| **Fichas Técnicas de Especies** | Información científica: nombre científico, familia, características, distribución | Alta |
+| **Galería de Especies** | Fotografías, videos y material audiovisual de cada especie | Alta |
+| **Registro de Avistamientos** | Geolocalización de avistamientos con fecha, hora y condiciones | Alta |
+| **Seguimiento de Poblaciones** | Evolución temporal de poblaciones de especies clave | Alta |
+| **Alertas de Especies Amenazadas** | Notificaciones sobre especies en peligro o disminución crítica | Alta |
+| **Evaluación de Impacto Ambiental** | Herramientas para estudiar y medir impacto de actividades/proyectos | Alta |
+| **Reportes de Biodiversidad** | Informes de riqueza de especies por zona/proyecto | Media |
+| **Mapas de Distribución** | Visualización geográfica de distribución de especies | Media |
+| **Comparativas Históricas** | Análisis de cambios en poblaciones a lo largo del tiempo | Media |
+| **Integración con Ciencia Ciudadana** | Posibilidad de que voluntarios registren avistamientos | Baja |
+| **Exportación de Datos Científicos** | Formatos compatibles con sistemas de investigación (CSV, Darwin Core) | Media |
+
+### 3.8 Módulo de Administración (CRM)
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -135,7 +165,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Cuentas por Pagar** | Control de pagos a proveedores | Media |
 | **Contactos** | Agenda centralizada de contactos | Media |
 
-### 3.8 Módulo de Reportes y Analytics
+### 3.9 Módulo de Reportes y Analytics
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -145,7 +175,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Exportación de Datos** | Excel, PDF, CSV | Alta |
 | **Reportes Personalizados** | Configuración de reportes a medida | Media |
 
-### 3.9 Módulo de Landing Page
+### 3.10 Módulo de Landing Page
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -243,6 +273,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 ## 7. Criterios de Aceptación
 
 ### 7.1 MVP (Módulo Socios y Voluntarios)
+
 - [ ] Registro y alta de nuevos socios con validación de datos
 - [ ] Gestión de membresías (alta, baja, renovación)
 - [ ] Perfil completo de voluntarios con habilidades y disponibilidad
@@ -252,6 +283,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 - [ ] Dashboard con métricas de socios y voluntarios
 
 ### 7.2 Criterios Generales
+
 - [ ] La plataforma soporta al menos 10 ONGs simultáneas en testing
 - [ ] Los datos de cada ONG están aislados y no son accesibles por otras ONGs
 - [ ] El tiempo de carga inicial es menor a 3 segundos
@@ -275,6 +307,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 ## 9. Cronograma Tentativo
 
 ### Fase 1: MVP (8-10 semanas)
+
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Diseño UI/UX, Arquitectura, Setup del proyecto |
@@ -284,6 +317,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | 10 | Testing, QA, Deploy a producción |
 
 ### Fase 2: Módulos de Recaudación (6-8 semanas)
+
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Módulo de Eventos |
@@ -291,22 +325,25 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | 5-6 | Módulo de Rifas Digitales |
 | 7-8 | Testing, QA, Deploy |
 
-### Fase 3: Módulos Operativos (6-8 semanas)
+### Fase 3: Módulos Operativos (8-10 semanas)
+
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Módulo de Ayuda Social |
 | 3-4 | Módulo de Rescate Ecológico |
-| 5-6 | CRM (Proveedores, Compras) |
-| 7-8 | Testing, QA, Deploy |
+| 5-7 | Biblioteca Técnica de Especies Nativas e Impacto Ambiental |
+| 8-9 | CRM (Proveedores, Compras) |
+| 10 | Testing, QA, Deploy |
 
 ### Fase 4: Landing Pages y Analytics (4-6 semanas)
+
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Generador de Landing Pages |
 | 3-4 | Módulo de Analytics avanzado |
 | 5-6 | Testing, QA, Deploy |
 
-**Total estimado:** 24-32 semanas (6-8 meses)
+**Total estimado:** 26-34 semanas (7-9 meses)
 
 ---
 
@@ -333,6 +370,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Enterprise** | Personalizado | Multi-ONG, API, soporte prioritario, white-label |
 
 **Comisiones:**
+
 - Donaciones: 2.9% + $0.30 por transacción
 - Rifas digitales: 5% del recaudado
 
@@ -348,6 +386,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Fundraising** | Recaudación de fondos |
 | **Row-level security** | Seguridad a nivel de fila en base de datos |
 | **MVP** | Minimum Viable Product, producto mínimo viable |
+| **EIA** | Evaluación de Impacto Ambiental |
+| **Darwin Core** | Estándar internacional para intercambio de datos de biodiversidad |
 
 ---
 
