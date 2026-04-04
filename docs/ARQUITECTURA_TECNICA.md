@@ -1,7 +1,7 @@
 # Documento de Arquitectura Técnica
 ## ONG Impacta+ — Plataforma SaaS de Gestión
 
-| **Versión** | 1.0 |
+| **Versión** | 2.0 |
 |-------------|-----|
 | **Fecha** | 4 de abril de 2026 |
 | **Estado** | En desarrollo |

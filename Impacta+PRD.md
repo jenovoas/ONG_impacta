@@ -2,7 +2,7 @@
 
 ## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
-| **Versión** | 4.0 |
+| **Versión** | 5.0 |
 |-------------|-----|
 | **Estado** | En revisión |
 | **Fecha** | 4 de abril de 2026 |
@@ -64,6 +64,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | OE11 | Implementar sistema unificado de pagos (web + interno) para donaciones y cuotas | Alta |
 | OE12 | Implementar calendario y coordinador de tareas con asignación de roles y cargos | Alta |
 | OE13 | Implementar administración contable completa según normativa chilena | Alta |
+| OE14 | Soporte multi-idioma (Español e Inglés) | Alta |
+| OE15 | Desarrollar aplicación móvil para socios, encargados y voluntarios | Alta |
 
 ---
 
@@ -235,6 +237,27 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Integración Redes Sociales** | Enlaces y feeds de redes sociales | Media |
 | **Modo Claro/Oscuro** | Toggle para cambiar entre temas claro y oscuro | Alta |
 | **Logo y Favicon** | SVG responsive con versiones para modo claro/oscuro | Alta |
+| **Multi-idioma** | Español e Inglés con selector de idioma | Alta |
+
+### 3.13 Módulo de Aplicación Móvil
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **App Multi-plataforma** | iOS y Android con código base único (React Native) | Alta |
+| **Autenticación Biométrica** | Login con huella digital o reconocimiento facial | Alta |
+| **Dashboard Personalizado** | Vista de tareas, eventos y métricas personales | Alta |
+| **Asignación de Carga de Trabajo** | Visualización de tareas asignadas con prioridad y plazo | Alta |
+| **Reporte en Línea** | Enviar actualizaciones de estado con fotos y ubicación | Alta |
+| **Check-in/Check-out** | Registro de asistencia a eventos y actividades | Alta |
+| **Notificaciones Push** | Alertas de nuevas tareas, recordatorios, cambios | Alta |
+| **Modo Offline** | Funcionalidad básica sin conexión con sincronización posterior | Alta |
+| **Chat Interno** | Mensajería entre equipos y coordinadores | Media |
+| **Calendario Móvil** | Vista de eventos y turnos con recordatorios | Alta |
+| **Perfil de Usuario** | Información personal, habilidades, historial | Alta |
+| **Documentos y Recursos** | Acceso a manuales, guías, protocolos | Media |
+| **Geolocalización** | Tracking de actividades en terreno (opcional) | Media |
+| **Formularios Dinámicos** | Encuestas, reportes de impacto, registro de beneficiarios | Alta |
+| **Escaneo de QR** | Para check-in en eventos y validación de asistencia | Media |
 
 ---
 
@@ -272,15 +295,19 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 
 | Capa | Tecnología | Justificación |
 |------|------------|---------------|
-| **Frontend** | React + TypeScript + TailwindCSS | Moderno, escalable, buena UX |
+| **Frontend Web** | React + TypeScript + TailwindCSS | Moderno, escalable, buena UX |
+| **Landing Page** | Next.js 14 | SSR, SEO optimizado |
+| **App Móvil** | React Native + Expo | Multi-plataforma (iOS/Android), código compartido |
 | **Backend** | Node.js + NestJS | TypeScript full-stack, arquitectura modular |
 | **Base de Datos** | PostgreSQL | Robusto, open-source, row-level security |
 | **Cache** | Redis | Sesiones, cache de consultas frecuentes |
-| **Colas** | Bull/Redis | Tareas asíncronas (emails, reportes) |
+| **Colas** | Bull/Redis | Tareas asíncronas (emails, reportes, push notifications) |
 | **Almacenamiento** | AWS S3 / Cloudflare R2 | Fotos, documentos, archivos |
 | **Hosting** | **Servidor Fenix** (impacta.pinguinoseguro.cl) | Infraestructura propia, control total |
 | **Pagos** | MercadoPago + PayPal + Stripe | Cobertura regional e internacional |
 | **Dominio** | impacta.pinguinoseguro.cl | Dominio principal del sistema |
+| **i18n** | react-i18next + i18next | Internacionalización Español/Inglés |
+| **Push Notifications** | Firebase Cloud Messaging / OneSignal | Notificaciones en app móvil |
 
 ### 4.3 Infraestructura y Despliegue
 
@@ -348,7 +375,9 @@ El sistema permite asignar cargos organizacionales a los socios:
 | RNF5 | **Backup** | Backups automáticos diarios con retención de 30 días |
 | RNF6 | **Responsive** | Funcional en móvil, tablet y desktop |
 | RNF7 | **Accesibilidad** | WCAG 2.1 nivel AA |
-| RNF8 | **Multi-idioma** | Español e inglés (futuro) |
+| RNF8 | **Multi-idioma** | Español e Inglés con detección automática y selector manual |
+| RNF9 | **App Móvil** | iOS 13+ y Android 8+ con funcionalidad offline |
+| RNF10 | **Notificaciones Push** | Entrega en < 5 segundos, 99% delivery rate |
 
 ---
 
@@ -400,15 +429,18 @@ El sistema permite asignar cargos organizacionales a los socios:
 | **Fase 5: Módulos Operativos** | 3-4 días | Ayuda social, rescate ecológico, CRM |
 | **Fase 6: Biblioteca Técnica** | 2-3 días | Especies nativas, impacto ambiental |
 | **Fase 7: Landing Page** | 1-2 días | Generador automático de landing pages |
-| **Fase 8: Testing y Ajustes** | 2-3 días | QA, bugs, optimizaciones |
+| **Fase 8: i18n (Español/Inglés)** | 2-3 días | Internacionalización, traducciones, selector de idioma |
+| **Fase 9: App Móvil** | 5-7 días | React Native, asignación de tareas, reportes, push notifications |
+| **Fase 10: Testing y Ajustes** | 3-4 días | QA, bugs, optimizaciones, testing en dispositivos |
 
-**Total estimado:** 17-29 días (3-6 semanas)
+**Total estimado:** 24-37 días (5-7 semanas)
 
 ### Notas de Desarrollo
 - Desarrollo iterativo con entregas continuas
 - Priorización dinámica según necesidades
 - Deploy continuo a producción (impacta.pinguinoseguro.cl)
 - Feedback inmediato de usuarios
+- App móvil: Publicación en App Store y Google Play
 
 ---
 
@@ -459,6 +491,11 @@ El sistema permite asignar cargos organizacionales a los socios:
 | **Ley 19.885** | Ley de Donaciones con fines sociales en Chile |
 | **Partida Doble** | Sistema contable donde cada transacción afecta al menos dos cuentas |
 | **UF** | Unidad de Fomento, unidad de cuenta reajustable usada en Chile |
+| **i18n** | Internacionalización (18 letras entre 'i' y 'n'), adaptación a idiomas |
+| **React Native** | Framework de Facebook para apps móviles multi-plataforma |
+| **Expo** | Herramientas y servicios para desarrollo con React Native |
+| **Push Notification** | Notificación emergente en dispositivos móviles |
+| **Offline-first** | Estrategia de diseño que prioriza funcionalidad sin conexión |
 
 ---
 
