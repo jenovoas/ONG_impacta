@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(git commit *)",
-      "Bash(rm *)"
+      "Bash(rm *)",
+      "Bash(gcloud *)",
+      "Bash(cat *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(pkill *)",
+      "Bash(true)",
+      "Bash(sleep *)"
     ]
   },
   "$version": 3
