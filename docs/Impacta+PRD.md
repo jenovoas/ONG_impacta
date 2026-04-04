@@ -2,7 +2,7 @@
 
 ## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
-| **Versión** | 5.0 |
+| **Versión** | 6.0 |
 |-------------|-----|
 | **Estado** | En revisión |
 | **Fecha** | 4 de abril de 2026 |
@@ -66,6 +66,15 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | OE13 | Implementar administración contable completa según normativa chilena | Alta |
 | OE14 | Soporte multi-idioma (Español e Inglés) | Alta |
 | OE15 | Desarrollar aplicación móvil para socios, encargados y voluntarios | Alta |
+| OE16 | Implementar portal de transparencia y rendición de cuentas | Alta |
+| OE17 | Incorporar email marketing y automatización de comunicaciones | Media |
+| OE18 | Gestionar logística, bodegas e inventarios de ayuda | Alta |
+| OE19 | Plataforma de e-learning para capacitación de voluntarios | Media |
+| OE20 | Crowdfunding y campañas virales de recaudación | Media |
+| OE21 | Programa de voluntariado corporativo y empresas aliadas | Media |
+| OE22 | Análisis predictivo e IA para optimización de donaciones | Baja |
+| OE23 | Sistema de emergencias y respuesta rápida ante desastres | Media |
+| OE24 | API pública para desarrolladores y ecosistema | Baja |
 
 ---
 
@@ -261,6 +270,105 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 
 ---
 
+## 3.14 Módulo de Transparencia y Rendición de Cuentas
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Dashboard Público** | Página web pública con métricas de transparencia | Alta |
+| **Uso de Fondos** | Visualización gráfica de cómo se usan las donaciones | Alta |
+| **Proyectos Activos** | Estado y avance de cada proyecto con fotos | Alta |
+| **Informes Anuales** | Memorias anuales descargables en PDF | Alta |
+| **Estados Financieros** | Balances auditados públicos | Alta |
+| **Certificaciones** | Sellos de transparencia y certificaciones | Media |
+
+## 3.15 Módulo de Email Marketing y Comunicación
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Newsletter** | Envío de boletines periódicos | Alta |
+| **Segmentación** | Envíos por tipo de usuario (socio, donante, voluntario) | Alta |
+| **Plantillas** | Templates pre-diseñados para campañas | Alta |
+| **Automatización** | Emails automáticos (bienvenida, cumpleaños, recordatorios) | Alta |
+| **Analytics** | Tasa de apertura, clics, conversiones | Media |
+| **Integración Redes Sociales** | Auto-posting en Facebook, Twitter, Instagram | Media |
+
+## 3.16 Módulo de Logística e Inventarios
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Control de Inventario** | Stock de alimentos, ropa, insumos | Alta |
+| **Bodegas Múltiples** | Múltiples ubicaciones de almacenamiento | Alta |
+| **Entradas/Salidas** | Registro de movimientos de inventario | Alta |
+| **Alertas de Stock** | Notificaciones de stock bajo | Alta |
+| **Trazabilidad** | Tracking de lote y fecha de vencimiento | Alta |
+| **Donaciones en Especie** | Recepción y valoración de donaciones no monetarias | Alta |
+| **Rutas de Distribución** | Optimización de rutas para entrega de ayuda | Media |
+| **Control de Entrega** | Registro con firma/foto del receptor | Alta |
+
+## 3.17 Módulo de E-Learning y Capacitación
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Cursos Online** | Plataforma LMS para capacitar voluntarios | Alta |
+| **Certificaciones** | Certificados automáticos al completar cursos | Alta |
+| **Biblioteca de Recursos** | Manuales, guías, videos tutoriales | Alta |
+| **Webinars** | Integración con Zoom/Meet para clases en vivo | Media |
+| **Evaluaciones** | Quizzes y exámenes de conocimiento | Media |
+| **Tracking de Progreso** | Seguimiento de avance por usuario | Alta |
+| **Gamificación** | Insignias, puntos, niveles | Media |
+
+## 3.18 Módulo de Crowdfunding y Campañas Virales
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Campañas Crowdfunding** | Creación de campañas con meta y plazo | Alta |
+| **Recompensas** | Sistema de recompensas por niveles de donación | Media |
+| **Ambassador Program** | Embajadores que comparten y ganan insignias | Alta |
+| **Leaderboard** | Ranking de donantes y embajadores | Media |
+| **Social Sharing** | Compartir progreso en redes automáticamente | Alta |
+| **Matching Gifts** | Empresas igualan donaciones de empleados | Media |
+
+## 3.19 Módulo de Voluntariado Corporativo
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Portal Empresas** | Dashboard específico para empresas voluntarias | Alta |
+| **Días de Voluntariado** | Agenda de jornadas corporativas | Alta |
+| **Skills-based Volunteering** | Voluntariado basado en habilidades profesionales | Alta |
+| **Informe de Impacto** | Reportes personalizados para empresas | Alta |
+| **Reconocimientos** | Certificados para empresas participantes | Media |
+
+## 3.20 Módulo de Análisis Predictivo e IA
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Predictive Analytics** | Predicción de donaciones futuras | Media |
+| **Churn Prediction** | Identificar donantes en riesgo de abandono | Alta |
+| **Donor Scoring** | Score de probabilidad de donación mayor | Media |
+| **Chatbot para Donantes** | Respuestas automáticas a preguntas frecuentes | Media |
+| **Análisis de Sentimiento** | Monitoreo de percepción en redes | Baja |
+
+## 3.21 Módulo de Emergencias y Respuesta Rápida
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Alertas de Emergencia** | Notificaciones masivas SMS/push | Alta |
+| **Protocolos de Actuación** | Checklists por tipo de emergencia | Alta |
+| **Movilización de Voluntarios** | Convocatoria rápida para emergencias | Alta |
+| **Inventario de Emergencia** | Stock específico para desastres | Alta |
+| **Daño Assessment** | Evaluación rápida de daños post-desastre | Alta |
+
+## 3.22 Módulo de API Pública
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **API REST Pública** | Documentación abierta para developers | Media |
+| **Webhooks** | Notificaciones a sistemas externos | Alta |
+| **Developer Portal** | Documentación, keys, analytics de uso | Media |
+| **Integraciones** | SII, bancos, Mailchimp, Zoom, Google for Nonprofits | Alta |
+
+---
+
 ## 4. Arquitectura Técnica
 
 ### 4.1 Arquitectura Multi-tenant
@@ -419,6 +527,8 @@ El sistema permite asignar cargos organizacionales a los socios:
 
 ### Desarrollo Ágil - Entregas Iterativas
 
+#### Fase 1: Core MVP (5-7 semanas)
+
 | Fase | Duración | Entregables |
 |------|----------|-------------|
 | **Fase 0: Setup** | 1-2 días | Infraestructura, CI/CD, base del proyecto |
@@ -433,7 +543,35 @@ El sistema permite asignar cargos organizacionales a los socios:
 | **Fase 9: App Móvil** | 5-7 días | React Native, asignación de tareas, reportes, push notifications |
 | **Fase 10: Testing y Ajustes** | 3-4 días | QA, bugs, optimizaciones, testing en dispositivos |
 
-**Total estimado:** 24-37 días (5-7 semanas)
+**Subtotal Fase 1:** 24-37 días (5-7 semanas)
+
+#### Fase 2: Crecimiento y Transparencia (4-6 semanas)
+
+| Fase | Duración | Entregables |
+|------|----------|-------------|
+| **Fase 11: Transparencia** | 2-3 días | Dashboard público, uso de fondos, informes |
+| **Fase 12: Email Marketing** | 2-3 días | Newsletter, automatización, plantillas |
+| **Fase 13: Inventarios** | 3-4 días | Control de stock, bodegas, distribución |
+| **Fase 14: Voluntariado Corp.** | 2-3 días | Portal empresas, días de voluntariado |
+| **Fase 15: Crowdfunding** | 3-4 días | Campañas, embajadores, social sharing |
+| **Fase 16: Testing** | 2-3 días | QA, bugs, optimizaciones |
+
+**Subtotal Fase 2:** 14-20 días (3-4 semanas)
+
+#### Fase 3: Madurez e Innovación (4-5 semanas)
+
+| Fase | Duración | Entregables |
+|------|----------|-------------|
+| **Fase 17: E-Learning** | 3-4 días | LMS, cursos, certificaciones |
+| **Fase 18: IA y Analytics** | 4-5 días | Churn prediction, donor scoring, chatbot |
+| **Fase 19: Emergencias** | 2-3 días | Alertas, protocolos, movilización |
+| **Fase 20: API Pública** | 2-3 días | API REST, webhooks, developer portal |
+| **Fase 21: Integraciones** | 3-4 días | SII, bancos, Mailchimp, Zoom |
+| **Fase 22: Testing Final** | 3-4 días | QA, bugs, optimizaciones |
+
+**Subtotal Fase 3:** 17-23 días (4-5 semanas)
+
+**Total general:** 55-80 días (12-18 semanas / 3-4 meses)
 
 ### Notas de Desarrollo
 - Desarrollo iterativo con entregas continuas
@@ -441,6 +579,7 @@ El sistema permite asignar cargos organizacionales a los socios:
 - Deploy continuo a producción (impacta.pinguinoseguro.cl)
 - Feedback inmediato de usuarios
 - App móvil: Publicación en App Store y Google Play
+- Cada fase puede ser independiente según prioridades del cliente
 
 ---
 
@@ -496,6 +635,15 @@ El sistema permite asignar cargos organizacionales a los socios:
 | **Expo** | Herramientas y servicios para desarrollo con React Native |
 | **Push Notification** | Notificación emergente en dispositivos móviles |
 | **Offline-first** | Estrategia de diseño que prioriza funcionalidad sin conexión |
+| **LMS** | Learning Management System, plataforma de e-learning |
+| **Crowdfunding** | Financiamiento colectivo, microdonaciones masivas |
+| **Churn** | Tasa de abandono de socios o donantes |
+| **API REST** | Interfaz de programación de aplicaciones con arquitectura REST |
+| **Webhooks** | Notificaciones automáticas entre sistemas |
+| **Skills-based Volunteering** | Voluntariado basado en habilidades profesionales específicas |
+| **Matching Gifts** | Programa donde empresas igualan donaciones de empleados |
+| **Dashboard** | Tablero de control con visualización de métricas clave |
+| **Gamificación** | Uso de elementos de juego en contextos no lúdicos |
 
 ---
 
