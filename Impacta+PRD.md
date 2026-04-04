@@ -2,7 +2,7 @@
 
 ## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
-| **Versión** | 3.0 |
+| **Versión** | 4.0 |
 |-------------|-----|
 | **Estado** | En revisión |
 | **Fecha** | 4 de abril de 2026 |
@@ -63,6 +63,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | OE10 | Implementar sistema de seguimiento de poblaciones y evaluación de impacto ambiental | Alta |
 | OE11 | Implementar sistema unificado de pagos (web + interno) para donaciones y cuotas | Alta |
 | OE12 | Implementar calendario y coordinador de tareas con asignación de roles y cargos | Alta |
+| OE13 | Implementar administración contable completa según normativa chilena | Alta |
 
 ---
 
@@ -190,7 +191,30 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Cuentas por Pagar** | Control de pagos a proveedores | Media |
 | **Contactos** | Agenda centralizada de contactos | Media |
 
-### 3.10 Módulo de Reportes y Analytics
+### 3.10 Módulo de Administración Contable (Normativa Chilena)
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Plan de Cuentas** | Plan de cuentas personalizable según normativa chilena | Alta |
+| **Libro Diario** | Registro cronológico de todas las transacciones contables | Alta |
+| **Libro Mayor** | Mayor general y analítico por cuentas | Alta |
+| **Balance de Comprobación** | Balance de comprobación con validación de partida doble | Alta |
+| **Estados Financieros** | Balance General y Estado de Resultados automáticos | Alta |
+| **Conciliación Bancaria** | Conciliación automática con extractos bancarios | Alta |
+| **Flujo de Caja** | Proyección y seguimiento de flujo de caja | Alta |
+| **Centros de Costo** | Imputación de gastos por proyecto/programa | Alta |
+| **Presupuesto** | Control presupuestario con alertas de desviación | Alta |
+| **Activos Fijos** | Registro, depreciación y baja de activos fijos | Alta |
+| **Informes SII** | Exportación de datos para declaraciones SII (F29, F39, etc.) | Alta |
+| **Libro de Inventarios** | Registro de inventarios valorizado | Media |
+| **Notas de Débito/Crédito** | Emisión y registro de notas | Alta |
+| **Informes para Donaciones** | Certificados para Ley de Donaciones (Ley 19.885) | Alta |
+| **Rendición de Cuentas** | Informes para Ministerio de Justicia y Bienes Nacionales | Alta |
+| **Auditoría** | Pista de auditoría completa de todos los movimientos | Alta |
+| **Multi-moneda** | Soporte para operaciones en UF, USD, EUR | Media |
+| **Cierre Contable** | Proceso de cierre mensual/anual con asientos de ajuste | Alta |
+
+### 3.11 Módulo de Reportes y Analytics
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -200,7 +224,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Exportación de Datos** | Excel, PDF, CSV | Alta |
 | **Reportes Personalizados** | Configuración de reportes a medida | Media |
 
-### 3.11 Módulo de Landing Page
+### 3.12 Módulo de Landing Page
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -362,46 +386,27 @@ El sistema permite asignar cargos organizacionales a los socios:
 
 ## 9. Cronograma Tentativo
 
-### Fase 1: MVP (10-12 semanas)
+### Desarrollo Ágil - Entregas Iterativas
 
-| Semana | Entregables |
-|--------|-------------|
-| 1-2 | Diseño UI/UX, Arquitectura, Setup del proyecto |
-| 3-5 | Módulo de Socios y Voluntarios (core) |
-| 6-7 | Autenticación, RBAC, Multi-tenancy |
-| 8-9 | Calendario y Coordinador de Tareas |
-| 10-11 | Sistema de Pagos Unificados (web + interno) |
-| 12 | Testing, QA, Deploy a producción |
+| Fase | Duración | Entregables |
+|------|----------|-------------|
+| **Fase 0: Setup** | 1-2 días | Infraestructura, CI/CD, base del proyecto |
+| **Fase 1: MVP Core** | 3-5 días | Socios, Voluntarios, Roles, Calendario, Tareas |
+| **Fase 2: Pagos** | 2-3 días | Sistema unificado web/interno, conciliación |
+| **Fase 3: Contabilidad** | 3-4 días | Plan de cuentas, libro diario/mayor, balances, SII |
+| **Fase 4: Eventos y Recaudación** | 2-3 días | Eventos, donaciones, rifas |
+| **Fase 5: Módulos Operativos** | 3-4 días | Ayuda social, rescate ecológico, CRM |
+| **Fase 6: Biblioteca Técnica** | 2-3 días | Especies nativas, impacto ambiental |
+| **Fase 7: Landing Page** | 1-2 días | Generador automático de landing pages |
+| **Fase 8: Testing y Ajustes** | 2-3 días | QA, bugs, optimizaciones |
 
-### Fase 2: Módulos de Recaudación (8-10 semanas)
+**Total estimado:** 17-29 días (3-6 semanas)
 
-| Semana | Entregables |
-|--------|-------------|
-| 1-2 | Módulo de Eventos |
-| 3-5 | Módulo de Donaciones y Pagos Unificados |
-| 6-7 | Módulo de Rifas Digitales |
-| 8-9 | Landing Page con portal de donaciones |
-| 10 | Testing, QA, Deploy |
-
-### Fase 3: Módulos Operativos (10-12 semanas)
-
-| Semana | Entregables |
-|--------|-------------|
-| 1-2 | Módulo de Ayuda Social |
-| 3-4 | Módulo de Rescate Ecológico |
-| 5-8 | Biblioteca Técnica de Especies Nativas e Impacto Ambiental |
-| 9-10 | CRM (Proveedores, Compras) |
-| 11-12 | Testing, QA, Deploy |
-
-### Fase 4: Landing Pages y Analytics (6-8 semanas)
-
-| Semana | Entregables |
-|--------|-------------|
-| 1-3 | Generador de Landing Pages |
-| 4-6 | Módulo de Analytics avanzado |
-| 7-8 | Testing, QA, Deploy |
-
-**Total estimado:** 34-42 semanas (8-11 meses)
+### Notas de Desarrollo
+- Desarrollo iterativo con entregas continuas
+- Priorización dinámica según necesidades
+- Deploy continuo a producción (impacta.pinguinoseguro.cl)
+- Feedback inmediato de usuarios
 
 ---
 
@@ -448,6 +453,10 @@ El sistema permite asignar cargos organizacionales a los socios:
 | **Darwin Core** | Estándar internacional para intercambio de datos de biodiversidad |
 | **Conciliación** | Proceso de matching entre pagos web y registros internos |
 | **Reverse Proxy** | Servidor que actúa como intermediario entre clientes y servidores backend |
+| **SII** | Servicio de Impuestos Internos de Chile |
+| **Ley 19.885** | Ley de Donaciones con fines sociales en Chile |
+| **Partida Doble** | Sistema contable donde cada transacción afecta al menos dos cuentas |
+| **UF** | Unidad de Fomento, unidad de cuenta reajustable usada en Chile |
 
 ---
 
