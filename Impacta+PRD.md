@@ -2,7 +2,7 @@
 
 ## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
-| **Versión** | 2.0 |
+| **Versión** | 3.0 |
 |-------------|-----|
 | **Estado** | En revisión |
 | **Fecha** | 4 de abril de 2026 |
@@ -61,6 +61,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | OE8 | Proveer landing page personalizada por ONG | Media |
 | OE9 | Crear biblioteca técnica de especies nativas (flora y fauna) | Alta |
 | OE10 | Implementar sistema de seguimiento de poblaciones y evaluación de impacto ambiental | Alta |
+| OE11 | Implementar sistema unificado de pagos (web + interno) para donaciones y cuotas | Alta |
+| OE12 | Implementar calendario y coordinador de tareas con asignación de roles y cargos | Alta |
 
 ---
 
@@ -78,6 +80,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Comunicación Interna** | Notificaciones por email/SMS a socios y voluntarios | Media |
 | **Certificados de Voluntariado** | Generación automática de certificados | Baja |
 | **Ranking de Voluntarios** | Reconocimiento a voluntarios destacados | Baja |
+| **Asignación de Roles y Cargos** | Sistema de cargos directivos, roles y jerarquías dentro de la ONG | Alta |
+| **Organigrama de la ONG** | Visualización de estructura organizacional con cargos | Media |
 
 ### 3.2 Módulo de Eventos y Recaudación de Fondos
 
@@ -92,19 +96,40 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Tickets Digitales** | Generación y envío de tickets/e-tickets | Media |
 | **Recordatorios Automáticos** | Notificaciones previas al evento | Media |
 
-### 3.3 Módulo de Donaciones
+### 3.3 Módulo de Calendario y Coordinador de Tareas
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
-| **Donaciones en Línea** | Integración con pasarelas de pago (MercadoPago, PayPal, Stripe) | Alta |
-| **Donaciones Recurrentes** | Suscripciones mensuales/anuales | Alta |
-| **Donaciones en Especie** | Registro de donaciones no monetarias | Media |
+| **Calendario General** | Vista mensual, semanal y diaria de todas las actividades | Alta |
+| **Asignación de Tareas** | Crear y asignar tareas a socios/voluntarios específicos | Alta |
+| **Tareas Recurrentes** | Configuración de tareas periódicas (ej: reunión mensual) | Alta |
+| **Seguimiento de Estado** | Tracking de progreso (pendiente, en curso, completada) | Alta |
+| **Recordatorios y Notificaciones** | Alertas de vencimiento de tareas | Alta |
+| **Calendario de Turnos** | Programación de turnos para actividades continuas | Media |
+| **Vista por Responsable** | Filtrado de tareas por persona/cargo | Media |
+| **Calendario Compartido** | Sincronización con Google Calendar, Outlook | Baja |
+| **Dependencias entre Tareas** | Configuración de tareas bloqueantes/dependientes | Baja |
+
+### 3.4 Módulo de Donaciones y Pagos Unificados
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Donaciones en Línea (Web)** | Integración con pasarelas de pago (MercadoPago, PayPal, Stripe) desde la landing page | Alta |
+| **Donaciones en Línea (Sistema Interno)** | Registro de donaciones web desde el panel de administración | Alta |
+| **Pagos de Cuotas de Socios (Web)** | Portal de autoservicio para pago de membresías | Alta |
+| **Pagos de Cuotas (Sistema Interno)** | Registro manual de pagos presenciales/transferencias | Alta |
+| **Sistema Unificado de Transacciones** | Todas las transacciones (web + interno) en una única base de datos conciliada | Alta |
+| **Conciliación Automática** | Matching automático entre pagos web y registros internos | Alta |
+| **Donaciones Recurrentes** | Suscripciones mensuales/anuales automáticas | Alta |
+| **Donaciones en Especie** | Registro de donaciones no monetarias con valoración | Media |
 | **Certificados de Donación** | Generación de certificados para deducción de impuestos | Alta |
 | **Transparencia** | Tracking de uso de fondos por proyecto | Alta |
 | **Muro de Donantes** | Reconocimiento público (opcional) | Media |
 | **Campanas de Donación** | Campañas específicas con metas y plazos | Alta |
+| **Historial de Transacciones** | Listado completo filtrable por fecha, tipo, monto, socio | Alta |
+| **Reportes de Recaudación** | Informes diarios, semanales, mensiles de ingresos | Alta |
 
-### 3.4 Módulo de Rifas Digitales
+### 3.5 Módulo de Rifas Digitales
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -116,7 +141,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Historial de Rifas** | Archivo de rifas realizadas y resultados | Media |
 | **Límite por Persona** | Configuración de máximo de boletos por persona | Media |
 
-### 3.5 Módulo de Ayuda Social
+### 3.6 Módulo de Ayuda Social
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -127,7 +152,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Reportes de Impacto** | Estadísticas de ayuda entregada | Alta |
 | **Geolocalización** | Mapa de zonas beneficiadas | Media |
 
-### 3.6 Módulo de Rescate Ecológico
+### 3.7 Módulo de Rescate Ecológico
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -137,7 +162,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Galería de Proyectos** | Fotos antes/después | Media |
 | **Certificados de Participación** | Para voluntarios en actividades ecológicas | Baja |
 
-### 3.7 Módulo de Biblioteca Técnica de Especies Nativas e Impacto Ambiental
+### 3.8 Módulo de Biblioteca Técnica de Especies Nativas e Impacto Ambiental
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -155,7 +180,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Integración con Ciencia Ciudadana** | Posibilidad de que voluntarios registren avistamientos | Baja |
 | **Exportación de Datos Científicos** | Formatos compatibles con sistemas de investigación (CSV, Darwin Core) | Media |
 
-### 3.8 Módulo de Administración (CRM)
+### 3.9 Módulo de Administración (CRM)
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -165,7 +190,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Cuentas por Pagar** | Control de pagos a proveedores | Media |
 | **Contactos** | Agenda centralizada de contactos | Media |
 
-### 3.9 Módulo de Reportes y Analytics
+### 3.10 Módulo de Reportes y Analytics
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -175,7 +200,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Exportación de Datos** | Excel, PDF, CSV | Alta |
 | **Reportes Personalizados** | Configuración de reportes a medida | Media |
 
-### 3.10 Módulo de Landing Page
+### 3.11 Módulo de Landing Page
 
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
@@ -227,10 +252,24 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Cache** | Redis | Sesiones, cache de consultas frecuentes |
 | **Colas** | Bull/Redis | Tareas asíncronas (emails, reportes) |
 | **Almacenamiento** | AWS S3 / Cloudflare R2 | Fotos, documentos, archivos |
-| **Hosting** | Vercel (Frontend) + Railway/Render (Backend) | Fácil deploy, escalable |
+| **Hosting** | **Servidor Fenix** (impacta.pinguinoseguro.cl) | Infraestructura propia, control total |
 | **Pagos** | MercadoPago + PayPal + Stripe | Cobertura regional e internacional |
+| **Dominio** | impacta.pinguinoseguro.cl | Dominio principal del sistema |
 
-### 4.3 Seguridad
+### 4.3 Infraestructura y Despliegue
+
+| Componente | Configuración | Ubicación |
+|------------|---------------|-----------|
+| **Servidor** | Servidor Fenix | On-premise / Data Center |
+| **Dominio** | impacta.pinguinoseguro.cl | DNS configurado |
+| **SSL/TLS** | Certificado Let's Encrypt o comercial | Renovación automática |
+| **Reverse Proxy** | Nginx | Balanceo y seguridad |
+| **Contenedores** | Docker + Docker Compose | Aislamiento y portabilidad |
+| **CI/CD** | GitHub Actions | Deploy automático |
+| **Monitoreo** | Prometheus + Grafana | Métricas y alertas |
+| **Backups** | Automáticos diarios + off-site | Recuperación ante desastres |
+
+### 4.4 Seguridad
 
 | Requisito | Implementación |
 |-----------|----------------|
@@ -244,6 +283,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 
 ## 5. Roles de Usuario
 
+### 5.1 Roles del Sistema
+
 | Rol | Descripción | Permisos |
 |-----|-------------|----------|
 | **Super Admin** | Administrador de la plataforma SaaS | Acceso total a todas las ONGs |
@@ -252,6 +293,21 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Voluntario** | Voluntario registrado | Ver eventos, actualizar perfil |
 | **Socio** | Socio con membresía activa | Ver beneficios, pagar cuotas |
 | **Donante** | Donante registrado | Ver historial de donaciones |
+
+### 5.2 Cargos Directivos de la ONG
+
+El sistema permite asignar cargos organizacionales a los socios:
+
+| Cargo | Descripción | Permisos Especiales |
+|-------|-------------|---------------------|
+| **Presidente/a** | Máxima autoridad de la ONG | Acceso total a reportes y configuración |
+| **Vicepresidente/a** | Segundo al mando | Reemplaza al presidente, acceso amplio |
+| **Secretario/a** | Gestión documental | Actas, documentos oficiales |
+| **Tesorero/a** | Administración financiera | Reportes financieros, conciliaciones |
+| **Director/a de Proyectos** | Coordinación de proyectos | Gestión de proyectos y voluntarios |
+| **Director/a de Comunicaciones** | Gestión de imagen | Blog, redes sociales, prensa |
+| **Coordinador de Voluntarios** | Gestión de voluntarios | Asignación de tareas, calendario |
+| **Consejero/a** | Miembro del consejo directivo | Acceso a actas y decisiones |
 
 ---
 
@@ -306,44 +362,46 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 
 ## 9. Cronograma Tentativo
 
-### Fase 1: MVP (8-10 semanas)
+### Fase 1: MVP (10-12 semanas)
 
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Diseño UI/UX, Arquitectura, Setup del proyecto |
 | 3-5 | Módulo de Socios y Voluntarios (core) |
 | 6-7 | Autenticación, RBAC, Multi-tenancy |
-| 8-9 | Dashboard y Reportes básicos |
-| 10 | Testing, QA, Deploy a producción |
+| 8-9 | Calendario y Coordinador de Tareas |
+| 10-11 | Sistema de Pagos Unificados (web + interno) |
+| 12 | Testing, QA, Deploy a producción |
 
-### Fase 2: Módulos de Recaudación (6-8 semanas)
+### Fase 2: Módulos de Recaudación (8-10 semanas)
 
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Módulo de Eventos |
-| 3-4 | Módulo de Donaciones |
-| 5-6 | Módulo de Rifas Digitales |
-| 7-8 | Testing, QA, Deploy |
+| 3-5 | Módulo de Donaciones y Pagos Unificados |
+| 6-7 | Módulo de Rifas Digitales |
+| 8-9 | Landing Page con portal de donaciones |
+| 10 | Testing, QA, Deploy |
 
-### Fase 3: Módulos Operativos (8-10 semanas)
+### Fase 3: Módulos Operativos (10-12 semanas)
 
 | Semana | Entregables |
 |--------|-------------|
 | 1-2 | Módulo de Ayuda Social |
 | 3-4 | Módulo de Rescate Ecológico |
-| 5-7 | Biblioteca Técnica de Especies Nativas e Impacto Ambiental |
-| 8-9 | CRM (Proveedores, Compras) |
-| 10 | Testing, QA, Deploy |
+| 5-8 | Biblioteca Técnica de Especies Nativas e Impacto Ambiental |
+| 9-10 | CRM (Proveedores, Compras) |
+| 11-12 | Testing, QA, Deploy |
 
-### Fase 4: Landing Pages y Analytics (4-6 semanas)
+### Fase 4: Landing Pages y Analytics (6-8 semanas)
 
 | Semana | Entregables |
 |--------|-------------|
-| 1-2 | Generador de Landing Pages |
-| 3-4 | Módulo de Analytics avanzado |
-| 5-6 | Testing, QA, Deploy |
+| 1-3 | Generador de Landing Pages |
+| 4-6 | Módulo de Analytics avanzado |
+| 7-8 | Testing, QA, Deploy |
 
-**Total estimado:** 26-34 semanas (7-9 meses)
+**Total estimado:** 34-42 semanas (8-11 meses)
 
 ---
 
@@ -388,6 +446,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **MVP** | Minimum Viable Product, producto mínimo viable |
 | **EIA** | Evaluación de Impacto Ambiental |
 | **Darwin Core** | Estándar internacional para intercambio de datos de biodiversidad |
+| **Conciliación** | Proceso de matching entre pagos web y registros internos |
+| **Reverse Proxy** | Servidor que actúa como intermediario entre clientes y servidores backend |
 
 ---
 
