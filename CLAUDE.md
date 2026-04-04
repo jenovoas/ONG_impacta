@@ -1,5 +1,9 @@
 # Impacta+ — Contexto del Proyecto
 
+## 0.5 TIER-0 SLA FREEZE (Sentinel Infra)
+**Línea Roja Operativa**: Cualquier despliegue o comando de red desde **Impacta+** está sujeto a contratos de SLA en el servidor root (Fenix Node). Los dominios `pinguinoseguro.cl` y `laespiguita.cl` comparten proxy con este proyecto.
+- Queda **ESTRICTAMENTE PROHIBIDO** alterar el motor de Traefik, reiniciar contenedores globales `proxy` o modificar puertos `80/443` compartidos bajo ninguna circunstancia. Caídas implican penalización financiera.
+
 ## Qué es
 Plataforma SaaS multi-tenant para gestión integral de ONGs (socios, eventos, donaciones, contabilidad, ecología, app móvil). Dominio: `impacta.pinguinoseguro.cl`
 

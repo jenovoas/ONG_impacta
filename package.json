@@ -1,0 +1,23 @@
+{
+  "name": "impacta-saas",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:generate": "turbo run db:generate --filter=@impacta/database",
+    "db:migrate": "turbo run db:migrate --filter=@impacta/database",
+    "db:seed": "turbo run db:seed --filter=@impacta/database",
+    "db:studio": "cd packages/database && pnpm prisma studio"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
