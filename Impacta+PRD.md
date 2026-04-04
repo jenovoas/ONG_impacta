@@ -233,6 +233,8 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Formularios Públicos** | Contacto, voluntariado, donaciones | Alta |
 | **Blog/Noticias** | Publicación de noticias y actualizaciones | Media |
 | **Integración Redes Sociales** | Enlaces y feeds de redes sociales | Media |
+| **Modo Claro/Oscuro** | Toggle para cambiar entre temas claro y oscuro | Alta |
+| **Logo y Favicon** | SVG responsive con versiones para modo claro/oscuro | Alta |
 
 ---
 

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fondo circular -->
+  <circle cx="32" cy="32" r="32" fill="#000000"/>
+  
+  <!-- Letra "I" estilizada -->
+  <text x="32" y="44" text-anchor="middle" fill="#00A8FF" font-family="Montserrat, sans-serif" font-size="36" font-weight="800">
+    I
+  </text>
+  
+  <!-- Símbolo "+" en la esquina superior derecha -->
+  <g transform="translate(42, 18)">
+    <rect x="-6" y="-8" width="4" height="16" rx="1" fill="#00D4AA"/>
+    <rect x="-8" y="-6" width="16" height="4" rx="1" fill="#00D4AA"/>
+  </g>
+  
+  <!-- Círculo decorativo -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="rgba(0, 168, 255, 0.3)" stroke-width="2"/>
+</svg>

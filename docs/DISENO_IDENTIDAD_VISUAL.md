@@ -1,7 +1,7 @@
 # Documento de Diseño e Identidad Visual
 ## ONG Impacta+ — Sistema de Gestión SaaS
 
-| **Versión** | 1.0 |
+| **Versión** | 2.0 |
 |-------------|-----|
 | **Fecha** | 4 de abril de 2026 |
 | **Estado** | En desarrollo |
@@ -359,27 +359,185 @@ Todos los colores deben cumplir WCAG 2.1 AA:
   --space-8: 48px;
   --space-10: 64px;
   --space-12: 96px;
-  
+
   /* Bordes */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-full: 9999px;
-  
+
   /* Sombras */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
 }
+
+/* ===========================================
+   MODO CLARO
+   =========================================== */
+:root[data-theme="light"],
+[data-theme="light"] {
+  /* Fondos */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F7FA;
+  --bg-tertiary: #E8EDF2;
+  --bg-elevated: #FFFFFF;
+
+  /* Texto */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-tertiary: #717171;
+  --text-inverse: #FFFFFF;
+
+  /* Bordes */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-default: rgba(0, 0, 0, 0.12);
+  --border-strong: rgba(0, 0, 0, 0.2);
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #D1D5DB;
+  --input-text: #1A1A1A;
+  --input-placeholder: #9CA3AF;
+
+  /* Hover states */
+  --hover-primary: rgba(0, 168, 255, 0.08);
+  --hover-accent: rgba(0, 212, 170, 0.08);
+}
+
+/* ===========================================
+   MODO OSCURO (Default)
+   =========================================== */
+:root,
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* Fondos */
+  --bg-primary: #000000;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #2A2A2A;
+  --bg-elevated: #1A1A1A;
+
+  /* Texto */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --text-tertiary: #717171;
+  --text-inverse: #000000;
+
+  /* Bordes */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+
+  /* Inputs */
+  --input-bg: #1A1A1A;
+  --input-border: #4A4A4A;
+  --input-text: #FFFFFF;
+  --input-placeholder: #717171;
+
+  /* Hover states */
+  --hover-primary: rgba(0, 168, 255, 0.12);
+  --hover-accent: rgba(0, 212, 170, 0.12);
+}
 ```
 
 ---
 
-## 11. Ejemplos de Aplicación
+## 11. Sistema de Temas (Claro/Oscuro)
 
-### 11.1 Dashboard
+### 11.1 Toggle de Tema
+
+```typescript
+// Hook personalizado para manejo de temas
+function useTheme() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    // Preferencia del sistema
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      setTheme(saved as 'light' | 'dark');
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
+  return { theme, toggleTheme };
+}
+```
+
+### 11.2 Componente Toggle
+
+```tsx
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800"
+      aria-label="Cambiar tema"
+    >
+      {theme === 'light' ? (
+        <MoonIcon className="w-5 h-5" />
+      ) : (
+        <SunIcon className="w-5 h-5" />
+      )}
+    </button>
+  );
+}
+```
+
+### 11.3 Comparativa de Temas
+
+| Elemento | Modo Claro | Modo Oscuro |
+|----------|------------|-------------|
+| Fondo principal | `#FFFFFF` | `#000000` |
+| Fondo secundario | `#F5F7FA` | `#1A1A1A` |
+| Texto primario | `#1A1A1A` | `#FFFFFF` |
+| Bordes | `rgba(0,0,0,0.12)` | `rgba(255,255,255,0.12)` |
+| Sombras | `rgba(0,0,0,0.1)` | `rgba(0,0,0,0.5)` |
+
+### 11.4 Accesibilidad
+
+- **Contraste mínimo**: WCAG AA (4.5:1 para texto normal)
+- **Focus visible**: Borde de 2px Azul Impacta en ambos temas
+- **Iconos**: Mismo tamaño y posición en ambos temas
+- **Transiciones**: 200ms ease para cambios suaves
+
+```css
+* {
+  transition: background-color 200ms ease,
+              border-color 200ms ease,
+              color 200ms ease;
+}
+```
+
+---
+
+## 12. Ejemplos de Aplicación
+
+### 12.1 Dashboard
 
 - Fondo: Negro (#000000)
 - Cards: Gris Carbón (#1A1A1A)

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Fondo transparente -->
+  <rect width="400" height="200" fill="none"/>
+  
+  <!-- Texto "ONG" -->
+  <text x="200" y="50" text-anchor="middle" fill="#1A1A1A" font-family="Montserrat, sans-serif" font-size="24" font-weight="700" letter-spacing="8">
+    O N G
+  </text>
+  
+  <!-- Texto "IMPACTA" -->
+  <text x="200" y="130" text-anchor="middle" fill="#0077B6" font-family="Montserrat, sans-serif" font-size="72" font-weight="800" letter-spacing="2">
+    IMPACTA
+  </text>
+  
+  <!-- Símbolo "+" estilizado con efecto brush -->
+  <g transform="translate(285, 115)">
+    <!-- Línea vertical del + -->
+    <path d="M-8,-35 L8,-35 L8,35 L-8,35 Z" fill="#00A896" opacity="0.9"/>
+    <!-- Línea horizontal del + -->
+    <path d="M-35,-8 L35,-8 L35,8 L-35,8 Z" fill="#00A896" opacity="0.9"/>
+    <!-- Efecto brush - textura -->
+    <path d="M-10,-36 Q0,-38 10,-36" stroke="#00A896" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M-10,36 Q0,38 10,36" stroke="#00A896" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M-36,-10 Q-38,0 -36,10" stroke="#00A896" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M36,-10 Q38,0 36,10" stroke="#00A896" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+  
+  <!-- Tagline "Restaurando Nuestro Planeta" -->
+  <text x="200" y="170" text-anchor="middle" fill="#4A4A4A" font-family="Inter, sans-serif" font-size="16" font-weight="400" letter-spacing="1">
+    Restaurando Nuestro Planeta
+  </text>
+</svg>
