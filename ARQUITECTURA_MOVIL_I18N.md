@@ -1,4 +1,5 @@
 # Arquitectura de Aplicación Móvil e Internacionalización
+
 ## ONG Impacta+ SaaS
 
 | **Versión** | 1.0 |
@@ -817,6 +818,7 @@ eas submit --platform ios
 ### 4.3 Requisitos para Tiendas
 
 #### Google Play Store
+
 - APK/AAB firmado
 - Icono 512x512px
 - Feature graphic 1024x500px
@@ -825,6 +827,7 @@ eas submit --platform ios
 - Política de privacidad
 
 #### Apple App Store
+
 - IPA firmado
 - Icono 1024x1024px
 - Screenshots para diferentes dispositivos
