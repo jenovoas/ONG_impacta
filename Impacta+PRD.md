@@ -1,9 +1,9 @@
 # Documento de Requisitos de Producto (PRD)
-## ONG Impacta+ — Landing Page
+## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
-| **Versión** | 1.0 |
+| **Versión** | 2.0 |
 |-------------|-----|
-| **Estado** | Borrador |
+| **Estado** | En revisión |
 | **Fecha** | 4 de abril de 2026 |
 | **Responsable** | Equipo de Desarrollo |
 
@@ -12,216 +12,346 @@
 ## 1. Resumen Ejecutivo
 
 ### 1.1 Propósito
-Desarrollar una landing page profesional para la ONG Impacta+ que permita dar a conocer la organización, sus programas y facilitar la participación de voluntarios y donantes.
+Desarrollar una plataforma SaaS multi-tenant para la gestión integral de Organizaciones No Gubernamentales (ONGs), permitiendo administrar eventos, donaciones, ayuda social, rescate ecológico, rifas digitales, recaudación de fondos, y administración de socios, clientes y proveedores.
 
-### 1.2 Antecedentes
-Impacta+ es una organización sin fines de lucro dedicada a brindar apoyo y recursos a comunidades vulnerables a través de programas educativos, de salud y desarrollo comunitario. Actualmente cuenta con presencia en Facebook pero requiere una plataforma web propia para centralizar información y facilitar la interacción con su audiencia.
+### 1.2 Problema a Resolver
+Las ONGs carecen de sistemas internos de administración que les permitan gestionar de manera eficiente sus operaciones diarias, incluyendo:
+- Gestión de socios, voluntarios y beneficiarios
+- Administración de eventos y recaudación de fondos
+- Control de donaciones y transparencia financiera
+- Organización de actividades de ayuda social y ecológica
+- Digitalización de rifas y otras actividades de fundraising
 
-### 1.3 Perfil de la Organización
-- **Nombre:** ONG Impacta+
-- **Facebook:** [Impacta+](https://web.facebook.com/profile.php?id=100090404104178)
-- **Misión:** Mejorar la calidad de vida de personas en situación de vulnerabilidad
-- **Valores:** Inclusión, colaboración, empoderamiento comunitario, impacto positivo
+### 1.3 Visión del Producto
+Convertirse en la plataforma líder para la gestión de ONGs en la región, ofreciendo una solución todo-en-uno que permita a las organizaciones enfocarse en su misión social en lugar de en tareas administrativas.
+
+### 1.4 Modelo de Negocio
+- **SaaS Multi-tenant**: Múltiples ONGs comparten la misma infraestructura
+- **Plan Freemium**: Funcionalidades básicas gratuitas
+- **Planes Premium**: Funcionalidades avanzadas por suscripción mensual/anual
+- **Comisión por transacción**: Porcentaje en donaciones y rifas digitales
 
 ---
 
 ## 2. Objetivos del Producto
 
 ### 2.1 Objetivo Principal
-Crear una plataforma web que visibilice el trabajo de Impacta+ y facilite los canales de participación (voluntariado, donaciones, contacto).
+Crear una plataforma SaaS que centralice y automatice la gestión operativa de ONGs, mejorando su eficiencia y transparencia.
 
 ### 2.2 Objetivos Específicos
 | ID | Objetivo | Prioridad |
 |----|----------|-----------|
-| OE1 | Informar sobre la misión, visión y programas de la ONG | Alta |
-| OE2 | Facilitar el registro de voluntarios | Alta |
-| OE3 | Habilitar canal de donaciones en línea | Alta |
-| OE4 | Centralizar información de contacto y redes sociales | Alta |
-| OE5 | Mostrar el impacto concreto de los programas | Media |
-| OE6 | Mantener a la comunidad informada (noticias/eventos) | Media |
+| OE1 | Proveer administración completa de socios y voluntarios | Alta (MVP) |
+| OE2 | Facilitar la gestión de eventos y recaudación de fondos | Alta |
+| OE3 | Habilitar sistema de donaciones con transparencia | Alta |
+| OE4 | Digitalizar rifas y actividades de fundraising | Media |
+| OE5 | Gestionar ayuda social y programas de rescate ecológico | Media |
+| OE6 | Administrar proveedores y compras | Media |
+| OE7 | Generar reportes automáticos para transparencia | Alta |
+| OE8 | Proveer landing page personalizada por ONG | Media |
 
 ---
 
-## 3. Alcance del Producto
+## 3. Módulos del Sistema
 
-### 3.1 Funcionalidades Principales
+### 3.1 Módulo de Administración de Socios y Voluntarios (MVP)
 
-#### 3.1.1 Secciones Informativas
-| Sección | Descripción | Prioridad |
-|---------|-------------|-----------|
-| **Inicio** | Hero section con llamado a la acción principal | Alta |
-| **Quiénes Somos** | Historia, misión, visión y valores de la ONG | Alta |
-| **Nuestros Programas** | Descripción de programas educativos, de salud y desarrollo comunitario | Alta |
-| **Impacto** | Estadísticas y resultados concretos de los programas | Alta |
-| **Cómo Ayudar** | Opciones de voluntariado y donaciones | Alta |
-| **Noticias/Blog** | Actualizaciones, logros e historias inspiradoras | Media |
-| **Eventos** | Calendario de actividades, talleres y campañas | Media |
-| **Recursos** | Materiales educativos y guías de salud | Baja |
-| **FAQ** | Preguntas frecuentes sobre la ONG y programas | Media |
-| **Contacto** | Formulario e información de contacto | Alta |
-
-#### 3.1.2 Funcionalidades Interactivas
 | Funcionalidad | Descripción | Prioridad |
 |---------------|-------------|-----------|
-| **Formulario de Contacto** | Envío de consultas e interés en apoyar | Alta |
-| **Registro de Voluntarios** | Formulario específico para postulantes | Alta |
-| **Sistema de Donaciones** | Donaciones únicas y recurrentes en línea | Alta |
-| **Calendario de Eventos** | Visualización de próximas actividades | Media |
-| **Galería Multimedia** | Fotos y videos de actividades | Media |
-| **Testimonios** | Historias de beneficiados (texto y video) | Media |
-| **Integración Redes Sociales** | Enlaces y feed de Facebook | Alta |
+| **Registro de Socios** | Alta de nuevos socios con datos completos | Alta |
+| **Gestión de Membresías** | Control de cuotas, vencimientos y estados | Alta |
+| **Perfil de Voluntarios** | Registro con habilidades, disponibilidad y áreas de interés | Alta |
+| **Asignación de Tareas** | Distribución de voluntarios por actividades/proyectos | Alta |
+| **Historial de Participación** | Tracking de actividades realizadas por cada voluntario | Media |
+| **Comunicación Interna** | Notificaciones por email/SMS a socios y voluntarios | Media |
+| **Certificados de Voluntariado** | Generación automática de certificados | Baja |
+| **Ranking de Voluntarios** | Reconocimiento a voluntarios destacados | Baja |
 
-#### 3.1.3 Secciones de Reconocimiento
-| Sección | Descripción | Prioridad |
-|---------|-------------|-----------|
-| **Voluntarios Destacados** | Perfiles de voluntarios con contribución significativa | Baja |
-| **Alianzas** | Organizaciones y empresas colaboradoras | Media |
+### 3.2 Módulo de Eventos y Recaudación de Fondos
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Creación de Eventos** | Configuración de eventos (nombre, fecha, lugar, capacidad) | Alta |
+| **Calendario Público** | Visualización de eventos próximos | Alta |
+| **Inscripciones en Línea** | Registro de participantes con pago integrado | Alta |
+| **Gestión de Asistencia** | Check-in el día del evento | Media |
+| **Eventos de Recaudación** | Configuración de metas de fundraising | Alta |
+| **Termómetro de Donaciones** | Visualización del progreso de la meta | Alta |
+| **Tickets Digitales** | Generación y envío de tickets/e-tickets | Media |
+| **Recordatorios Automáticos** | Notificaciones previas al evento | Media |
+
+### 3.3 Módulo de Donaciones
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Donaciones en Línea** | Integración con pasarelas de pago (MercadoPago, PayPal, Stripe) | Alta |
+| **Donaciones Recurrentes** | Suscripciones mensuales/anuales | Alta |
+| **Donaciones en Especie** | Registro de donaciones no monetarias | Media |
+| **Certificados de Donación** | Generación de certificados para deducción de impuestos | Alta |
+| **Transparencia** | Tracking de uso de fondos por proyecto | Alta |
+| **Muro de Donantes** | Reconocimiento público (opcional) | Media |
+| **Campanas de Donación** | Campañas específicas con metas y plazos | Alta |
+
+### 3.4 Módulo de Rifas Digitales
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Creación de Rifas** | Configuración de premios, cantidad de boletos, precio | Alta |
+| **Venta de Boletos en Línea** | Selección de números y pago integrado | Alta |
+| **Boleto Digital** | Envío de boleto por email/WhatsApp | Alta |
+| **Sorteo Automatizado** | Selección aleatoria con acta digital | Alta |
+| **Notificación a Ganadores** | Comunicación automática a ganadores | Alta |
+| **Historial de Rifas** | Archivo de rifas realizadas y resultados | Media |
+| **Límite por Persona** | Configuración de máximo de boletos por persona | Media |
+
+### 3.5 Módulo de Ayuda Social
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Registro de Beneficiarios** | Base de datos de personas/familias beneficiadas | Alta |
+| **Seguimiento de Casos** | Historial de ayuda proporcionada | Alta |
+| **Tipos de Ayuda** | Clasificación (alimentos, salud, educación, vivienda, etc.) | Alta |
+| **Entrega de Ayuda** | Registro de entregas con firma/foto digital | Alta |
+| **Reportes de Impacto** | Estadísticas de ayuda entregada | Alta |
+| **Geolocalización** | Mapa de zonas beneficiadas | Media |
+
+### 3.6 Módulo de Rescate Ecológico
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Registro de Proyectos** | Proyectos de reforestación, limpieza, conservación | Alta |
+| **Seguimiento de Actividades** | Tracking de jornadas y voluntarios participantes | Alta |
+| **Métricas de Impacto** | Árboles plantados, residuos recolectados, etc. | Alta |
+| **Galería de Proyectos** | Fotos antes/después | Media |
+| **Certificados de Participación** | Para voluntarios en actividades ecológicas | Baja |
+
+### 3.7 Módulo de Administración (CRM)
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Gestión de Socios/Clientes** | CRM completo con historial de interacciones | Alta |
+| **Gestión de Proveedores** | Base de datos de proveedores y contratos | Alta |
+| **Órdenes de Compra** | Generación y seguimiento de compras | Media |
+| **Cuentas por Pagar** | Control de pagos a proveedores | Media |
+| **Contactos** | Agenda centralizada de contactos | Media |
+
+### 3.8 Módulo de Reportes y Analytics
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Dashboard General** | Vista general de métricas clave | Alta |
+| **Reportes Financieros** | Ingresos, egresos, balance por proyecto | Alta |
+| **Reportes de Impacto** | Beneficiarios, voluntarios, actividades | Alta |
+| **Exportación de Datos** | Excel, PDF, CSV | Alta |
+| **Reportes Personalizados** | Configuración de reportes a medida | Media |
+
+### 3.9 Módulo de Landing Page
+
+| Funcionalidad | Descripción | Prioridad |
+|---------------|-------------|-----------|
+| **Landing Page Personalizada** | Página web automática para cada ONG | Media |
+| **Personalización de Marca** | Logo, colores, dominio personalizado | Media |
+| **Formularios Públicos** | Contacto, voluntariado, donaciones | Alta |
+| **Blog/Noticias** | Publicación de noticias y actualizaciones | Media |
+| **Integración Redes Sociales** | Enlaces y feeds de redes sociales | Media |
 
 ---
 
-## 4. Requisitos Técnicos
+## 4. Arquitectura Técnica
 
-### 4.1 Requisitos No Funcionales
+### 4.1 Arquitectura Multi-tenant
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    LOAD BALANCER                        │
+└─────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│                   API GATEWAY                           │
+│              (Autenticación, Rate Limiting)             │
+└─────────────────────────────────────────────────────────┘
+                          │
+        ┌─────────────────┼─────────────────┐
+        ▼                 ▼                 ▼
+┌───────────────┐ ┌───────────────┐ ┌───────────────┐
+│   Servicio    │ │   Servicio    │ │   Servicio    │
+│   de ONGs     │ │   de Socios   │ │   Eventos     │
+└───────────────┘ └───────────────┘ └───────────────┘
+        │                 │                 │
+        └─────────────────┼─────────────────┘
+                          ▼
+┌─────────────────────────────────────────────────────────┐
+│                    BASE DE DATOS                        │
+│         (PostgreSQL con row-level security)             │
+└─────────────────────────────────────────────────────────┘
+```
+
+### 4.2 Stack Tecnológico Propuesto
+
+| Capa | Tecnología | Justificación |
+|------|------------|---------------|
+| **Frontend** | React + TypeScript + TailwindCSS | Moderno, escalable, buena UX |
+| **Backend** | Node.js + NestJS | TypeScript full-stack, arquitectura modular |
+| **Base de Datos** | PostgreSQL | Robusto, open-source, row-level security |
+| **Cache** | Redis | Sesiones, cache de consultas frecuentes |
+| **Colas** | Bull/Redis | Tareas asíncronas (emails, reportes) |
+| **Almacenamiento** | AWS S3 / Cloudflare R2 | Fotos, documentos, archivos |
+| **Hosting** | Vercel (Frontend) + Railway/Render (Backend) | Fácil deploy, escalable |
+| **Pagos** | MercadoPago + PayPal + Stripe | Cobertura regional e internacional |
+
+### 4.3 Seguridad
+
+| Requisito | Implementación |
+|-----------|----------------|
+| Autenticación | JWT con refresh tokens |
+| Autorización | RBAC (Roles y Permisos) |
+| Multi-tenancy | Row-level security en BD |
+| Encriptación | TLS 1.3, datos sensibles encriptados |
+| Backups | Automáticos diarios |
+
+---
+
+## 5. Roles de Usuario
+
+| Rol | Descripción | Permisos |
+|-----|-------------|----------|
+| **Super Admin** | Administrador de la plataforma SaaS | Acceso total a todas las ONGs |
+| **Admin ONG** | Administrador de una ONG específica | Acceso completo a su ONG |
+| **Coordinador** | Coordinador de área/voluntarios | Gestión de voluntarios y eventos |
+| **Voluntario** | Voluntario registrado | Ver eventos, actualizar perfil |
+| **Socio** | Socio con membresía activa | Ver beneficios, pagar cuotas |
+| **Donante** | Donante registrado | Ver historial de donaciones |
+
+---
+
+## 6. Requisitos No Funcionales
 
 | ID | Requisito | Descripción |
 |----|-----------|-------------|
-| RNF1 | **Responsive Design** | La página debe adaptarse a todos los dispositivos (móvil, tablet, desktop) |
-| RNF2 | **Performance** | Tiempo de carga máximo de 3 segundos |
-| RNF3 | **SEO** | Optimización para motores de búsqueda (meta tags, estructura semántica) |
-| RNF4 | **Accesibilidad** | Cumplimiento WCAG 2.1 nivel AA mínimo |
-| RNF5 | **Seguridad** | Certificado SSL, protección de formularios contra spam |
-| RNF6 | **Navegabilidad** | Menú intuitivo, máximo 3 clics para llegar a cualquier sección |
-
-### 4.2 Requisitos de Contenido
-
-| ID | Requisito |
-|----|-----------|
-| RC1 | Incluir imágenes relevantes del trabajo de la ONG |
-| RC2 | Redacción clara, concisa y con llamado a la acción |
-| RC3 | Contenido disponible en español |
-| RC4 | Mantener coherencia con la identidad visual de la organización |
+| RNF1 | **Disponibilidad** | 99.9% uptime garantizado |
+| RNF2 | **Performance** | < 2 segundos de respuesta en 95% de requests |
+| RNF3 | **Escalabilidad** | Soportar 100+ ONGs, 10,000+ usuarios concurrentes |
+| RNF4 | **Seguridad** | Cumplimiento OWASP Top 10 |
+| RNF5 | **Backup** | Backups automáticos diarios con retención de 30 días |
+| RNF6 | **Responsive** | Funcional en móvil, tablet y desktop |
+| RNF7 | **Accesibilidad** | WCAG 2.1 nivel AA |
+| RNF8 | **Multi-idioma** | Español e inglés (futuro) |
 
 ---
 
-## 5. Arquitectura de Información
+## 7. Criterios de Aceptación
 
-```
-┌─────────────────────────────────────────────────────┐
-│                    HEADER / NAV                     │
-│  Logo  |  Inicio  Programas  Impacto  Cómo Ayudar   │
-│          Noticias  Eventos  Recursos  Contacto      │
-├─────────────────────────────────────────────────────┤
-│                      HERO SECTION                   │
-│         "Juntos podemos hacer una diferencia"       │
-│              [Botón: Quiero Ayudar]                 │
-├─────────────────────────────────────────────────────┤
-│                  QUIÉNES SOMOS                      │
-│     Historia | Misión | Visión | Valores            │
-├─────────────────────────────────────────────────────┤
-│                  NUESTROS PROGRAMAS                 │
-│   Educación | Salud | Desarrollo Comunitario        │
-├─────────────────────────────────────────────────────┤
-│                     IMPACTO                         │
-│        Estadísticas | Resultados | Testimonios      │
-├─────────────────────────────────────────────────────┤
-│                   CÓMO AYUDAR                       │
-│      Voluntariado | Donaciones | Alianzas           │
-├─────────────────────────────────────────────────────┤
-│                   NOTICIAS/BLOG                     │
-│           Últimas actividades y logros              │
-├─────────────────────────────────────────────────────┤
-│                     EVENTOS                         │
-│         Calendario de próximas actividades          │
-├─────────────────────────────────────────────────────┤
-│                    CONTACTO                         │
-│   Formulario | Email | Teléfono | Dirección         │
-├─────────────────────────────────────────────────────┤
-│                    FOOTER                           │
-│   Redes Sociales | Links Rápidos | © 2026 Impacta+  │
-└─────────────────────────────────────────────────────┘
-```
+### 7.1 MVP (Módulo Socios y Voluntarios)
+- [ ] Registro y alta de nuevos socios con validación de datos
+- [ ] Gestión de membresías (alta, baja, renovación)
+- [ ] Perfil completo de voluntarios con habilidades y disponibilidad
+- [ ] Búsqueda y filtrado de socios/voluntarios
+- [ ] Exportación de listados a Excel/PDF
+- [ ] Notificaciones por email (bienvenida, vencimiento de membresía)
+- [ ] Dashboard con métricas de socios y voluntarios
+
+### 7.2 Criterios Generales
+- [ ] La plataforma soporta al menos 10 ONGs simultáneas en testing
+- [ ] Los datos de cada ONG están aislados y no son accesibles por otras ONGs
+- [ ] El tiempo de carga inicial es menor a 3 segundos
+- [ ] La plataforma funciona en Chrome, Firefox, Safari y Edge (últimas 2 versiones)
 
 ---
 
-## 6. Criterios de Aceptación
+## 8. Métricas de Éxito
 
-### 6.1 Criterios Generales
-- [ ] La página carga en menos de 3 segundos en conexión 4G
-- [ ] El diseño es responsive y se prueba en 3 breakpoints mínimo
-- [ ] Todos los formularios envían datos correctamente
-- [ ] Los enlaces a redes sociales funcionan
-- [ ] El sitio es navegable con teclado (accesibilidad)
-- [ ] Las imágenes tienen texto alternativo descriptivo
-
-### 6.2 Criterios Específicos por Funcionalidad
-
-#### Formulario de Contacto
-- [ ] Campos requeridos validados
-- [ ] Mensaje de confirmación al enviar
-- [ ] Notificación por email al administrador
-
-#### Registro de Voluntarios
-- [ ] Formulario con datos personales y áreas de interés
-- [ ] Confirmación de recepción
-- [ ] Los datos se almacenan de forma segura
-
-#### Donaciones
-- [ ] Integración con pasarela de pago segura
-- [ ] Opción de donación única y recurrente
-- [ ] Comprobante de donación por email
+| Métrica | Objetivo | Período |
+|---------|----------|---------|
+| ONGs registradas | 50+ | Primeros 6 meses |
+| Usuarios activos | 1,000+ | Primeros 6 meses |
+| Tasa de retención | > 80% | Mensual |
+| Donaciones procesadas | $50,000+ | Primeros 6 meses |
+| NPS (Net Promoter Score) | > 50 | Trimestral |
+| Tiempo de respuesta | < 2 segundos | Continuo |
 
 ---
 
-## 7. Métricas de Éxito
+## 9. Cronograma Tentativo
 
-| Métrica | Objetivo | Herramienta de Medición |
-|---------|----------|------------------------|
-| Visitas mensuales | 1,000+ en los primeros 3 meses | Google Analytics |
-| Tasa de rebote | < 40% | Google Analytics |
-| Registros de voluntarios | 20+ mensuales | Formulario |
-| Donaciones en línea | 10+ mensuales | Plataforma de pagos |
-| Tiempo en página | > 2 minutos promedio | Google Analytics |
+### Fase 1: MVP (8-10 semanas)
+| Semana | Entregables |
+|--------|-------------|
+| 1-2 | Diseño UI/UX, Arquitectura, Setup del proyecto |
+| 3-5 | Módulo de Socios y Voluntarios (core) |
+| 6-7 | Autenticación, RBAC, Multi-tenancy |
+| 8-9 | Dashboard y Reportes básicos |
+| 10 | Testing, QA, Deploy a producción |
+
+### Fase 2: Módulos de Recaudación (6-8 semanas)
+| Semana | Entregables |
+|--------|-------------|
+| 1-2 | Módulo de Eventos |
+| 3-4 | Módulo de Donaciones |
+| 5-6 | Módulo de Rifas Digitales |
+| 7-8 | Testing, QA, Deploy |
+
+### Fase 3: Módulos Operativos (6-8 semanas)
+| Semana | Entregables |
+|--------|-------------|
+| 1-2 | Módulo de Ayuda Social |
+| 3-4 | Módulo de Rescate Ecológico |
+| 5-6 | CRM (Proveedores, Compras) |
+| 7-8 | Testing, QA, Deploy |
+
+### Fase 4: Landing Pages y Analytics (4-6 semanas)
+| Semana | Entregables |
+|--------|-------------|
+| 1-2 | Generador de Landing Pages |
+| 3-4 | Módulo de Analytics avanzado |
+| 5-6 | Testing, QA, Deploy |
+
+**Total estimado:** 24-32 semanas (6-8 meses)
 
 ---
 
-## 8. Cronograma Tentativo
-
-| Fase | Duración | Entregables |
-|------|----------|-------------|
-| **Diseño UI/UX** | 1-2 semanas | Wireframes, Mockups |
-| **Desarrollo Frontend** | 2-3 semanas | Página funcional |
-| **Integración Backend** | 1-2 semanas | Formularios, Donaciones |
-| **Testing** | 1 semana | Reporte de pruebas |
-| **Lanzamiento** | 1 semana | Deploy y capacitación |
-
-**Total estimado:** 6-9 semanas
-
----
-
-## 9. Riesgos y Dependencias
+## 10. Riesgos y Dependencias
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
 |--------|--------------|---------|------------|
-| Retraso en entrega de contenido | Media | Alto | Establecer fechas límite claras |
-| Cambios en requisitos | Media | Medio | Congelar requisitos antes de desarrollo |
-| Limitaciones de presupuesto | Baja | Alto | Priorizar funcionalidades MVP |
-| Dependencia de terceros (pasarela de pago) | Media | Medio | Evaluar múltiples proveedores |
+| Complejidad de desarrollo | Alta | Alto | Priorizar MVP, iteraciones cortas |
+| Adopción lenta del mercado | Media | Alto | Plan de marketing, beta testers |
+| Problemas con pasarelas de pago | Media | Alto | Múltiples proveedores, fallback |
+| Escalabilidad insuficiente | Baja | Alto | Arquitectura cloud-native desde inicio |
+| Cambios regulatorios | Media | Medio | Asesoría legal, cumplimiento local |
+| Competencia | Media | Medio | Diferenciación por precio y funcionalidades |
 
 ---
 
-## 10. Glosario
+## 11. Plan de Monetización
+
+| Plan | Precio | Funcionalidades |
+|------|--------|-----------------|
+| **Free** | $0/mes | Hasta 50 socios, 1 evento/mes, donaciones básicas |
+| **Básico** | $29/mes | Hasta 200 socios, eventos ilimitados, rifas digitales |
+| **Pro** | $79/mes | Socios ilimitados, todos los módulos, landing page |
+| **Enterprise** | Personalizado | Multi-ONG, API, soporte prioritario, white-label |
+
+**Comisiones:**
+- Donaciones: 2.9% + $0.30 por transacción
+- Rifas digitales: 5% del recaudado
+
+---
+
+## 12. Glosario
 
 | Término | Definición |
 |---------|------------|
-| **Landing Page** | Página de aterrizaje diseñada para convertir visitantes |
-| **Responsive** | Diseño que se adapta a diferentes tamaños de pantalla |
-| **SEO** | Search Engine Optimization, optimización para buscadores |
-| **WCAG** | Web Content Accessibility Guidelines |
+| **Multi-tenant** | Arquitectura donde una instancia sirve a múltiples clientes |
+| **SaaS** | Software as a Service, software por suscripción en la nube |
+| **RBAC** | Role-Based Access Control, control de acceso por roles |
+| **Fundraising** | Recaudación de fondos |
+| **Row-level security** | Seguridad a nivel de fila en base de datos |
 | **MVP** | Minimum Viable Product, producto mínimo viable |
 
 ---
 
-## 11. Aprobaciones
+## 13. Aprobaciones
 
 | Rol | Nombre | Fecha | Firma |
 |-----|--------|-------|-------|
@@ -231,4 +361,4 @@ Crear una plataforma web que visibilice el trabajo de Impacta+ y facilite los ca
 
 ---
 
-*Documento elaborado para el proyecto de desarrollo web de ONG Impacta+*
+*Documento elaborado para el proyecto SaaS de gestión de ONGs*
