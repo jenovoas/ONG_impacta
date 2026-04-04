@@ -9,6 +9,26 @@ M05 (Rifas) está en este mismo archivo por su estrecha relación operativa, per
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ❌ Pendiente | `proto/eventos.html` | E01 Lista eventos, E02 Detalle + check-in, E03 Formulario nuevo evento, E04 Check-in QR |
+| ❌ Pendiente | `proto/rifas.html` | R01 Lista rifas, R02 Detalle rifa, R03 Nueva rifa, R04 Sorteo animado |
+
+**Antes de implementar este sprint**: crear los prototipos en Stitch
+(proyecto `4741044715461206908`), exportar a `/proto/` y actualizar `planning/UI_PROTOTYPES_STITCH.md`.
+
+Guías de diseño para estos prototipos:
+- `eventos.html`: cards con imagen hero, badge de estado, barra de progreso de inscripción
+- `rifas.html`: la pantalla de sorteo (`R04`) es pieza clave — diseño dramático con animación de ruleta/tambola
+- Reutilizar el patrón de tabs (Info | Inscriptos | Check-in | Recaudación) del módulo M01
+
+---
+
 ## Backend
 
 ```

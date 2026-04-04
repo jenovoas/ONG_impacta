@@ -8,6 +8,20 @@ Gestión de tareas asignables y visualización unificada del calendario (tareas 
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ✅ Disponible | `proto/calendario-tareas.html` | C01 Calendario, C02 Lista tareas / Kanban, C03 Detalle tarea, C04 Nueva tarea |
+| ✅ Disponible | `proto/calendario-tareas-es.html` | Variante español (misma estructura) |
+
+Referencia primaria: **`proto/calendario-tareas.html`**
+
+---
+
 ## Backend
 
 ```

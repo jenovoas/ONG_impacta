@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Socios | ONG Impacta+</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#bec7d3",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary": "#006399",
+                        "tertiary-container": "#ec8701",
+                        "surface-container-high": "#eae7e7",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#3e4852",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "on-primary-fixed": "#001d32",
+                        "tertiary-fixed-dim": "#ffb877",
+                        "outline": "#6f7883",
+                        "primary-fixed": "#cde5ff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed": "#2e1600",
+                        "on-primary-container": "#003a5c",
+                        "inverse-primary": "#95ccff",
+                        "secondary": "#006b55",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#28dfb5",
+                        "on-tertiary-fixed-variant": "#6c3b00",
+                        "on-primary-fixed-variant": "#004a75",
+                        "on-secondary-fixed-variant": "#00513f",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#002118",
+                        "on-secondary-container": "#007059",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#8d4f00",
+                        "secondary-container": "#51f9cd",
+                        "on-tertiary-container": "#552d00",
+                        "surface-tint": "#006399",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdcc0",
+                        "inverse-surface": "#313030",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#95ccff",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#00a8ff",
+                        "surface-container": "#f0eded",
+                        "secondary-fixed": "#55fcd0"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-blue-glow {
+            box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+        }
+        .neon-green-gradient {
+            background: linear-gradient(135deg, #00D4AA 0%, #006b55 100%);
+        }
+        .neon-blue-gradient {
+            background: linear-gradient(135deg, #00A8FF 0%, #006399 100%);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-body selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<nav class="fixed top-0 z-50 w-full glass-effect border-b border-white/10 px-8 py-4 flex justify-between items-center">
+<div class="flex items-center gap-8">
+<div class="text-2xl font-black tracking-tighter text-primary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-headline">ONG Impacta+</span>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-gray-400 hover:text-white transition-colors font-medium" href="#">Dashboard</a>
+<a class="text-primary-container border-b-2 border-primary pb-1 font-medium" href="#">Metrics</a>
+<a class="text-gray-400 hover:text-white transition-colors font-medium" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center bg-white/5 rounded-full px-4 py-1.5 border border-white/10">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="language">language</span>
+<select class="bg-transparent border-none text-xs font-bold uppercase tracking-widest focus:ring-0 cursor-pointer">
+<option selected="" value="es">ES</option>
+<option value="en">EN</option>
+</select>
+</div>
+<button class="relative hover:bg-white/5 p-2 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary-fixed rounded-full"></span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary-container overflow-hidden">
+<img alt="Administrator profile" data-alt="Close up portrait of a professional man in a dark suit with a clean and focused expression, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB7Mhvz-E3cAy9aqYyHeCc7Fdl4SLF-TWxU6cuAZwjliw3nU1NS0RtZV_dQWXJ_7HGGUesJBPTDXKjy4aUWdK2CZK_PaPPIUN8ILSa-L1_BtwT4keCjLedS5GP86hTk1vsprZFl5fDOD5BUgWQjCQUtYZsMy_tJ6e7aSYpSg2WeJQnC2HsoS1tnZTO41Mn622Eb5JaFTRbsorxEajJ4uxGrwOJhAv2WdywctdB-anWdTxn5kegQDWvqCjV2TJcil4IZZhdiDjJDn0"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 glass-effect border-r border-white/10 flex flex-col py-8 pt-24 hidden lg:flex">
+<div class="px-6 mb-10">
+<div class="flex items-center space-x-3 mb-2">
+<div class="w-8 h-8 rounded-lg neon-blue-gradient flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<p class="text-sm font-headline font-extrabold text-primary-container leading-none">Impacta+</p>
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-label mt-1">Global Steward</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-4 rounded-xl hover:bg-white/5 hover:text-secondary-fixed transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Overview</span>
+</a>
+<a class="flex items-center space-x-3 bg-primary-container/10 text-primary-container border-r-4 border-primary-container py-3 px-4 rounded-r-none rounded-l-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Socios</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-4 rounded-xl hover:bg-white/5 hover:text-secondary-fixed transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="eco">eco</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Environmental</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-4 rounded-xl hover:bg-white/5 hover:text-secondary-fixed transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="security">security</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Governance</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-4 rounded-xl hover:bg-white/5 hover:text-secondary-fixed transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="settings">settings</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-8 border-t border-white/5">
+<button class="w-full neon-blue-gradient text-white py-3 rounded-xl font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                Nueva Iniciativa
+            </button>
+<div class="mt-6 space-y-4">
+<a class="flex items-center space-x-3 text-gray-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span class="text-[10px] uppercase tracking-widest font-label">Support</span>
+</a>
+<a class="flex items-center space-x-3 text-error/80 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+<span class="text-[10px] uppercase tracking-widest font-label">Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:ml-64 pt-24 px-8 pb-12">
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-secondary-fixed font-label text-xs uppercase tracking-[0.3em] font-bold">Panel de Control</span>
+<h1 class="text-5xl font-headline font-extrabold tracking-tighter mt-2">Gestión de <span class="text-primary-container">Socios</span></h1>
+<p class="text-gray-400 mt-4 max-w-xl font-body leading-relaxed">
+                    Administra la red global de colaboradores de ONG Impacta+. Supervisa roles, contribuciones y estados de membresía en tiempo real.
+                </p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white/10 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="file_download">file_download</span>
+                    Exportar Datos
+                </button>
+<button class="px-6 py-3 rounded-xl neon-green-gradient text-white font-bold text-sm shadow-lg shadow-secondary/20 hover:scale-[1.02] transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+                    Añadir Socio
+                </button>
+</div>
+</header>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary-container/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container bg-primary-container/10 p-2 rounded-lg" data-icon="groups">groups</span>
+<span class="text-secondary-fixed text-xs font-bold">+12% vs mes anterior</span>
+</div>
+<h3 class="text-3xl font-headline font-bold">2,842</h3>
+<p class="text-gray-500 text-xs uppercase tracking-widest mt-1">Total Socios</p>
+</div>
+<div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary-container/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary-fixed bg-secondary-fixed/10 p-2 rounded-lg" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="text-secondary-fixed text-xs font-bold">42 Activos hoy</span>
+</div>
+<h3 class="text-3xl font-headline font-bold">156</h3>
+<p class="text-gray-500 text-xs uppercase tracking-widest mt-1">Voluntarios</p>
+</div>
+<div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary-container/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim bg-tertiary-fixed-dim/10 p-2 rounded-lg" data-icon="payments">payments</span>
+<span class="text-primary-container text-xs font-bold">Objetivo 85%</span>
+</div>
+<h3 class="text-3xl font-headline font-bold">€12.4k</h3>
+<p class="text-gray-500 text-xs uppercase tracking-widest mt-1">Recaudación Mensual</p>
+</div>
+<div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary-container/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-container bg-primary-container/10 p-2 rounded-lg" data-icon="verified_user">verified_user</span>
+<span class="text-error text-xs font-bold">5 por renovar</span>
+</div>
+<h3 class="text-3xl font-headline font-bold">12</h3>
+<p class="text-gray-500 text-xs uppercase tracking-widest mt-1">Roles Directivos</p>
+</div>
+</div>
+<!-- Advanced Table Section -->
+<div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+<div class="p-6 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" data-icon="search">search</span>
+<input class="w-full bg-black/40 border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary-container focus:border-primary-container placeholder:text-gray-600" placeholder="Buscar por nombre, email o ID..." type="text"/>
+</div>
+<button class="bg-white/5 p-2 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-400" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-label uppercase tracking-widest text-gray-500 mr-2">Filtrar por:</span>
+<button class="px-3 py-1 rounded-full bg-primary-container/20 text-primary-container text-xs font-bold border border-primary-container/30">Todos</button>
+<button class="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-bold border border-white/10 hover:bg-white/10">Socio</button>
+<button class="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-bold border border-white/10 hover:bg-white/10">Voluntario</button>
+<button class="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-bold border border-white/10 hover:bg-white/10">Donante</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-white/2">
+<th class="px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-label border-b border-white/5">Usuario</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-label border-b border-white/5">Rol de Impacto</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-label border-b border-white/5">Estado</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-label border-b border-white/5">Contribución</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-label border-b border-white/5">Última Actividad</th>
+<th class="px-6 py-4 border-b border-white/5"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Row 1 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-gray-800">
+<img alt="User" data-alt="Portrait of a smiling young professional woman in a bright office environment, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChtHn3utTM2Wu4g1bfx4r68KkBDtzRylPD6B0qJRaXVbT_DHFkndOyZdOLdikKaa2M5i-RQ_XeelMnNNNkiY5AQUCdZrDXeyQn5r1Raf6BtHymObKijQEAqo4Q6dphDmS1MrqccTtin9A05DwRwzt6_24THJfwPbP41qiTBwo5MdcRA9eMaTz8a18wrGCHhpsIsD0lr22JTv5m6wTHOIaF7CypxrfyGL0HGZPvpcqxY6L181iENKussDuEPqxwClhBvdjnxKRjafs"/>
+</div>
+<div>
+<p class="font-bold text-sm">Elena Rodríguez</p>
+<p class="text-xs text-gray-500">elena.ro@impacta.org</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-secondary-fixed/10 text-secondary-fixed border border-secondary-fixed/20">
+                                    Directiva
+                                </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="text-xs text-white">Activo</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-bold">€1,200 <span class="text-[10px] text-gray-500 font-normal">/ anual</span></p>
+</td>
+<td class="px-6 py-4 text-xs text-gray-400">
+                                Hace 2 horas
+                            </td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-white/5 rounded-lg text-gray-500 hover:text-primary-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-gray-800">
+<img alt="User" data-alt="Headshot of a middle-aged man with glasses, looking professional and friendly, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsirrs-ZgduDXSZaHUhG1CNXRq8-CwtvdGvuumFIproqQWDQVxN-CMSbBW10P0Ejguvsz5hatb04uP6m3Gufyb0aRAZgECRO2WjWAiU1N1QgZBgkp971kXzZ2K6TgxIgpnpYjF7jV1KciNhELr19ulTTuacpvHwqfvndHFHFt8HTJ6fz7QXoffx8ZW_l20sOTP1WdKtutFd-w2g5A_u5Y2n6i3gXn2QAflGD2rj_-xacTSG11BDndBAFhAA_2y83xK06sK054h4XI"/>
+</div>
+<div>
+<p class="font-bold text-sm">Javier Maza</p>
+<p class="text-xs text-gray-500">j.maza@network.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-primary-container/10 text-primary-container border border-primary-container/20">
+                                    Donante Platinum
+                                </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="text-xs text-white">Activo</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-bold">€5,000 <span class="text-[10px] text-gray-500 font-normal">/ único</span></p>
+</td>
+<td class="px-6 py-4 text-xs text-gray-400">
+                                Ayer, 14:20
+                            </td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-white/5 rounded-lg text-gray-500 hover:text-primary-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-gray-800">
+<img alt="User" data-alt="Portrait of a young woman with a thoughtful expression, warm lighting, blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUnsE7lWkz6WDtM7obGrLcgEcLAXvdHn1mkGJhfQhNRHQ0JMC1kcFuEC6IKD-6KggBwIAFmyDg0sEsRgR6Rq6_X3eNT0gVeo9nl2PUbPwzVvcghtAk1ywArMgnIAcTPSqeGCQAILwEg8MZbwzHyNsEYn9Mk8QRE4ACy2f4DVI--YLfRqokE_tPx9mhUTNuIDaJqpMk3cqrOCNlwyZXCCzWuThZUp-n0LphLaTlOeLs6xkKGzCtYZQ8BSrH8pRq7CrI5yneNNJq-H0"/>
+</div>
+<div>
+<p class="font-bold text-sm">Lucía Méndez</p>
+<p class="text-xs text-gray-500">lucia.vol@impacta.org</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/20">
+                                    Voluntario
+                                </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="text-xs text-white">En Pausa</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-bold">120h <span class="text-[10px] text-gray-500 font-normal">/ total</span></p>
+</td>
+<td class="px-6 py-4 text-xs text-gray-400">
+                                hace 2 semanas
+                            </td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-white/5 rounded-lg text-gray-500 hover:text-primary-container transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-white/5 flex items-center justify-between">
+<p class="text-xs text-gray-500">Mostrando 1-10 de 2,842 miembros</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-white/10 hover:bg-white/5 disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-white/5 text-gray-400 text-xs font-bold">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-white/5 text-gray-400 text-xs font-bold">3</button>
+<button class="p-2 rounded-lg border border-white/10 hover:bg-white/5">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB (Contextual for Adding Initiatives) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 rounded-full neon-blue-gradient text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-40 neon-blue-glow group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform" data-icon="add">add</span>
+</button>
+</body></html>

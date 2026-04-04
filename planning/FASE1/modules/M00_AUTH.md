@@ -9,6 +9,23 @@ No gestiona perfil de usuario (eso es M01 Socios/Configuración).
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ❌ Pendiente | `proto/auth-login.html` | A01 Login, A02 Recuperar, A03 Nueva contraseña |
+| ❌ Pendiente | `proto/auth-2fa.html` | A04 2FA TOTP |
+| ❌ Pendiente | `proto/app-shell.html` | S01 Sidebar, S02 Topbar, S03 Breadcrumb |
+
+**Antes de implementar este sprint**: crear los prototipos faltantes en Stitch
+(proyecto `4741044715461206908`) siguiendo el sistema "The Digital Steward",
+exportar HTML a `/proto/` y actualizar `planning/UI_PROTOTYPES_STITCH.md`.
+
+---
+
 ## Backend — `apps/api/src/modules/auth/`
 
 ### Estructura de archivos

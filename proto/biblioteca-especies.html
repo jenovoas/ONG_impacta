@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002118",
+                    "on-secondary-fixed-variant": "#00513f",
+                    "background": "#131313",
+                    "inverse-primary": "#006399",
+                    "on-tertiary-fixed-variant": "#6c3b00",
+                    "on-tertiary": "#4b2700",
+                    "on-secondary": "#00382b",
+                    "error": "#ffb4ab",
+                    "surface-container": "#20201f",
+                    "inverse-on-surface": "#313030",
+                    "surface": "#131313",
+                    "surface-tint": "#95ccff",
+                    "primary-container": "#00a8ff",
+                    "on-primary": "#003352",
+                    "surface-bright": "#393939",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-variant": "#bec7d3",
+                    "primary-fixed": "#cde5ff",
+                    "outline": "#88929d",
+                    "tertiary": "#ffb877",
+                    "secondary-fixed-dim": "#28dfb5",
+                    "tertiary-fixed": "#ffdcc0",
+                    "on-primary-fixed-variant": "#004a75",
+                    "on-secondary-container": "#005441",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353535",
+                    "secondary-container": "#00d1a7",
+                    "tertiary-container": "#ec8701",
+                    "secondary": "#41eec2",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#ffb877",
+                    "primary": "#95ccff",
+                    "on-tertiary-fixed": "#2e1600",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#95ccff",
+                    "surface-container-highest": "#353535",
+                    "surface-container-high": "#2a2a2a",
+                    "outline-variant": "#3e4852",
+                    "on-tertiary-container": "#552d00",
+                    "on-primary-container": "#003a5c",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#131313",
+                    "secondary-fixed": "#55fcd0",
+                    "on-primary-fixed": "#001d32",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary/30">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-[#1C1B1B] border-r border-[#353535]/15 flex flex-col p-6 space-y-8 font-['Manrope'] font-medium text-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-[#95CCFF] tracking-tighter">Impacta+</h1>
+<p class="text-[10px] text-outline uppercase tracking-widest">Digital Steward</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<div class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">group</span>
+<span>Members</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">calendar_today</span>
+<span>Calendar</span>
+</div>
+<!-- Active Tab: Species Library -->
+<div class="flex items-center gap-3 px-4 py-3 text-[#95CCFF] bg-[#20201F] rounded-lg shadow-[inset_0_1px_0_0_rgba(149,204,255,0.1)] cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span>Species Library</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">volunteer_activism</span>
+<span>Donations</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">settings</span>
+<span>Settings</span>
+</div>
+</nav>
+<div class="pt-6 border-t border-outline-variant/10 space-y-2">
+<button class="w-full py-3 px-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Initiative
+            </button>
+<div class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">help</span>
+<span>Help Center</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-error/70 hover:text-error hover:bg-error/5 rounded-lg transition-all duration-200 cursor-pointer group">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300">logout</span>
+<span>Sign Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-40 bg-[#131313]/80 backdrop-blur-xl font-['Manrope'] antialiased">
+<div class="flex justify-between items-center px-8 py-4 w-full">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary/30 transition-all placeholder:text-outline/50" placeholder="Search Species Library..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<div class="p-2 text-[#353535] hover:text-[#41EEC2] transition-colors duration-300 cursor-pointer relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border-2 border-background"></span>
+</div>
+<div class="p-2 text-[#353535] hover:text-[#41EEC2] transition-colors duration-300 cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/20"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Riveros</p>
+<p class="text-[10px] text-outline">Conservation Lead</p>
+</div>
+<div class="relative">
+<img alt="User profile with status indicator" class="w-10 h-10 rounded-full border border-outline-variant/30 grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT-M2vaaU0_SRqM1_VBeHdKToWpDTHtPf0v8M42OwAlPd0-To-oJJy2PK3EncgUEMGRRJs2CuxMmrSsozc2ewYf9AScnZCPGDRmPb95MYtyskcNdjVbUBshc4vsUaLczhfTmYPmscdCkDy-v1zmz6Ghq5OO9GKBdsLuiby1ulJLHJLV-4Wt6ZfHxA7sBbP-pUwo7g3_tqeL5rityHC7hXU5hwcO8oG9Yp0M3sH5m617Y519uPk0oLibTF8Sz5I5a8FzOPXZrX8Nzc"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary border-2 border-background rounded-full"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#1C1B1B] to-transparent h-px w-full"></div>
+</header>
+<!-- Page Canvas -->
+<div class="p-8 space-y-8">
+<!-- Header & Action Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-secondary font-label font-semibold tracking-[0.2em] text-[10px] uppercase mb-2 block">Knowledge Base</span>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight">Species Library</h2>
+<p class="text-outline mt-2 max-w-xl leading-relaxed">The authoritative record of regional flora and fauna under our stewardship. Track populations, status, and sightings in real-time.</p>
+</div>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-6 py-3 rounded-xl flex items-center gap-3 transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">add_location_alt</span>
+<span class="font-bold text-sm">Log New Sighting</span>
+</button>
+</section>
+<!-- Filters & Stats Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Filters Sidebar/Column -->
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-2xl space-y-6">
+<h3 class="font-headline font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-primary">filter_list</span>
+                            Refine Library
+                        </h3>
+<!-- Filter Group -->
+<div class="space-y-3">
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold">Category</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">All Types</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-outline text-xs font-semibold hover:text-on-surface transition-colors">Flora</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-outline text-xs font-semibold hover:text-on-surface transition-colors">Fauna</button>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold">Conservation Status</p>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant bg-surface-container text-secondary focus:ring-secondary/30" type="checkbox"/>
+<span class="text-xs text-outline group-hover:text-on-surface transition-colors">Critically Endangered</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant bg-surface-container text-secondary focus:ring-secondary/30" type="checkbox"/>
+<span class="text-xs text-outline group-hover:text-on-surface transition-colors">Endangered</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant bg-surface-container text-secondary focus:ring-secondary/30" type="checkbox"/>
+<span class="text-xs text-outline group-hover:text-on-surface transition-colors">Stable</span>
+</label>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold">Region</p>
+<select class="w-full bg-surface-container border-none rounded-xl text-xs py-2 text-on-surface focus:ring-1 focus:ring-primary/30">
+<option>Valdivian Rainforest</option>
+<option>Patagonian Steppe</option>
+<option>Atacama Plateau</option>
+</select>
+</div>
+</div>
+<!-- Map Integration Widget -->
+<div class="bg-surface-container-low p-1 rounded-2xl overflow-hidden group">
+<div class="h-48 relative rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Satellite map view of a rugged mountain terrain with highlighted blue hotspots for recent species sightings" data-location="Chilean Patagonia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_jQmJNWjrx2mK1LsC0DrI5BN4W9ZpDCrzSr45reU7CSER01IFFkfKaX2FFynDYDtrrRXSLwwiHCypzAY39Xci4PVLAfa-Qp9YUTB4vl7EAbsC1EKmXWFDHkNgDvFgD97ykWHL02nsQZyegZbCPVMFAdaUPXYz5ubUYOKvaK9eJD0FU6-ZtyhuYJXegiE2Ey3Ir_UYmbDfcVxVrEABtaBVVe1CQYu1IrSFi1N4hotaMjJnB1YAEyKCE-GovO1-2AjI9ijex-VvyDU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1">Live Sighting Map</p>
+<h4 class="text-sm font-bold text-white">Southern Cordillera</h4>
+</div>
+<!-- Map Pin Mockups -->
+<div class="absolute top-1/2 left-1/3 w-3 h-3 bg-secondary rounded-full shadow-[0_0_15px_rgba(65,238,194,0.8)] animate-pulse"></div>
+<div class="absolute top-1/4 left-1/2 w-3 h-3 bg-primary rounded-full shadow-[0_0_15px_rgba(149,204,255,0.8)] animate-pulse" style="animation-delay: 1s"></div>
+</div>
+<div class="p-4 flex justify-between items-center">
+<span class="text-[10px] text-outline">14 New sightings today</span>
+<span class="material-symbols-outlined text-sm text-outline hover:text-primary cursor-pointer">open_in_new</span>
+</div>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="lg:col-span-3 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Species Card 1: Monito del Monte -->
+<article class="bg-surface-container rounded-[2rem] overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/5">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up of a tiny brown opossum known as Monito del Monte clinging to a mossy branch in a dark misty forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxBxDKZzJEzGY-x0WHqr2mWsChPbFVKBvebEBXgWHRU2d4VtwFjz2xQyKhh0dV4xOS0qv7G_Ixb8LjSufIEQRfhANWf7hQTtPUBilD3Qib0ksqC2RLtMj-OSjma42pRQKsmSyTWdP48y_vvPqsWWGRKX27Jl_wOdOZ8fNsd4u_W22mzVwHbW5r8taHhCFA_WnSBJaKfYFl74AwQKQ7zRU58jN2NsANx_XO79jNPOErCUNlel8HnkTiGIgIzVjuQA5Mi2ewVXsRVqM"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-background/40 backdrop-blur-md rounded-full">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-tighter">Fauna</span>
+</div>
+<div class="absolute top-4 right-4 w-10 h-10 bg-background/40 backdrop-blur-md rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-extrabold text-on-surface">Monito del Monte</h3>
+<p class="text-xs italic text-outline">Dromiciops gliroides</p>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-bold text-error uppercase mb-1">Endangered</div>
+<div class="h-1 w-16 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-error"></div>
+</div>
+</div>
+</div>
+<p class="text-sm text-outline leading-relaxed line-clamp-2">A tiny living fossil, the only extant member of its order. Found primarily in the temperate rainforests of the Southern Andes.</p>
+<div class="flex items-center gap-6 pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">monitoring</span>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase">Population</p>
+<p class="text-xs font-bold text-on-surface">~2,400</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">location_on</span>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase">Range</p>
+<p class="text-xs font-bold text-on-surface">620 km²</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Species Card 2: Araucaria -->
+<article class="bg-surface-container rounded-[2rem] overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="majestic ancient Araucaria Araucana trees under a clear blue sky on a snowy mountain slope in Chile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-so9Led0X4LBSMID4yjfGMIbCpCKdaEFDmNCLgMpoXvkcqmIPdQJ2qSsxpbv5VrQ8tpxv2BA0xQeSLdSYCXdJmHeEXd7Yro8JBy5lO10kAqht3hEXrPO-i4UyeOOxWfWrcFtpRwEwgknoEpvZW7FGS9KhzJCJ0RECmYi9xhu4T4Ac-rY9yefa0rKLn7KRLdG3eQXdC6I9jadVRTI3dJAS2gkjZABaS3TbQkD1tSJ4mjoIEDP7yXdyouTlsIlFeCSmqMsL2YR_Nvk"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-background/40 backdrop-blur-md rounded-full">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Flora</span>
+</div>
+<div class="absolute top-4 right-4 w-10 h-10 bg-background/40 backdrop-blur-md rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-extrabold text-on-surface">Araucaria</h3>
+<p class="text-xs italic text-outline">Araucana Araucana</p>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-bold text-primary uppercase mb-1">Vulnerable</div>
+<div class="h-1 w-16 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-1/2 bg-primary"></div>
+</div>
+</div>
+</div>
+<p class="text-sm text-outline leading-relaxed line-clamp-2">The Monkey Puzzle tree is an ancient conifer, sacred to the indigenous Mapuche people of South America.</p>
+<div class="flex items-center gap-6 pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase">Lifespan</p>
+<p class="text-xs font-bold text-on-surface">1,000+ yrs</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">forest</span>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase">Habitat</p>
+<p class="text-xs font-bold text-on-surface">Sub-Alpine</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Metric Marquee - Inline Bento Style -->
+<div class="md:col-span-2 bg-gradient-to-br from-surface-container to-surface-container-low p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8 border border-outline-variant/5">
+<div class="space-y-1">
+<h4 class="text-sm font-bold text-outline uppercase tracking-[0.2em]">Global Impact Metric</h4>
+<div class="text-5xl font-headline font-black text-on-surface tracking-tighter">842,192 <span class="text-primary">Species</span></div>
+<p class="text-xs text-outline italic">Total documented observations across our 12 regional protected zones</p>
+</div>
+<div class="flex -space-x-4">
+<div class="w-16 h-16 rounded-full border-4 border-background overflow-hidden bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">eco</span>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-background overflow-hidden bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">potted_plant</span>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-background overflow-hidden bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">cruelty_free</span>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-background bg-secondary text-on-secondary-fixed flex items-center justify-center font-bold text-xl">
+                                    +
+                                </div>
+</div>
+</div>
+<!-- Species Card 3: Darwin's Fox -->
+<article class="bg-surface-container rounded-[2rem] overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/5">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up portrait of a dark grey and rust colored Darwin's Fox staring intently forward in a leafy undergrowth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC2M-ckxa7IeJxLxU_e6Q-5OPY1onnW-HtRfFGSVSSxj2PrJ4q3ttD-puVW9OAtD_WgnTy-YdHuG0jb0sSuPlaL6FjADQ-MxkeT3F0H-Na3mQG78XsicWjArNxaUq4yjE_Oksn04g2OBeLSDapi5XfuF45fMY4dCTb9x_Hg2QsFnWNyuWUY35vtKv4YcqDW-RSnpYnJKy7jF9aJq9_Atw2sGO0311oSZBI9hq9_wx3C9Jv4L0y_blNg6m4TYLca88xTtMrlYUz0sc"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-background/40 backdrop-blur-md rounded-full">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-tighter">Fauna</span>
+</div>
+<div class="absolute top-4 right-4 w-10 h-10 bg-background/40 backdrop-blur-md rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-extrabold text-on-surface">Darwin's Fox</h3>
+<p class="text-xs italic text-outline">Lycalopex fulvipes</p>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-bold text-error uppercase mb-1">Critical</div>
+<div class="h-1 w-16 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-4/5 bg-error"></div>
+</div>
+</div>
+</div>
+<p class="text-sm text-outline leading-relaxed line-clamp-2">One of the rarest canids in the world, living in two small, isolated populations in southern Chile.</p>
+<div class="flex items-center gap-6 pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">diversity_2</span>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase">Status</p>
+<p class="text-xs font-bold text-on-surface">Critical</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">psychology</span>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase">Intelligence</p>
+<p class="text-xs font-bold text-on-surface">High</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Load More / Placeholder -->
+<div class="bg-surface-container-lowest border-2 border-dashed border-outline-variant/20 rounded-[2rem] flex flex-col items-center justify-center p-8 gap-4 group cursor-pointer hover:border-primary/40 transition-all">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<div class="text-center">
+<p class="font-bold text-on-surface">Expand Database</p>
+<p class="text-xs text-outline">Click to request addition of a new species</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Metric Bar (Floating Glass) -->
+<footer class="fixed bottom-8 left-[calc(16rem+2rem)] right-8 bg-[#20201F]/60 backdrop-blur-2xl px-8 py-4 rounded-[2rem] flex items-center justify-between border border-outline-variant/10 shadow-2xl z-30">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">Network Active</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/20"></div>
+<div class="flex gap-4">
+<div class="flex items-baseline gap-1">
+<span class="text-sm font-bold text-on-surface">24</span>
+<span class="text-[10px] text-outline uppercase">Active Projects</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-sm font-bold text-on-surface">1.2M</span>
+<span class="text-[10px] text-outline uppercase">Hectares Protected</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-xs text-outline">System Sync: 100%</p>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">refresh</span>
+</button>
+</div>
+</footer>
+</main>
+</body></html>

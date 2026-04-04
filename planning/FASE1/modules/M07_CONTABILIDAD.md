@@ -8,6 +8,26 @@ Administración contable completa bajo normativa chilena: plan de cuentas, libro
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ❌ Pendiente | `proto/contabilidad.html` | CT01 Dashboard, CT02 Plan cuentas, CT03 Libro diario, CT04 Nuevo asiento, CT05 Mayor, CT06 Balance, CT09 SII |
+
+**Antes de implementar este sprint**: crear el prototipo en Stitch
+(proyecto `4741044715461206908`), exportar a `/proto/` y actualizar `planning/UI_PROTOTYPES_STITCH.md`.
+
+Guías de diseño para `contabilidad.html`:
+- Árbol de cuentas: componente expandible tipo file-explorer con niveles de indentación
+- Libro diario: tabla densa con columnas fijas (fecha, código, descripción, debe, haber)
+- Formulario de asiento: filas dinámicas (agregar/eliminar) con totales en tiempo real; mostrar en rojo si no cuadra la partida doble
+- Balance: tabla de dos columnas (Activo / Pasivo+Patrimonio) con totales resaltados en acento `#00D4AA`
+
+---
+
 ## Backend
 
 ```

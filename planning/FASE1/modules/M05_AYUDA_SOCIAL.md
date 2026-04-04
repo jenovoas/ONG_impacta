@@ -8,6 +8,25 @@ Registro y seguimiento de beneficiarios y las entregas de ayuda realizadas. No g
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ❌ Pendiente | `proto/ayuda-social.html` | AS01 Lista beneficiarios + mapa, AS02 Detalle + historial, AS03 Formulario registro, AS04 Registrar entrega, AS05 Mapa |
+
+**Antes de implementar este sprint**: crear el prototipo en Stitch
+(proyecto `4741044715461206908`), exportar a `/proto/` y actualizar `planning/UI_PROTOTYPES_STITCH.md`.
+
+Guías de diseño para este prototipo:
+- Layout split: DataTable izquierda (60%) + mapa Leaflet derecha (40%)
+- Detalle de beneficiario: área de firma digital (`SignaturePad`) y upload de fotos
+- Usar color acento `#00D4AA` para indicadores de entregas completadas
+
+---
+
 ## Backend
 
 ```

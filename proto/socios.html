@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impacta+ | Members Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#002118",
+                        "on-secondary-fixed-variant": "#00513f",
+                        "background": "#131313",
+                        "inverse-primary": "#006399",
+                        "on-tertiary-fixed-variant": "#6c3b00",
+                        "on-tertiary": "#4b2700",
+                        "on-secondary": "#00382b",
+                        "error": "#ffb4ab",
+                        "surface-container": "#20201f",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "surface-tint": "#95ccff",
+                        "primary-container": "#00a8ff",
+                        "on-primary": "#003352",
+                        "surface-bright": "#393939",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#bec7d3",
+                        "primary-fixed": "#cde5ff",
+                        "outline": "#88929d",
+                        "tertiary": "#ffb877",
+                        "secondary-fixed-dim": "#28dfb5",
+                        "tertiary-fixed": "#ffdcc0",
+                        "on-primary-fixed-variant": "#004a75",
+                        "on-secondary-container": "#005441",
+                        "on-surface": "#e5e2e1",
+                        "surface-variant": "#353535",
+                        "secondary-container": "#00d1a7",
+                        "tertiary-container": "#ec8701",
+                        "secondary": "#41eec2",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffb877",
+                        "primary": "#95ccff",
+                        "on-tertiary-fixed": "#2e1600",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#95ccff",
+                        "surface-container-highest": "#353535",
+                        "surface-container-high": "#2a2a2a",
+                        "outline-variant": "#3e4852",
+                        "on-tertiary-container": "#552d00",
+                        "on-primary-container": "#003a5c",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#55fcd0",
+                        "on-primary-fixed": "#001d32",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-[#1C1B1B] border-r border-[#353535]/15 flex flex-col p-6 space-y-8 font-['Manrope'] font-medium text-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#95CCFF] tracking-tighter">Impacta+</h2>
+<p class="text-[10px] text-outline uppercase tracking-widest">Digital Steward</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#95CCFF] bg-[#20201F] rounded-lg shadow-[inset_0_1px_0_0_rgba(149,204,255,0.1)] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="group">group</span>
+<span>Members</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="calendar_today">calendar_today</span>
+<span>Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="eco">eco</span>
+<span>Species Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="volunteer_activism">volunteer_activism</span>
+<span>Donations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 duration-300" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#353535] hover:text-[#95CCFF] hover:bg-[#20201F] rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<header class="w-full sticky top-0 z-40 bg-[#131313]/80 backdrop-blur-xl font-['Manrope'] antialiased">
+<div class="flex justify-between items-center px-8 py-4 w-full">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-96 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/30 transition-all placeholder:text-outline/50" placeholder="Search members, roles, or status..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 text-[#353535] hover:text-[#41EEC2] transition-colors duration-300 cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#353535] hover:text-[#41EEC2] transition-colors duration-300 cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover" data-alt="Professional headshot of a female executive with confident expression, soft studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnUyEATKilLXPM0tVMh4vhQa4gLnlMwfVVGTuDFmGE91RH69xecQBaFQ_vgBrZ4ApLY2EL91CRAr507sqPCp0meDX3z4Hr_6AHHBbdoJdPxniC_dkl8vgfO5cgW8AAod5kSP8SQV83HKWpglaGGTMVSNw_YPNZKPHXfv00-q5-MA9GEdziP47q-aMEO2StScJkQ9frPbyf0trFh145B8s71JU6lRNg-pxbDHTv695l40SpDK70q8QQ_pWAvg50Mg7wGxviRb8loIA"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full border-2 border-background"></div>
+</div>
+<span class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Sarah Jenkins</span>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#1C1B1B] to-transparent h-px w-full"></div>
+</header>
+<!-- Content Area -->
+<div class="p-8 space-y-8">
+<!-- Hero Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden border border-outline-variant/5">
+<div class="relative z-10">
+<p class="text-xs font-bold text-outline uppercase tracking-widest mb-1">Total Members</p>
+<h3 class="text-4xl font-extrabold text-on-surface tracking-tight">1,240</h3>
+<p class="text-xs text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +12% increase from last quarter
+                        </p>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl text-white/5 pointer-events-none" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden border border-outline-variant/5">
+<div class="relative z-10">
+<p class="text-xs font-bold text-outline uppercase tracking-widest mb-1">New this month</p>
+<h3 class="text-4xl font-extrabold text-primary tracking-tight">45</h3>
+<p class="text-xs text-outline mt-2">Target: 60 members</p>
+</div>
+<div class="absolute right-6 top-6 w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person_add</span>
+</div>
+</div>
+<div class="bg-primary rounded-2xl p-6 flex flex-col justify-between text-on-primary shadow-xl">
+<p class="text-xs font-bold uppercase tracking-widest opacity-80">Engagement Rate</p>
+<div class="flex items-end justify-between">
+<h3 class="text-4xl font-extrabold tracking-tight">92.4%</h3>
+<span class="material-symbols-outlined text-4xl opacity-50">analytics</span>
+</div>
+</div>
+</div>
+<!-- Management Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-1">
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface">Member Directory</h1>
+<p class="text-outline text-sm">Oversee and manage your global impact network.</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="bg-surface-container rounded-xl p-1 flex gap-1">
+<button class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-primary text-on-primary shadow-sm transition-all">All</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-semibold text-outline hover:text-on-surface transition-all">Active</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-semibold text-outline hover:text-on-surface transition-all">Volunteers</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-semibold text-outline hover:text-on-surface transition-all">Donors</button>
+</div>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-surface-container-high border border-outline-variant/20 text-sm font-semibold text-on-surface hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        Filters
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-primary to-primary-container text-sm font-bold text-on-primary shadow-lg shadow-primary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">add</span>
+                        New Initiative
+                    </button>
+</div>
+</div>
+<!-- Members Table -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/50 border-b border-outline-variant/10">
+<th class="px-6 py-4 text-xs font-bold text-outline uppercase tracking-widest">Name</th>
+<th class="px-6 py-4 text-xs font-bold text-outline uppercase tracking-widest">Role</th>
+<th class="px-6 py-4 text-xs font-bold text-outline uppercase tracking-widest">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-outline uppercase tracking-widest">Membership Expiry</th>
+<th class="px-6 py-4 text-xs font-bold text-outline uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="Marcus Chen" class="w-10 h-10 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Portrait of a professional man with glasses and short dark hair, clean minimalist background, soft rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAgTmcVkhGcswFIVPEPWYZIjVBkFLIbcX2FIXNDu1We0o0iwrQRrMDb9DbtUzCyzTw3NDAEYP4FlWnrquwMOq3jXvvwbO9yxiuWqJ-GfE0IHUvxLUdRr0nu5HYAVFC7R64_NTON4PxCTjkHbhgIPQgfyEQbU6ASo_345w_4HvclIw7mscOgIoUD7UzCPZzI86jeEJojuyMuEfHfbts5HHYNbgm7oDKa28wfiMq8W0SZNhROrR7Ci7PAVGZisVEKW6O1I_cjCvlATA"/>
+<div>
+<div class="text-sm font-bold text-on-surface">Marcus Chen</div>
+<div class="text-xs text-outline">marcus.c@impacta.org</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">Lead Ambassador</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-secondary">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(65,238,194,0.6)]"></div>
+<span class="text-xs font-medium uppercase tracking-wide">Active</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm text-on-surface">Oct 24, 2025</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="Elena Rodriguez" class="w-10 h-10 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Vibrant portrait of a smiling woman with curly hair, natural outdoor lighting with bokeh leaves in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkIWstmw5cHvKEsYlS9htignqwYTboBQQYC3a33NJeYO23mHKT0ZdVSKEyAvAS7wNWlErN3VfCGN59pXhuvGphx47E5hrQYDKv8sDU63EuG_pjYvLu1_QWu0G-TG49063CEIp1W9AlnMU0SOXeK9iRz6AbRoUgsbYMGUg6t4K9mx-5MWvzRZezMsz4NiIdBvdRUc6t8N-hK1vea-kvV6M2szMmFSz8GqN1FvdCuJbZ2m1xJAp0AjSS-WNsQPlTaIxJunyzh127Me4"/>
+<div>
+<div class="text-sm font-bold text-on-surface">Elena Rodriguez</div>
+<div class="text-xs text-outline">elena.r@impacta.org</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary/10 text-tertiary border border-tertiary/20">Monthly Donor</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-secondary">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(65,238,194,0.6)]"></div>
+<span class="text-xs font-medium uppercase tracking-wide">Active</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm text-on-surface">Jan 12, 2026</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="David Park" class="w-10 h-10 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Portrait of a man in casual attire, soft overcast lighting, urban brick background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN8Bxh_s_EXKft2xtVVnSvPTeiZ5l-tUU37n-L4LC1DqA4U7E9mYeNDTlyUlRMGW9628SHLHSPhv328c9nbqaNus7u7oIH1JnW-dGSJTK2cWDvYWEnzV9FRUciodW2bvVeUpG2jKL5nl8t5AyxazOfOva7VgE3Oxj_NKShz0CvXzHbxSC91_livQR5bkLBZG95uykgjpnc4DLMHykvDk85dNI0TJSab0jfgLDc9ARqhD8qXFK_2_IDulq4lbWh38a580RHcgQQ4vM"/>
+<div>
+<div class="text-sm font-bold text-on-surface">David Park</div>
+<div class="text-xs text-outline">d.park@gmail.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-outline/10 text-outline border border-outline/20">Volunteer</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-outline">
+<div class="w-2 h-2 rounded-full bg-outline/30"></div>
+<span class="text-xs font-medium uppercase tracking-wide">Inactive</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm text-error/70">Expired</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="Amara Okafor" class="w-10 h-10 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Corporate headshot of a woman of color, high-key lighting, modern office interior blurred in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuyqCXDBHJ6nwHppoJ0aVT0Gzifj9ADc6zmqvbSnFRWLF4f36SfMAUoMsVkyNlMLUqoLZEiMQ88WPNtXOb6iABjVhsR73DTwwtuAcGlSCvV8vEJLF0Jf-P17xofXRWkoSskCaN4FVNLctdD7L8eY97Q7fPPjEWoH969aiCHwOPZ-h1NJQH3nfP5dIqDVo1Zn8NzYulbNnlp4u_JltyGFx3UeutUXoCIhMi1Gv8pmD07-XPQ8F2SCl50NU2fZyoF3-oQ9T1HVAxLzc"/>
+<div>
+<div class="text-sm font-bold text-on-surface">Amara Okafor</div>
+<div class="text-xs text-outline">amara.o@global.tech</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary border border-secondary/20">Partner</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2 text-secondary">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(65,238,194,0.6)]"></div>
+<span class="text-xs font-medium uppercase tracking-wide">Active</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm text-on-surface">May 05, 2026</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-outline-variant/10 flex items-center justify-between bg-surface-container-low">
+<p class="text-xs text-outline">Showing 1-4 of 1,240 members</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-surface-container-high text-outline hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded-lg bg-primary/20 text-primary text-xs font-bold">1</button>
+<button class="px-3 py-1 rounded-lg text-outline text-xs font-bold hover:bg-surface-container-high transition-all">2</button>
+<button class="px-3 py-1 rounded-lg text-outline text-xs font-bold hover:bg-surface-container-high transition-all">3</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-outline hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Features Row -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-surface-container p-8 rounded-3xl border border-outline-variant/5">
+<h4 class="text-xl font-bold tracking-tight mb-4">Membership Trends</h4>
+<div class="h-48 flex items-end gap-2 justify-between">
+<div class="w-full bg-primary/20 rounded-t-lg h-1/4"></div>
+<div class="w-full bg-primary/20 rounded-t-lg h-2/5"></div>
+<div class="w-full bg-primary/20 rounded-t-lg h-1/3"></div>
+<div class="w-full bg-primary/40 rounded-t-lg h-3/5"></div>
+<div class="w-full bg-primary/40 rounded-t-lg h-1/2"></div>
+<div class="w-full bg-primary rounded-t-lg h-[90%]"></div>
+<div class="w-full bg-secondary rounded-t-lg h-full"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-outline uppercase font-bold tracking-widest">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+</div>
+</div>
+<div class="bg-gradient-to-br from-surface-container to-surface-container-low p-8 rounded-3xl border border-outline-variant/5 flex flex-col justify-between">
+<div>
+<h4 class="text-xl font-bold tracking-tight mb-2">Impact Highlight</h4>
+<p class="text-sm text-outline leading-relaxed">Our newest member group has already contributed to the restoration of <span class="text-secondary font-bold">14,200 mangrove trees</span> in the Mekong Delta this quarter.</p>
+</div>
+<div class="mt-6 flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a young man smiling, soft natural lighting, outdoor background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnXhICNdKFkZmJgafakr8-IXzfRiazGhefdsYKwaO6GPZ4e4vGT544kHKR4T-PswaLQgAA5o4bsBELZzCC9g88YwHvx6R55LEsAqosGFVAsMT9dIGSenUlBF8A7UcpwT9EULHZniDxkYagNaCpAJnbLD29m46Y6dKLF4_Vi7Oc1YOs2pEjmwblTt03axoNj4T6JQmeRZhwsaleY4FeAECdjkPcV5UrSEu_vpfIjf7nOXR8XoYfHOG1iGxTckQgQmcPDW8fesf_X1Y"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container object-cover" data-alt="Candid portrait of a woman laughing, warm golden hour sunlight, soft focus greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphypPvFmNSp5FkRjNRUzfuGaIbNuPf0BtXAIYqEJlhUqPiospMh4vVHKSzi-z3p-8mSvGS0ZjIpuhRVM5M3Z-s5Fg_Azi5fBjO8tMV5RDL0nuUbXg6KE35KQXFKSA_FyyGciRV_DKBGmgMtEpXCpQ_OSqPvF5YlynGDwaiJkgmWesARNlyQRHnXYIPxeXKLMBNoPbfz9JSRYI8wpRNSCqiCqwbNK74OLLS6Yq-8_ehJWHBbERsFvT7QlrUUbKLSjyhDVOTJUb_Lo"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container object-cover" data-alt="Portrait of a person with contemplative expression, minimalist studio lighting, neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBilSG7h4hI_g35rh-we1-YUCxeFA71XGbc3M9Ow8CWXHcmWOndLIZ6ZfVpZRLOpF9X8-b-U1RssEgpFuqKeisqeow_zRNsuaAH7NTRA7gevfA4HqPTSESNmvtrz1r4g8P_ApJ6I6dpbuxznoFUM2GgfDoI5lCI7hn-YewSkpm1RTyPhG8v9eWNDJd-iYi0Be3bf0d7vjfXQ7bOodYt60nb_N8f8aw7PpaR0Rc1B7R35fsDkEr0Xj1zv-WPxSYnxHj-bA9WD7vl4nM"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-outline">+12</div>
+</div>
+<button class="text-xs font-bold text-primary hover:underline">View the initiative</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ONG Impacta+ | Restaurando Nuestro Planeta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2a2a2a",
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1c1b1b",
+                        "outline-variant": "#3e4852",
+                        "primary-fixed-dim": "#95ccff",
+                        "surface": "#131313",
+                        "primary-fixed": "#cde5ff",
+                        "primary-container": "#00a8ff",
+                        "surface-tint": "#95ccff",
+                        "surface-container-highest": "#353535",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed-variant": "#004a75",
+                        "on-tertiary": "#4b2700",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#55fcd0",
+                        "inverse-primary": "#006399",
+                        "on-secondary-fixed-variant": "#00513f",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffb877",
+                        "on-primary-container": "#003a5c",
+                        "on-secondary-container": "#005441",
+                        "on-primary-fixed": "#001d32",
+                        "tertiary-container": "#ec8701",
+                        "on-tertiary-container": "#552d00",
+                        "tertiary-fixed-dim": "#ffb877",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#bec7d3",
+                        "on-error": "#690005",
+                        "secondary-container": "#00d1a7",
+                        "on-secondary": "#00382b",
+                        "outline": "#88929d",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed-dim": "#28dfb5",
+                        "surface-container": "#20201f",
+                        "inverse-surface": "#e5e2e1",
+                        "primary": "#95ccff",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#003352",
+                        "secondary": "#41eec2",
+                        "on-tertiary-fixed": "#2e1600",
+                        "background": "#131313",
+                        "tertiary-fixed": "#ffdcc0",
+                        "on-tertiary-fixed-variant": "#6c3b00",
+                        "on-secondary-fixed": "#002118",
+                        "surface-dim": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-card {
+            background: rgba(32, 32, 31, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(0, 168, 255, 0.2);
+        }
+        .neon-glow-secondary {
+            box-shadow: 0 0 20px rgba(65, 238, 194, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#95CCFF]">
+                ONG Impacta+
+            </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#95CCFF] border-b-2 border-[#95CCFF] pb-1 font-['Manrope'] font-bold tracking-tight" href="#">Platform</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Mission</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Donations</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Impact</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors font-['Manrope'] font-bold tracking-tight" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-gray-400 font-medium hover:text-white transition-colors">Login</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-bold hover:scale-95 transition-transform">Get Started</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+<!-- Digital Universe Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(0,168,255,0.1),_transparent_70%)]"></div>
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 container mx-auto px-6 text-center">
+<div class="mb-8 flex justify-center">
+<img alt="Logo" class="h-20 w-20" data-alt="Stylized eco-friendly logo icon with glowing blue edges representing digital conservation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKB7TDf_7ziM9TXz5t7EuledAugnuRJiu6kvqjy7cjBz-Q1RXoB5vblor-iR3mUX4K-bY7OycWd0ERYEg_Fl2qfXLgAfAy8q_UuV1IbQ3Cxfo6lMTQ-uQW7lQqKqhhdwbTND4wiP2B5ycLhlPtOLV3BiF6kRw5RVjvZtJbCbHvZU44sqRyQ9q4en1IAU9iukel5xE-8A6N7pkjpVzdXmNQwushLxjOvmKvYruG_S6Su2SQnvpEj1tzEImN4Tw5QKQGHbmwG2Q1264"/>
+</div>
+<h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-6 leading-tight">
+                    Restaurando <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Nuestro Planeta</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-3xl mx-auto mb-12 font-body font-light leading-relaxed">
+                    La plataforma SaaS definitiva para la gestión integral de ONGs. Potencia tu impacto con tecnología de vanguardia y transparencia absoluta.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="px-10 py-5 bg-gradient-to-r from-primary-container to-primary text-on-primary-container rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(0,168,255,0.4)] transition-all">
+                        Comenzar Ahora
+                    </button>
+<button class="px-10 py-5 bg-surface-container-high text-on-surface rounded-full font-bold text-lg hover:bg-surface-variant transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                        Ver Demo
+                    </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-50">
+<span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Section 2: Mission (The Digital Steward) -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="absolute -top-12 -left-12 text-secondary/20 font-black text-[200px] leading-none select-none">01</div>
+<h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">The Digital <br/><span class="text-secondary">Steward</span></h2>
+<p class="text-lg text-on-surface-variant leading-loose mb-8">
+                            Nuestra arquitectura no es solo código; es un compromiso con la regeneración global. En ONG Impacta+, hemos diseñado un sistema que actúa como el administrador digital del futuro, donde cada dato recolectado se traduce en una acción climática tangible.
+                        </p>
+<div class="h-1 w-24 bg-secondary rounded-full"></div>
+</div>
+<div class="glass-card p-12 rounded-[2rem] border border-white/5 relative">
+<blockquote class="text-2xl font-headline italic leading-relaxed text-on-surface">
+                            "La tecnología debe ser el puente entre la intención y el impacto. No gestionamos bases de datos; custodiamos el futuro de nuestra biodiversidad."
+                        </blockquote>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant" data-alt="Professional portrait of a visionary female environmental technologist with soft studio lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAelmWrU-eVKFCaBkNcUU1FbJ_saJXbWrp8PJ7knZyqoBYz6LS4JwdVrglqlSLjq0UHhovPXOB1qGLHjJp3mud6fflOEbPCGElS3sZqlYdsOmBd4VAVgjSUUYvzSmsTEIEQS9zR8Bl-axONyNLQzkQem6U19XU_24Z_sAKKf258qIIjyX5NOtDoiQ8SwYmUg7KcJ0V4WBD1mlRsxwfGq4vCMcqvRjZF_o-Jv0RfbPo9xeRt_zfmD7MAKymLoFUen4NOaPwRN-P-oWg');"></div>
+<div>
+<p class="font-bold">Ana Valeria Ruiz</p>
+<p class="text-sm text-on-surface-variant">Chief Impact Officer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Modules Showcase (Bento Grid) -->
+<section class="py-32">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Ecosistema Integral</span>
+<h2 class="text-4xl md:text-5xl font-bold">Módulos de Gestión Avanzada</h2>
+</div>
+<button class="text-primary hover:gap-4 transition-all flex items-center gap-2 font-bold">
+                        Explorar todos los módulos <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Item 1 -->
+<div class="md:col-span-8 bg-surface-container rounded-[2rem] p-8 group relative overflow-hidden flex flex-col justify-end">
+<div class="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Diverse group of volunteers planting trees in a sunny field with professional cinematic color grading" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjDpnSphtA7_0MQF9TbQs_ouu5K9DWUv9oURWxw1QEV3AFnnQRfqy9KoJWG0PB-kfXIfAtbMZmR-xMxfG-c4CL8DN1DlKe76Vh0kzC53Ha3FT3Y3Nq6otyUGBx10ecrbRRf5cXiKGLgv13xa47UtAcqch6ubrlNT8m0KU7wEVm2vQlISnIrr6NixC71IrhiKpGlF13SEp_AueD0dtL2s05YZe0_Y24rTZlbj_WyW695e4CnJLDmcQUKWO77amO7ZHVodRyIQhOgz8'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="relative z-10">
+<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block">CORE</span>
+<h3 class="text-3xl font-bold mb-2">Socios y Voluntarios</h3>
+<p class="text-on-surface-variant max-w-md">Gestión centralizada de perfiles, asignación de tareas y gamificación del impacto social.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="md:col-span-4 bg-surface-container rounded-[2rem] p-8 group relative overflow-hidden border border-white/5">
+<div class="mb-8">
+<span class="material-symbols-outlined text-secondary text-5xl">payments</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Donaciones y Transparencia</h3>
+<p class="text-on-surface-variant mb-6">Seguimiento en tiempo real de cada centavo. Reportes automatizados para donantes.</p>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="md:col-span-4 bg-surface-container rounded-[2rem] p-8 group relative overflow-hidden border border-white/5">
+<div class="mb-8">
+<span class="material-symbols-outlined text-tertiary text-5xl">health_and_safety</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Rescate Ecológico</h3>
+<p class="text-on-surface-variant">Logística crítica para misiones de campo y respuesta rápida ante desastres ambientales.</p>
+</div>
+<!-- Item 4 -->
+<div class="md:col-span-8 bg-surface-container rounded-[2rem] p-8 group relative overflow-hidden flex flex-col justify-end">
+<div class="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Macro photography of a rare vibrant butterfly on a tropical leaf with soft morning dew" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_tZ780NibQmNSpdLagxgc8zONzT-CwJWK4_epdW3RYJJhRW3i-gLUv3B3Rp1U3Bd-aWRCEGCBSFAKS1zoUWXyxzxPvSdwmWusAPDJIKLmHXFkgYYiJHecQrjE2XX0ZznwEtPcacgrIVuM8NevjZyJQPknFt-ZZiuktta8Kfs5McGGfuBrnIbqdsTMTNtbsFS4phiW7ZSC4D-N0nL3WOyE4oEIo15qP3Rqny09K4kiWKISrz1NYw_9TImcbkrD4oRskSFFIHN0NEM'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="relative z-10">
+<h3 class="text-3xl font-bold mb-2">Biblioteca de Especies</h3>
+<p class="text-on-surface-variant max-w-md">Base de datos impulsada por IA para la identificación y monitoreo de biodiversidad regional.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Impact Counter -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="p-8">
+<span class="text-display-lg text-primary text-6xl md:text-8xl font-black block mb-4">14,200</span>
+<p class="text-on-surface-variant uppercase tracking-widest font-bold text-sm">Árboles Plantados</p>
+</div>
+<div class="p-8 border-x border-white/5">
+<span class="text-display-lg text-secondary text-6xl md:text-8xl font-black block mb-4">842</span>
+<p class="text-on-surface-variant uppercase tracking-widest font-bold text-sm">Especies Protegidas</p>
+</div>
+<div class="p-8">
+<span class="text-display-lg text-tertiary text-6xl md:text-8xl font-black block mb-4">$2.8M</span>
+<p class="text-on-surface-variant uppercase tracking-widest font-bold text-sm">Recaudados en 2024</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Quick Donation Section -->
+<section class="py-32 relative">
+<div class="container mx-auto px-6 max-w-4xl">
+<div class="glass-card rounded-[3rem] p-12 md:p-20 border border-white/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 blur-[80px]"></div>
+<div class="relative z-10 text-center">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Tu aporte es el <span class="text-secondary">cambio</span></h2>
+<p class="text-on-surface-variant mb-12 text-lg">Únete a la red global de impacto. Donación rápida y 100% transparente.</p>
+<form class="space-y-6 max-w-md mx-auto">
+<div class="grid grid-cols-3 gap-4 mb-8">
+<button class="py-4 rounded-xl border border-white/10 hover:border-secondary hover:text-secondary transition-all font-bold" type="button">$10</button>
+<button class="py-4 rounded-xl border border-secondary text-secondary bg-secondary/5 transition-all font-bold" type="button">$25</button>
+<button class="py-4 rounded-xl border border-white/10 hover:border-secondary hover:text-secondary transition-all font-bold" type="button">$50</button>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-primary text-on-surface placeholder:text-gray-600 transition-all" placeholder="Monto personalizado" type="number"/>
+<span class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500">$USD</span>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-secondary-container to-secondary text-on-secondary-container rounded-full font-bold text-xl hover:shadow-[0_0_30px_rgba(65,238,194,0.4)] transition-all flex items-center justify-center gap-3" type="submit">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                Donar Ahora
+                            </button>
+</form>
+<p class="mt-8 text-sm text-gray-500 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">lock</span> 
+                            Pago seguro procesado por ImpactaPay
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-[1920px] mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-xl font-bold text-[#95CCFF] mb-2">ONG Impacta+</div>
+<p class="text-gray-500 font-['Inter'] text-sm max-w-xs">Arquitectura tecnológica para un planeta más verde y justo.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-0">
+<a class="text-gray-500 hover:text-[#95CCFF] transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-[#95CCFF] transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Terms of Service</a>
+<a class="text-gray-500 hover:text-[#95CCFF] transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Sustainability Report</a>
+<a class="text-gray-500 hover:text-[#95CCFF] transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col items-center md:items-end">
+<div class="flex gap-4 mb-4">
+<span class="material-symbols-outlined text-gray-500 hover:text-[#41EEC2] cursor-pointer">public</span>
+<span class="material-symbols-outlined text-gray-500 hover:text-[#41EEC2] cursor-pointer">mail</span>
+<span class="material-symbols-outlined text-gray-500 hover:text-[#41EEC2] cursor-pointer">diversity_3</span>
+</div>
+<div class="text-gray-500 font-['Inter'] text-sm leading-relaxed">
+                    © 2024 ONG Impacta+. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -3,6 +3,31 @@
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+### M08a — Reportes
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ❌ Pendiente | `proto/reportes.html` | RP01 Centro reportes, RP02 Financiero, RP03 Impacto, RP04 Socios |
+
+### M08b — Landing Page (apps/landing)
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ✅ Disponible | `proto/landing-new-identity-2026.html` | L01 Home (referencia canónica) |
+| ✅ Disponible | `proto/landing-portal-publico.html` | L06 Transparencia pública por ONG |
+| ✅ Disponible | `proto/landing-edicion-planeta-es.html` | L01 variante |
+| ✅ Disponible | `proto/landing-cinematic-earth.html` | L01 variante |
+
+Referencia primaria landing: **`proto/landing-new-identity-2026.html`**
+
+**Antes de implementar reportes**: crear `proto/reportes.html` en Stitch
+(proyecto `4741044715461206908`), exportar y actualizar `planning/UI_PROTOTYPES_STITCH.md`.
+
+---
+
 ## M08a — Reportes y Analytics
 
 ### Responsabilidad única

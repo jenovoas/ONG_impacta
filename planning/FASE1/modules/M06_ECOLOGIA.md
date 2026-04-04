@@ -10,6 +10,37 @@ Son módulos NestJS separados pero agrupados aquí por dominio.
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+### M06a — Rescate Ecológico
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ❌ Pendiente | `proto/ecologia.html` | EC01 Lista proyectos, EC02 Detalle + galería, EC03 Nuevo proyecto, EC04 Registrar jornada |
+
+### M06b — Biblioteca de Especies
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ✅ Disponible | `proto/biblioteca-especies-pro.html` | BE01 Catálogo, BE02 Detalle especie + avistamientos |
+| ✅ Disponible | `proto/biblioteca-especies.html` | BE01 Catálogo, BE02 Detalle especie |
+| ✅ Disponible | `proto/biblioteca-especies-es.html` | Variante español |
+| ❌ Pendiente | *(en proto existente)* | BE03 Nueva especie, BE04 Registrar avistamiento, BE05 Mapa, BE06 Seguimiento poblaciones |
+
+Referencia primaria M06b: **`proto/biblioteca-especies-pro.html`**
+
+**Antes de implementar M06a**: crear `proto/ecologia.html` en Stitch, exportar y actualizar `planning/UI_PROTOTYPES_STITCH.md`.
+
+Guías de diseño para `ecologia.html`:
+- KPI cards con métricas grandes (display-lg): "847 Árboles plantados", "12.3 ha restauradas"
+- Galería de fotos de jornadas en grid masonry
+- Gráficos de barras apiladas para métricas acumuladas por proyecto
+
+---
+
 ## Backend
 
 ```

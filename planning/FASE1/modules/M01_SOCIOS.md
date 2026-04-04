@@ -8,6 +8,21 @@ Gestión del directorio de personas vinculadas a la ONG: socios (con membresía 
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ✅ Disponible | `proto/socios.html` | M01 Lista socios, M02 Detalle socio, M03 Formulario nuevo/editar |
+| ✅ Disponible | `proto/socios-es.html` | Variante español (misma estructura) |
+| ❌ Pendiente | `proto/socios-voluntarios.html` | M04 Lista voluntarios, M05 Detalle, M06 Formulario, M07 Organigrama |
+
+Referencia primaria: **`proto/socios.html`**
+
+---
+
 ## Backend — `apps/api/src/modules/`
 
 ### Módulos NestJS

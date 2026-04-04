@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Donaciones y Transparencia | ONG Impacta+</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bec7d3",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#006399",
+                    "tertiary-container": "#ec8701",
+                    "surface-container-high": "#eae7e7",
+                    "on-surface": "#1c1b1b",
+                    "on-surface-variant": "#3e4852",
+                    "surface-variant": "#e5e2e1",
+                    "surface": "#fcf9f8",
+                    "on-primary-fixed": "#001d32",
+                    "tertiary-fixed-dim": "#ffb877",
+                    "outline": "#6f7883",
+                    "primary-fixed": "#cde5ff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed": "#2e1600",
+                    "on-primary-container": "#003a5c",
+                    "inverse-primary": "#95ccff",
+                    "secondary": "#006b55",
+                    "on-background": "#1c1b1b",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#28dfb5",
+                    "on-tertiary-fixed-variant": "#6c3b00",
+                    "on-primary-fixed-variant": "#004a75",
+                    "on-secondary-fixed-variant": "#00513f",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#002118",
+                    "on-secondary-container": "#007059",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#8d4f00",
+                    "secondary-container": "#51f9cd",
+                    "on-tertiary-container": "#552d00",
+                    "surface-tint": "#006399",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdcc0",
+                    "inverse-surface": "#313030",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-fixed-dim": "#95ccff",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#00a8ff",
+                    "surface-container": "#f0eded",
+                    "secondary-fixed": "#55fcd0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #05070a; color: #fcf9f8; font-family: 'Inter', sans-serif; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(24px); }
+        .neon-glow-blue { box-shadow: 0 0 20px rgba(0, 168, 255, 0.3); }
+        .neon-glow-green { box-shadow: 0 0 20px rgba(40, 223, 181, 0.3); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-black/80 backdrop-blur-xl docked full-width top-0 z-50 border-b border-white/10 shadow-[0_0_15px_rgba(0,168,255,0.1)] flex justify-between items-center w-full px-8 py-4 fixed">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-blue-500 dark:text-blue-400 font-headline">ONG Impacta+</span>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-blue-400 border-b-2 border-blue-500 pb-1 font-body text-sm font-medium" href="#">Dashboard</a>
+<a class="text-gray-400 hover:text-white transition-colors font-body text-sm font-medium" href="#">Metrics</a>
+<a class="text-gray-400 hover:text-white transition-colors font-body text-sm font-medium" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-sm text-blue-400" data-icon="language">language</span>
+<span class="text-xs font-bold text-white">ES</span>
+<span class="text-xs text-gray-500">/</span>
+<span class="text-xs font-medium text-gray-400 hover:text-white cursor-pointer transition-colors">EN</span>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-gray-400 hover:text-white transition-all hover:scale-110" data-icon="notifications">notifications</button>
+<div class="w-10 h-10 rounded-full border border-blue-500/30 p-0.5">
+<img alt="Administrator profile" class="w-full h-full rounded-full object-cover" data-alt="Professional headshot of a senior executive administrator in a clean office environment with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wv9LuZReN5UnIiAkhrAAOgyoblXq5bZvZZElCiMXioMl6gk0vzn-Xa_cVBFeyZ24TVUqIGaDShfsPNZDop1Fqe6Lf-x2X3F5Cxk8WpQXs27zegKiUreS2hKaGWszUcp5YQW3O8CfQEiXmIVg8G1mf-dU-K5y_mIX1RtUaxh1werS9aJopAGa71298JrAyWrQ1md5mreQln9USMcgkxCI0dkRz_XX0no13du3yvITxFLiKbvkG83rT_MXP7FkWajz966s62rAnCc"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-white/10 bg-black/90 backdrop-blur-2xl flex flex-col h-full py-8 pt-24 z-40 hidden lg:flex">
+<div class="px-6 mb-10">
+<div class="flex items-center space-x-3 mb-1">
+<span class="font-manrope font-extrabold text-blue-500 text-xl">Impacta+</span>
+</div>
+<p class="font-inter uppercase tracking-widest text-[10px] text-gray-500">Global Steward</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-6 hover:text-emerald-400 hover:bg-emerald-500/5 hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter uppercase tracking-widest text-[10px] font-semibold">Overview</span>
+</a>
+<a class="flex items-center space-x-3 bg-blue-500/10 text-blue-400 border-r-4 border-blue-500 py-3 px-6" href="#">
+<span class="material-symbols-outlined" data-icon="eco" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-inter uppercase tracking-widest text-[10px] font-semibold">Environmental</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-6 hover:text-emerald-400 hover:bg-emerald-500/5 hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-inter uppercase tracking-widest text-[10px] font-semibold">Social</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-6 hover:text-emerald-400 hover:bg-emerald-500/5 hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-inter uppercase tracking-widest text-[10px] font-semibold">Governance</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-3 px-6 hover:text-emerald-400 hover:bg-emerald-500/5 hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter uppercase tracking-widest text-[10px] font-semibold">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-6 border-t border-white/5 space-y-4">
+<button class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-white text-xs font-bold uppercase tracking-widest shadow-lg shadow-blue-900/20 active:scale-95 transition-transform">
+                New Initiative
+            </button>
+<div class="space-y-1">
+<a class="flex items-center space-x-3 text-gray-500 py-2 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">Support</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-500 py-2 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-28 px-8 pb-12 min-h-screen">
+<!-- Hero Header -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<span class="text-secondary-fixed font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Transparencia Radical</span>
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold tracking-tighter text-white mb-4">
+                        Donaciones y <span class="text-primary-container">Flujo de Impacto</span>
+</h1>
+<p class="text-gray-400 text-lg leading-relaxed font-body">
+                        Monitoreo en tiempo real de recursos globales destinados a la restauración de ecosistemas críticos.
+                    </p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-high/10 border border-white/10 hover:bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2">
+<span class="material-symbols-outlined" data-icon="ios_share">ios_share</span>
+<span>Generar Reporte</span>
+</button>
+<button class="bg-gradient-to-r from-secondary to-secondary-fixed text-on-secondary px-8 py-3 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-900/20 active:scale-95 transition-transform flex items-center space-x-2">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>Conciliar</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Financial Real-Time Chart -->
+<div class="md:col-span-8 glass-panel rounded-3xl p-8 border border-white/5 relative overflow-hidden">
+<div class="flex justify-between items-start mb-10">
+<div>
+<h3 class="text-xl font-headline font-bold text-white">Recaudación Anual</h3>
+<p class="text-xs text-gray-500 uppercase tracking-widest font-semibold mt-1">Impacto Acumulado vs Proyectado</p>
+</div>
+<div class="flex items-center space-x-2 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-[10px] font-bold text-emerald-400 uppercase tracking-tighter">En Vivo</span>
+</div>
+</div>
+<!-- Placeholder for Chart -->
+<div class="h-64 flex items-end justify-between space-x-4 mb-4 relative">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-10">
+<div class="border-t border-white w-full"></div>
+<div class="border-t border-white w-full"></div>
+<div class="border-t border-white w-full"></div>
+<div class="border-t border-white w-full"></div>
+</div>
+<div class="flex-1 bg-gradient-to-t from-primary/40 to-primary-container/80 h-[40%] rounded-t-lg neon-glow-blue"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/40 to-primary-container/80 h-[55%] rounded-t-lg neon-glow-blue"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/40 to-primary-container/80 h-[45%] rounded-t-lg neon-glow-blue"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/40 to-primary-container/80 h-[70%] rounded-t-lg neon-glow-blue"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/40 to-primary-container/80 h-[60%] rounded-t-lg neon-glow-blue"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/40 to-primary-container/80 h-[85%] rounded-t-lg neon-glow-blue relative">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black px-2 py-1 rounded text-[10px] font-bold">$1.2M</div>
+</div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/20 h-[30%] rounded-t-lg"></div>
+<div class="flex-1 bg-gradient-to-t from-primary/10 to-primary/20 h-[20%] rounded-t-lg"></div>
+</div>
+<div class="flex justify-between px-2 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+<span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span>
+</div>
+</div>
+<!-- Transparency Score Widget -->
+<div class="md:col-span-4 glass-panel rounded-3xl p-8 border border-white/5 flex flex-col items-center justify-center text-center">
+<span class="text-[10px] font-bold text-emerald-400 uppercase tracking-[0.3em] mb-6">Puntaje de Transparencia</span>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary-fixed neon-glow-green" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="55.29" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-5xl font-headline font-black text-white leading-none">98</span>
+<span class="text-xs text-gray-400 font-bold uppercase mt-1">A+ Rating</span>
+</div>
+</div>
+<p class="mt-8 text-gray-400 text-sm leading-relaxed">
+                    Certificado bajo el estándar de **Auditoría Abierta 2024**. Datos inmutables procesados por nodo externo.
+                </p>
+<a class="mt-6 text-emerald-400 text-xs font-bold uppercase tracking-widest hover:underline transition-all" href="#">Ver Certificación →</a>
+</div>
+<!-- Key Metrics Bar -->
+<div class="md:col-span-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white/5 rounded-2xl p-6 border border-white/5">
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Total Donado (USD)</p>
+<h4 class="text-3xl font-headline font-black text-white">$4,829,102</h4>
+<div class="flex items-center text-emerald-400 text-xs font-bold mt-2">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                        +12.4% vs Mes Anterior
+                    </div>
+</div>
+<div class="bg-white/5 rounded-2xl p-6 border border-white/5">
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Impacto por Dólar</p>
+<h4 class="text-3xl font-headline font-black text-white">92.4%</h4>
+<p class="text-xs text-gray-500 mt-2 font-medium">Fondo Operativo vs Programático</p>
+</div>
+<div class="bg-white/5 rounded-2xl p-6 border border-white/5">
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Donantes Activos</p>
+<h4 class="text-3xl font-headline font-black text-white">12,408</h4>
+<div class="flex -space-x-2 mt-3">
+<div class="w-6 h-6 rounded-full border-2 border-black bg-gray-600"></div>
+<div class="w-6 h-6 rounded-full border-2 border-black bg-gray-500"></div>
+<div class="w-6 h-6 rounded-full border-2 border-black bg-gray-400"></div>
+<div class="w-6 h-6 rounded-full border-2 border-black bg-primary flex items-center justify-center text-[8px] font-bold">+</div>
+</div>
+</div>
+<div class="bg-white/5 rounded-2xl p-6 border border-white/5">
+<p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Proyectos Financiados</p>
+<h4 class="text-3xl font-headline font-black text-white">84</h4>
+<p class="text-xs text-gray-500 mt-2 font-medium">12 en fase de completación</p>
+</div>
+</div>
+<!-- Reconciliation Table -->
+<div class="md:col-span-12 glass-panel rounded-3xl border border-white/5 overflow-hidden">
+<div class="p-8 border-b border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h3 class="text-xl font-headline font-bold text-white">Tabla de Conciliación Bancaria</h3>
+<p class="text-xs text-gray-500 uppercase tracking-widest font-semibold mt-1">Últimas transacciones verificadas vía API</p>
+</div>
+<div class="flex items-center space-x-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm" data-icon="search">search</span>
+<input class="bg-black/50 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-xs focus:ring-1 focus:ring-primary focus:border-primary outline-none text-white w-64" placeholder="Filtrar transacción..." type="text"/>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-white/5 text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
+<th class="px-8 py-4">ID Transacción</th>
+<th class="px-8 py-4">Entidad/Donante</th>
+<th class="px-8 py-4">Estado</th>
+<th class="px-8 py-4">Fecha</th>
+<th class="px-8 py-4">Destino de Impacto</th>
+<th class="px-8 py-4 text-right">Monto</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-8 py-5 text-xs font-mono text-gray-400 group-hover:text-blue-400 transition-colors">TX-9921-X01</td>
+<td class="px-8 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+<span class="material-symbols-outlined text-sm" data-icon="business">business</span>
+</div>
+<span class="text-xs font-bold text-white">Global Tech Partners</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded-md border border-emerald-500/20">VERIFICADO</span>
+</td>
+<td class="px-8 py-5 text-xs text-gray-400">22 May, 2024</td>
+<td class="px-8 py-5 text-xs font-medium text-white italic">Reforestación Amazonía</td>
+<td class="px-8 py-5 text-right font-headline font-black text-white">$45,000.00</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-8 py-5 text-xs font-mono text-gray-400 group-hover:text-blue-400 transition-colors">TX-9844-Z92</td>
+<td class="px-8 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+</div>
+<span class="text-xs font-bold text-white">Elena Rodriguez</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded-md border border-emerald-500/20">VERIFICADO</span>
+</td>
+<td class="px-8 py-5 text-xs text-gray-400">21 May, 2024</td>
+<td class="px-8 py-5 text-xs font-medium text-white italic">Limpieza de Océanos</td>
+<td class="px-8 py-5 text-right font-headline font-black text-white">$1,250.00</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-8 py-5 text-xs font-mono text-gray-400 group-hover:text-blue-400 transition-colors">TX-9841-A12</td>
+<td class="px-8 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="account_balance">account_balance</span>
+</div>
+<span class="text-xs font-bold text-white">Fundación Horizonte</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-2 py-1 bg-yellow-500/10 text-yellow-400 text-[10px] font-bold rounded-md border border-yellow-500/20 uppercase tracking-tighter">Pendiente</span>
+</td>
+<td class="px-8 py-5 text-xs text-gray-400">20 May, 2024</td>
+<td class="px-8 py-5 text-xs font-medium text-white italic">Energía Solar Rural</td>
+<td class="px-8 py-5 text-right font-headline font-black text-white">$12,800.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-black/40 flex justify-center border-t border-white/5">
+<button class="text-[10px] font-bold text-gray-500 uppercase tracking-widest hover:text-white transition-colors">Cargar 100 transacciones más</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 glass-panel border-t border-white/10 z-50 flex justify-around items-center py-4 px-6">
+<a class="flex flex-col items-center space-y-1 text-blue-400" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Dash</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-gray-500" href="#">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Impacto</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-gray-500" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Dinero</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-gray-500" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Perfil</span>
+</a>
+</nav>
+</body></html>

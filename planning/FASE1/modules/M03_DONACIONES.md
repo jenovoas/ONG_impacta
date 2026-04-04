@@ -8,6 +8,20 @@ Gestión de donaciones monetarias y en especie, campañas de recaudación, y pro
 
 ---
 
+## ⚠️ Prototipo de referencia visual
+
+> **`/proto` es de SOLO LECTURA. No escribir código ahí. No copiar HTML.**
+> Abrir en el navegador como referencia visual y recrear en React + shadcn/ui.
+
+| Estado | Archivo | Pantallas que cubre |
+|--------|---------|---------------------|
+| ✅ Disponible | `proto/donaciones-transparencia.html` | P01 Dashboard donaciones, P02 Transacciones, P03 Detalle, P04 Nueva donación, P06 Campañas, P07 Nueva campaña |
+| ✅ Disponible | `proto/donaciones-transparencia-es.html` | Variante español (misma estructura) |
+
+Referencia primaria: **`proto/donaciones-transparencia.html`**
+
+---
+
 ## Backend
 
 ```

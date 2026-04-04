@@ -50,6 +50,9 @@ Ninguna.
 - [ ] Swagger configurado en `/api/docs`
 
 **Día 3 — Frontend Shell**
+> ⚠️ Referencia visual: `proto/app-shell.html` (crear en Stitch antes de este día — ver `planning/UI_PROTOTYPES_STITCH.md`)
+> ⚠️ `/proto` es de SOLO LECTURA. Recrear en React, no copiar HTML.
+- [ ] **[PREVIO]** Crear prototipo `app-shell.html` en Stitch y guardarlo en `/proto/`
 - [ ] Crear `apps/web` con Vite + React
 - [ ] Instalar dependencias frontend (ver `00_SETUP.md` sección 10)
 - [ ] Instalar y configurar shadcn/ui (ver `00_SETUP.md` sección 10)
@@ -59,6 +62,9 @@ Ninguna.
 - [ ] Configurar `TanStack Query` + `axios` con interceptores de refresh token
 
 **Día 4 — Frontend Auth**
+> ⚠️ Referencia visual: `proto/auth-login.html`, `proto/auth-2fa.html` (crear en Stitch antes — ver `planning/UI_PROTOTYPES_STITCH.md`)
+> ⚠️ `/proto` es de SOLO LECTURA. Recrear en React, no copiar HTML.
+- [ ] **[PREVIO]** Crear prototipos `auth-login.html` y `auth-2fa.html` en Stitch y guardarlos en `/proto/`
 - [ ] Pantalla `/auth/login` (ver spec `modules/M00_AUTH.md`)
 - [ ] Pantalla `/auth/recuperar` y `/auth/nueva-contrasena`
 - [ ] Pantalla `/auth/2fa`
@@ -67,6 +73,8 @@ Ninguna.
 - [ ] Ruta protegida: redirige a `/auth/login` si no autenticado
 
 **Día 5 — Dashboard home y configuración**
+> ⚠️ Referencia visual: `proto/dashboard-general.html` (disponible en `/proto/`)
+> ⚠️ `/proto` es de SOLO LECTURA. Recrear en React, no copiar HTML.
 - [ ] Pantalla `/dashboard` con widgets vacíos (StatCards en skeleton)
 - [ ] `GET /auth/me` conectado → muestra nombre ONG en Topbar
 - [ ] Theme toggle (dark/light) persistido en localStorage
