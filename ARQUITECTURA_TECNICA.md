@@ -1,7 +1,7 @@
 # Documento de Arquitectura Técnica
 ## ONG Impacta+ — Plataforma SaaS de Gestión
 
-| **Versión** | 2.0 |
+| **Versión** | 1.0 |
 |-------------|-----|
 | **Fecha** | 4 de abril de 2026 |
 | **Estado** | En desarrollo |
@@ -16,10 +16,10 @@
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                           CAPA DE PRESENTACIÓN                          │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
-│  │   Landing Page  │  │  Dashboard Web  │  │   Portal Socio  │         │
-│  │   (Next.js)     │  │   (React + Vite)│  │   (React)       │         │
-│  └─────────────────┘  └─────────────────┘  └─────────────────┘         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  ┌────────┐│
+│  │   Landing Page  │  │  Dashboard Web  │  │   Portal Socio  │  │App Móvil││
+│  │   (Next.js)     │  │   (React + Vite)│  │   (React)       │  │ (Fase 2)││
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘  └────────┘│
 └─────────────────────────────────────────────────────────────────────────┘
                                     │
                                     ▼
@@ -38,10 +38,13 @@
 │  │   Auth       │  │   Core       │  │   Pagos      │  │  Contable  │  │
 │  │   Service    │  │   Service    │  │   Service    │  │  Service   │  │
 │  └──────────────┘  └──────────────┘  └──────────────┘  └────────────┘  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────────  │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────────┐  │
 │  │   Eventos    │  │  Voluntarios │  │   Ecología   │  │  Reportes  │  │
 │  │   Service    │  │   Service    │  │   Service    │  │  Service   │  │
 │  └──────────────┘  └──────────────┘  └──────────────┘  └────────────┘  │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                      SaaS Super-Admin Service                   │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
 │                    (NestJS + TypeScript + REST/GraphQL)                 │
 └─────────────────────────────────────────────────────────────────────────┘
                                     │
@@ -84,6 +87,7 @@
 | **Zod** | 3.x | Validación de esquemas |
 | **Lucide Icons** | latest | Iconografía |
 | **Recharts** | 2.x | Gráficos y dashboards |
+| **Apollo Client** | 3.x | Cliente GraphQL (Reportes) |
 | **FullCalendar** | 6.x | Calendario |
 | **React Table** | 8.x | Tablas avanzadas |
 
@@ -101,8 +105,9 @@
 | **JWT** | 9.x | Autenticación |
 | **class-validator** | 0.x | Validación de DTOs |
 | **Swagger/OpenAPI** | latest | Documentación API |
+| **Apollo Server** | 4.x | Servidor GraphQL (NestJS plugin) |
 | **Winston** | 3.x | Logging estructurado |
-| **Helm** | latest | Tests E2E |
+| **Playwright** | latest | Tests E2E y Visuales |
 
 ### 2.3 Infraestructura
 
@@ -130,7 +135,8 @@ impacta-saas/
 │   ├── web/                    # Dashboard principal (React + Vite)
 │   ├── landing/                # Landing pages (Next.js)
 │   ├── api/                    # Backend API (NestJS)
-│   └── admin/                  # Panel super-admin (React)
+│   ├── mobile/                 # App móvil (Fase 2 - Expo)
+│   └── admin/                  # Panel SaaS Super-Admin (React)
 ├── packages/
 │   ├── ui/                     # Componentes UI compartidos
 │   ├── database/               # Schema Prisma, migraciones
@@ -601,20 +607,40 @@ GET    /api/v1/accounting/reports/sii-f29
 
 ### 6.4 Rate Limiting
 
-```typescript
-// Configuración Nginx
-limit_req_zone $binary_remote_addr zone=api:10m rate=100r/s;
-limit_req_zone $binary_remote_addr zone=auth:10m rate=10r/s;
+Estrategia diferenciada por tipo de tráfico:
 
-// Por endpoint
-/auth/*     -> 10 req/min
-/api/*      -> 100 req/s
-/webhook/*  -> 1000 req/min
-```
+| Contexto | Límite | Observación |
+|----------|--------|-------------|
+| **Auth** | 5 req/min | Por IP (Prevención Brute-force) |
+| **API Pública** | 20 req/s | Por API Key (Uso de datos) |
+| **Dashboard** | 60 req/min | Por Sesión |
+| **Webhooks** | 100 req/s | Burst permitido (Pagos/Integraciones) |
 
 ---
 
-## 7. Desempeño y Calidad
+## 7. Estrategia de Multi-tenancy
+
+La plataforma utiliza un modelo de **Base de Datos Compartida con Aislamiento Lógico (RLS)**.
+
+### 7.1 Flujo de Identificación de Tenant
+1.  **Extracción:** El `TenantInterceptor` extrae el `organizationId` del JWT decodificado en cada request.
+2.  **Propagación de Contexto:** Se utiliza `AsyncLocalStorage` de Node.js para hacer disponible el `organizationId` en todas las capas del servicio sin necesidad de pasarlo por parámetro.
+3.  **Aislamiento en Base de Datos (RLS):**
+    - Se ejecuta `SET LOCAL app.current_organization_id = '${orgId}'` al inicio de cada transacción.
+    - Políticas `USING (organization_id = current_setting('app.current_organization_id')::uuid)` aseguran que ninguna query pueda acceder a datos de otro tenant.
+
+## 8. Módulo Super-Admin (SaaS Management)
+
+El Super-Admin (`apps/admin`) es la herramienta interna para la gestión del negocio SaaS:
+
+- **Gestión de Organizaciones:** Onboarding, suspensión y monitoreo de salud comercial.
+- **Configuración de Planes:** Definición de cuotas y límites por cada plan (Socio, Pro, Enterprise).
+- **Billing Global:** Dashboard de recaudación por suscripciones y comisiones de transacciones.
+- **Métricas de Plataforma:** Visualización de métricas de infraestructura (Prometheus/Grafana integrado).
+
+---
+
+## 9. Desempeño y Calidad
 
 ### 7.1 Métricas Objetivo
 

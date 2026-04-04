@@ -2,7 +2,7 @@
 
 ## ONG Impacta+ SaaS — Plataforma de Gestión para ONGs
 
-| **Versión** | 6.0 |
+| **Versión** | 1.0 |
 |-------------|-----|
 | **Estado** | En revisión |
 | **Fecha** | 4 de abril de 2026 |
@@ -139,7 +139,7 @@ Crear una plataforma SaaS que centralice y automatice la gestión operativa de O
 | **Muro de Donantes** | Reconocimiento público (opcional) | Media |
 | **Campanas de Donación** | Campañas específicas con metas y plazos | Alta |
 | **Historial de Transacciones** | Listado completo filtrable por fecha, tipo, monto, socio | Alta |
-| **Reportes de Recaudación** | Informes diarios, semanales, mensiles de ingresos | Alta |
+| **Reportes de Recaudación** | Informes diarios, semanales, mensuales de ingresos | Alta |
 
 ### 3.5 Módulo de Rifas Digitales
 

@@ -186,8 +186,8 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      CAPA DE PRESENTACIÓN                          │
 │   ┌─────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────┐ │
-│   │ Landing Page │  │ Dashboard Web│  │ Portal Socio │  │App Móvl│ │
-│   │  (Next.js)  │  │(React + Vite)│  │   (React)    │  │(Expo)  │ │
+│   │ Landing Page │  │ Dashboard Web│  │ Portal Socio │  │ App Móvil  │ │
+│   │  (Next.js)  │  │(React + Vite)│  │   (React)    │  │ (Fase 2)  │ │
 │   └─────────────┘  └──────────────┘  └──────────────┘  └────────┘ │
 └─────────────────────────────────────────────────────────────────────┘
                                 │
@@ -230,8 +230,8 @@ impacta-saas/
 │   ├── web/                    # Dashboard principal (React + Vite)
 │   ├── landing/                # Landing pages (Next.js)
 │   ├── api/                    # Backend API (NestJS)
-│   ├── mobile/                 # App móvil (React Native + Expo)
-│   └── admin/                  # Panel super-admin (React)
+│   ├── mobile/                 # App móvil (Fase 2 - Expo)
+│   └── admin/                  # Panel SaaS Super-Admin (React)
 ├── packages/
 │   ├── ui/                     # Componentes UI compartidos
 │   ├── database/               # Schema Prisma, migraciones
@@ -434,21 +434,25 @@ A diferencia de otras soluciones en el mercado que sufren de inestabilidad, **Im
 
 | Plan | Precio | Incluye |
 |:----:|:------:|---------|
-| **Free** | $0/mes | Hasta 50 socios, 1 evento/mes, donaciones básicas |
-| **Básico** | $29/mes | Hasta 200 socios, eventos ilimitados, rifas digitales |
-| **Pro** | $79/mes | Socios ilimitados, todos los módulos, landing page |
-| **Enterprise** | Personalizado | Multi-ONG, API, soporte prioritario, white-label |
+| **Free** | $0/mes | Hasta 50 socios, 1 evento/mes, donaciones básicas<br>*(+ 2.9% comisión)* |
+| **Básico** | $29/mes | Hasta 200 socios, eventos ilimitados, rifas digitales<br>*(+ 2.9% comisión)* |
+| **Pro** | $79/mes | Socios ilimitados, todos los módulos, landing page<br>*(+ 1.5% comisión)* |
+| **Enterprise** | Personalizado | Multi-ONG, API, soporte prioritario, white-label<br>*(Comisión negociada)* |
+
+**Comisiones adicionales:**
+- Donaciones: % según plan + $0.30 por transacción.
+- Rifas digitales: 5% del total recaudado.
 
 ---
 
 ## 📈 Roadmap
 
 ```
-Fase 1 ████████████████████░░░░░░░░░░░░  Core MVP           (5-7 semanas)
-Fase 2 ░░░░░░░░░░░░░░░░░░░░████████░░░░  Crecimiento        (4-6 semanas)
+Fase 1 ████████████████████░░░░░░░░░░░░  Core Web & Admin   (6-8 semanas)
+Fase 2 ░░░░░░░░░░░░░░░░░░░░████████░░░░  App Móvil & i18n   (4-6 semanas)
 Fase 3 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░████  Madurez & IA       (4-5 semanas)
        ─────────────────────────────────
-       Total estimado: 3-4 meses
+       Total estimado: 4-5 meses
 ```
 
 ### Objetivos de Lanzamiento
