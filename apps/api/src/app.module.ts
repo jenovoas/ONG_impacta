@@ -1,8 +1,9 @@
-import { Module, MiddlewareConsumer, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 import { AuthModule } from './modules/auth/auth.module';
 import { PrismaModule } from './modules/prisma/prisma.module';
-import { TenantMiddleware } from './common/middleware/tenant.middleware';
+import { TenantInterceptor } from './common/interceptors/tenant.interceptor';
 
 @Module({
   imports: [
@@ -13,12 +14,11 @@ import { TenantMiddleware } from './common/middleware/tenant.middleware';
     PrismaModule,
     AuthModule,
   ],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: TenantInterceptor,
+    },
+  ],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(TenantMiddleware)
-      .exclude('auth/(.*)') // Excluir login, registro, etc.
-      .forRoutes('*');
-  }
-}
+export class AppModule {}
