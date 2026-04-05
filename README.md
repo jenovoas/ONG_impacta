@@ -65,6 +65,7 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 <td width="50%">
 
 ### 🏢 Gestión Organizacional
+
 - Administración de socios y voluntarios
 - Asignación de roles, cargos y jerarquías
 - Organigrama interactivo
@@ -74,6 +75,7 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 <td width="50%">
 
 ### 💳 Pagos & Donaciones
+
 - Sistema unificado web + interno
 - Integración MercadoPago, PayPal & Stripe
 - Donaciones recurrentes y en especie
@@ -85,6 +87,7 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 <td width="50%">
 
 ### 📊 Contabilidad Chilena
+
 - Plan de cuentas según normativa chilena
 - Libro diario, mayor y balance automáticos
 - Exportación para SII (F29, F39)
@@ -94,6 +97,7 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 <td width="50%">
 
 ### 🌿 Ecología & Biodiversidad
+
 - Catálogo de flora y fauna nativa
 - Registro de avistamientos geolocalizados
 - Seguimiento de poblaciones
@@ -105,6 +109,7 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 <td width="50%">
 
 ### 📱 App Móvil
+
 - React Native (iOS & Android)
 - Notificaciones push
 - Check-in/Check-out en eventos
@@ -114,6 +119,7 @@ Convertirse en la **plataforma líder** para la gestión de ONGs en la región, 
 <td width="50%">
 
 ### 🌐 Multi-idioma
+
 - Español e Inglés
 - Detección automática de idioma
 - Selector manual en UI
@@ -440,6 +446,7 @@ A diferencia de otras soluciones en el mercado que sufren de inestabilidad, **Im
 | **Enterprise** | Personalizado | Multi-ONG, API, soporte prioritario, white-label<br>*(Comisión negociada)* |
 
 **Comisiones adicionales:**
+
 - Donaciones: % según plan + $0.30 por transacción.
 - Rifas digitales: 5% del total recaudado.
 
