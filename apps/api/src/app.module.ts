@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { PrismaModule } from './modules/prisma/prisma.module';
+import { MembersModule } from './modules/members/members.module';
 import { TenantInterceptor } from './common/interceptors/tenant.interceptor';
 
 @Module({
@@ -16,6 +17,7 @@ import { TenantInterceptor } from './common/interceptors/tenant.interceptor';
     }),
     PrismaModule,
     AuthModule,
+    MembersModule,
   ],
   controllers: [AppController],
   providers: [

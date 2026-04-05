@@ -4,6 +4,7 @@ import PublicRoute from "./components/PublicRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./pages/LoginPage";
 import AppLayout from "./layouts/AppLayout";
+import MembersPage from "./pages/MembersPage";
 
 export default function App() {
   return (
@@ -19,7 +20,6 @@ export default function App() {
             }
           />
 
-          {/* Protected Routes */}
           <Route
             element={
               <ProtectedRoute>
@@ -27,6 +27,7 @@ export default function App() {
               </ProtectedRoute>
             }
           >
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route
               path="/dashboard"
               element={
@@ -88,14 +89,7 @@ export default function App() {
               }
             />
 
-            {/* Placeholder routes */}
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route
-              path="/socios"
-              element={
-                <div className="text-display-md font-bold">Módulo Socios</div>
-              }
-            />
+            <Route path="/socios" element={<MembersPage />} />
             <Route
               path="/donaciones"
               element={
@@ -124,8 +118,7 @@ export default function App() {
                 <div className="text-display-md font-bold">Configuración</div>
               }
             />
-          </ProtectedRoute>
-        </Routes>
+          </Route>
         </Routes>
       </BrowserRouter>
     </AuthBootstrap>
