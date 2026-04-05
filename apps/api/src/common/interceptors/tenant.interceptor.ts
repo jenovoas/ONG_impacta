@@ -4,7 +4,7 @@ import {
   ExecutionContext,
   CallHandler,
 } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Observable, defer } from 'rxjs';
 import { TenantContext } from '../context/tenant-context';
 
 @Injectable()
@@ -15,12 +15,7 @@ export class TenantInterceptor implements NestInterceptor {
     const orgId = user?.orgId;
 
     if (orgId) {
-      // Resolve the handler within the tenant context scope
-      return new Observable((subscriber) => {
-        TenantContext.run(orgId, () => {
-          next.handle().subscribe(subscriber);
-        });
-      });
+      return defer(() => TenantContext.run(orgId, () => next.handle()));
     }
 
     return next.handle();

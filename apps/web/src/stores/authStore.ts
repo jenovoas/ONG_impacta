@@ -1,7 +1,7 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-interface User {
+export interface AuthUser {
   id: string;
   name: string;
   email: string;
@@ -14,10 +14,14 @@ interface User {
 }
 
 interface AuthState {
-  user: User | null;
+  user: AuthUser | null;
   accessToken: string | null;
   isAuthenticated: boolean;
-  setAuth: (user: User, token: string) => void;
+  isBootstrapping: boolean;
+  setAuth: (user: AuthUser, token: string) => void;
+  setUser: (user: AuthUser) => void;
+  startBootstrap: () => void;
+  finishBootstrap: () => void;
   logout: () => void;
 }
 
@@ -27,11 +31,32 @@ export const useAuthStore = create<AuthState>()(
       user: null,
       accessToken: null,
       isAuthenticated: false,
-      setAuth: (user, token) => set({ user, accessToken: token, isAuthenticated: true }),
-      logout: () => set({ user: null, accessToken: null, isAuthenticated: false }),
+      isBootstrapping: true,
+      setAuth: (user, token) =>
+        set({
+          user,
+          accessToken: token,
+          isAuthenticated: true,
+          isBootstrapping: false,
+        }),
+      setUser: (user) => set({ user, isAuthenticated: true }),
+      startBootstrap: () => set({ isBootstrapping: true }),
+      finishBootstrap: () => set({ isBootstrapping: false }),
+      logout: () =>
+        set({
+          user: null,
+          accessToken: null,
+          isAuthenticated: false,
+          isBootstrapping: false,
+        }),
     }),
     {
-      name: 'impacta-auth-storage',
-    }
-  )
+      name: "impacta-auth-storage",
+      partialize: (state) => ({
+        user: state.user,
+        accessToken: state.accessToken,
+        isAuthenticated: state.isAuthenticated,
+      }),
+    },
+  ),
 );
