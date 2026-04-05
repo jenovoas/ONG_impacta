@@ -43,82 +43,84 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-background">
-      <div className="w-full max-w-sm space-y-8 animate-fade-in">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-background relative overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-blue/10 blur-[120px]" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-brand-green/10 blur-[120px]" />
+
+      <div className="w-full max-w-sm space-y-8 animate-fade-in relative z-10">
         <div className="text-center">
-          <div className="mx-auto h-12 w-12 gradient-brand rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-glow-blue">
+          <div className="mx-auto h-16 w-16 gradient-brand rounded-2xl flex items-center justify-center text-black font-bold text-3xl shadow-glow-blue mb-6">
             i
           </div>
-          <h2 className="mt-6 text-display-md font-bold tracking-tight">
+          <h2 className="text-display-lg font-bold tracking-tight mb-2">
             Impacta+
           </h2>
-          <p className="mt-2 text-body-sm text-muted-foreground">
+          <p className="text-body-lg text-muted-foreground">
             Gestión inteligente para organizaciones sociales
           </p>
         </div>
 
-        <div className="glass p-6 rounded-2xl shadow-card border-border">
-          <h3 className="text-display-sm font-semibold mb-6 flex items-center gap-2">
+        <div className="glass p-8 rounded-3xl shadow-card border-border/50">
+          <h3 className="text-display-sm font-bold mb-8">
             Iniciar sesión
           </h3>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div className="space-y-1">
-              <label className="text-caption text-muted-foreground uppercase tracking-wider font-semibold">
+          {error && (
+            <div className="bg-danger/10 border border-danger/20 text-danger text-body-sm p-3 rounded-lg mb-6">
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="space-y-2">
+              <label className="text-caption text-muted-foreground uppercase tracking-widest font-bold ml-1">
                 Email
               </label>
-              <div className="relative">
-                <Mail
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-                  size={18}
-                />
+              <div className="relative group">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-brand-blue transition-colors">
+                  <Mail size={18} />
+                </div>
                 <input
                   {...register("email")}
                   type="email"
-                  className="w-full bg-secondary border border-border rounded-lg py-2.5 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                  placeholder="name@organization.cl"
+                  className="w-full bg-secondary/50 border border-border rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all placeholder:text-muted-foreground/30"
+                  placeholder="admin@impacta.cl"
                 />
               </div>
               {errors.email && (
-                <p className="text-danger text-caption mt-1">
+                <p className="text-danger text-caption mt-1 px-1">
                   {errors.email.message}
                 </p>
               )}
             </div>
 
-            <div className="space-y-1">
-              <label className="text-caption text-muted-foreground uppercase tracking-wider font-semibold">
+            <div className="space-y-2">
+              <label className="text-caption text-muted-foreground uppercase tracking-widest font-bold ml-1">
                 Contraseña
               </label>
-              <div className="relative">
-                <Lock
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-                  size={18}
-                />
+              <div className="relative group">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-brand-blue transition-colors">
+                  <Lock size={18} />
+                </div>
                 <input
                   {...register("password")}
                   type="password"
-                  className="w-full bg-secondary border border-border rounded-lg py-2.5 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                  placeholder="••••••••"
+                  className="w-full bg-secondary/50 border border-border rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all"
+                  placeholder="••••••••••••"
                 />
               </div>
               {errors.password && (
-                <p className="text-danger text-caption mt-1">
+                <p className="text-danger text-caption mt-1 px-1">
                   {errors.password.message}
                 </p>
               )}
             </div>
 
-            {error && (
-              <div className="bg-danger/10 border border-danger/20 p-3 rounded-lg text-danger text-body-sm">
-                {error}
-              </div>
-            )}
-
             <button
               type="submit"
               disabled={loading}
-              className="w-full gradient-brand text-white py-2.5 rounded-lg font-semibold shadow-glow-blue hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+              className="w-full h-12 gradient-brand text-black rounded-xl font-bold shadow-glow-blue hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:scale-100"
             >
               {loading ? (
                 <Loader2 className="animate-spin" size={20} />
@@ -128,14 +130,17 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <p className="mt-6 text-center text-body-sm text-muted-foreground">
-            ¿No tienes cuenta?{" "}
-            <span className="text-primary hover:underline cursor-pointer">
-              Solicitar demo
-            </span>
-          </p>
+          <div className="mt-8 pt-6 border-t border-border/50 text-center">
+            <p className="text-body-sm text-muted-foreground">
+              ¿No tienes cuenta?{" "}
+              <button className="text-brand-green font-bold hover:underline underline-offset-4">
+                Solicitar demo
+              </button>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+

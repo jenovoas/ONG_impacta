@@ -11,10 +11,10 @@ const statusLabels: Record<MemberStatus, string> = {
 };
 
 const statusColors: Record<MemberStatus, string> = {
-  ACTIVE: "bg-emerald-500/20 text-emerald-300",
-  INACTIVE: "bg-muted text-muted-foreground",
-  SUSPENDED: "bg-amber-500/20 text-amber-300",
-  DECEASED: "bg-red-500/20 text-red-300",
+  ACTIVE: "bg-success/10 text-success border-success/20",
+  INACTIVE: "bg-muted text-muted-foreground border-border",
+  SUSPENDED: "bg-warning/10 text-warning border-warning/20",
+  DECEASED: "bg-danger/10 text-danger border-danger/20",
 };
 
 export default function MembersPage() {

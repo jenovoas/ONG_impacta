@@ -91,6 +91,13 @@ const config: Config = {
           100: '#E0E0E0',
           50:  '#F5F5F5',
         },
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -101,6 +108,16 @@ const config: Config = {
         sans:    ['Inter', ...fontFamily.sans],
         display: ['Montserrat', ...fontFamily.sans],
         mono:    ['JetBrains Mono', ...fontFamily.mono],
+      },
+      fontSize: {
+        'display-xl': ['3rem',    { lineHeight: '1.2',  fontWeight: '700' }],
+        'display-lg': ['2.25rem', { lineHeight: '1.25', fontWeight: '700' }],
+        'display-md': ['1.75rem', { lineHeight: '1.3',  fontWeight: '600' }],
+        'display-sm': ['1.5rem',  { lineHeight: '1.35', fontWeight: '600' }],
+        'body-xl':    ['1.125rem',{ lineHeight: '1.6',  fontWeight: '400' }],
+        'body-lg':    ['1rem',    { lineHeight: '1.6',  fontWeight: '400' }],
+        'body-sm':    ['0.875rem',{ lineHeight: '1.5',  fontWeight: '400' }],
+        'caption':    ['0.75rem', { lineHeight: '1.4',  fontWeight: '400' }],
       },
       spacing: {
         'sidebar':       '240px',
@@ -118,21 +135,31 @@ const config: Config = {
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
-          to:   'var(--radix-accordion-content-height)',
+          to:   { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: 'var(--radix-accordion-content-height)',
-          to:   '0',
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to:   { height: '0' },
         },
         'fade-in': {
           from: { opacity: '0', transform: 'translateY(4px)' },
           to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-in-right': {
+          from: { transform: 'translateX(100%)' },
+          to:   { transform: 'translateX(0)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { boxShadow: '0 0 0 rgba(0,168,255,0)' },
+          '50%':      { boxShadow: '0 0 20px rgba(0,168,255,0.4)' },
         },
       },
       animation: {
         'accordion-down':  'accordion-down 0.2s ease-out',
         'accordion-up':    'accordion-up 0.2s ease-out',
         'fade-in':         'fade-in 0.15s ease-out',
+        'slide-in-right':  'slide-in-right 0.2s ease-out',
+        'pulse-glow':      'pulse-glow 2s infinite',
       },
     },
   },
@@ -140,3 +167,4 @@ const config: Config = {
 }
 
 export default config
+
