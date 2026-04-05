@@ -45,7 +45,7 @@ export class AuthService {
     const refreshToken = await this.prisma.refreshToken.create({
       data: {
         userId: user.id,
-        token: crypto.randomUUID(),
+        token: randomUUID(),
         expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       },
     });
@@ -121,7 +121,7 @@ export class AuthService {
     const newRefreshToken = await this.prisma.refreshToken.create({
       data: {
         userId: storedToken.user.id,
-        token: crypto.randomUUID(),
+        token: randomUUID(),
         expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       },
     });
