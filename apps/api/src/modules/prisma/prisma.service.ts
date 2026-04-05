@@ -51,7 +51,7 @@ export class PrismaService
       }
 
       // Solo aplicar a modelos que requieren RLS
-      if (!RLS_MODELS.includes(params.model)) {
+      if (!params.model || !RLS_MODELS.includes(params.model)) {
         return next(params);
       }
 

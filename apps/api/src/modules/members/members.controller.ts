@@ -15,6 +15,7 @@ import {
   ApiResponse,
   ApiBearerAuth,
 } from '@nestjs/swagger';
+import type { UserPayload } from '../../common/interfaces/user-payload.interface';
 import { MembersService } from './members.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
@@ -23,7 +24,6 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { UserPayload } from '../../common/interfaces/user-payload.interface';
 import { SystemRole } from '@impacta/database';
 
 @ApiTags('members')
