@@ -1,0 +1,115 @@
+# ==================================================================================
+# docker-compose.prod.yml — Stack Impacta+ para Producción en Fenix
+# Se conecta a la red proxy externa (Traefik) ya existente.
+# NO modifica ni interfiere con ningún otro servicio.
+# ==================================================================================
+
+services:
+
+  # ── BASE DE DATOS IMPACTA ──────────────────────────────────────────────────────
+  impacta_db:
+    image: docker.io/library/postgres:16-alpine
+    container_name: impacta_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-impacta}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME:-impacta_prod}
+    volumes:
+      - impacta_db_data:/var/lib/postgresql/data
+      - ./docker/postgres/init_copy.sql:/docker-entrypoint-initdb.d/init.sql:ro,z
+    networks:
+      - impacta_internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-impacta}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ── REDIS IMPACTA ────────────────────────────────────────────────────────────
+  impacta_redis:
+    image: docker.io/library/redis:7-alpine
+    container_name: impacta_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - impacta_redis_data:/data
+    networks:
+      - impacta_internal
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  # ── API BACKEND (NestJS) ──────────────────────────────────────────────────────
+  impacta_api:
+    build:
+      context: ..
+      dockerfile: apps/api/Dockerfile
+    container_name: impacta_api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://${DB_USER:-impacta}:${DB_PASSWORD}@impacta_db:5432/${DB_NAME:-impacta_prod}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@impacta_redis:6379
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_ACCESS_EXPIRES_IN: 15m
+      JWT_REFRESH_EXPIRES_IN: 7d
+      PORT: 4000
+    depends_on:
+      impacta_db:
+        condition: service_healthy
+      impacta_redis:
+        condition: service_started
+    networks:
+      - impacta_internal
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.impacta-api.rule=Host(`impacta.pinguinoseguro.cl`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.impacta-api.entrypoints=websecure"
+      - "traefik.http.routers.impacta-api.tls.certresolver=powerdns"
+      - "traefik.http.services.impacta-api.loadbalancer.server.port=4000"
+      - "traefik.docker.network=proxy"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ── FRONTEND DASHBOARD (React + Vite → Nginx) ─────────────────────────────────
+  impacta_web:
+    build:
+      context: ..
+      dockerfile: apps/web/Dockerfile
+      args:
+        VITE_API_URL: https://impacta.pinguinoseguro.cl/api
+    container_name: impacta_web
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.impacta-web.rule=Host(`impacta.pinguinoseguro.cl`)"
+      - "traefik.http.routers.impacta-web.entrypoints=websecure"
+      - "traefik.http.routers.impacta-web.tls.certresolver=powerdns"
+      - "traefik.http.services.impacta-web.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+
+volumes:
+  impacta_db_data:
+  impacta_redis_data:
+
+networks:
+  impacta_internal:
+    driver: bridge
+    internal: true
+  proxy:
+    external: true
