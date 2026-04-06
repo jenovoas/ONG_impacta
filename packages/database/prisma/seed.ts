@@ -28,27 +28,33 @@ async function main() {
   console.log(`✅ Organización creada: ${primaryOrg.name}`);
 
   // 2. Crear Super Administrador
-  const passwordHash = await argon2.hash('impacta_dev_pass');
+  const adminEmail = process.env.SUPER_ADMIN_EMAIL || 'admin@impacta.cl';
+  const adminPassword = process.env.SUPER_ADMIN_PASSWORD || 'impacta_dev_pass';
+  
+  const passwordHash = await argon2.hash(adminPassword);
+  
   const superAdmin = await prisma.user.upsert({
     where: {
       organizationId_email: {
         organizationId: primaryOrg.id,
-        email: 'admin@impacta.cl'
-      }
+        email: adminEmail,
+      },
     },
-    update: {},
+    update: {
+      passwordHash: passwordHash, // Asegurar que la contraseña se actualice si cambia en el env
+    },
     create: {
       organizationId: primaryOrg.id,
-      email: 'admin@impacta.cl',
+      email: adminEmail,
       passwordHash,
       name: 'Super Admin Impacta',
       systemRole: SystemRole.SUPER_ADMIN,
       isActive: true,
-      emailVerified: true
-    }
+      emailVerified: true,
+    },
   });
 
-  console.log(`✅ Super Admin creado: ${superAdmin.email}`);
+  console.log(`✅ Super Admin creado/actualizado: ${superAdmin.email}`);
 
   // 3. Crear Plan de Cuentas Chileno Básico (Resumen)
   const baseAccounts = [

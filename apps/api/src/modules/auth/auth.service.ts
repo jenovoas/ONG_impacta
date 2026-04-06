@@ -20,10 +20,18 @@ export class AuthService {
       include: { organization: true, customRole: true },
     });
 
-    if (user && (await argon2.verify(user.passwordHash, pass))) {
+    if (!user) {
+      console.warn(`[AUTH] Usuario no encontrado: ${email}`);
+      return null;
+    }
+
+    const isPasswordValid = await argon2.verify(user.passwordHash, pass);
+    if (isPasswordValid) {
       const { passwordHash, ...result } = user;
       return result;
     }
+
+    console.warn(`[AUTH] Contraseña incorrecta para: ${email}`);
     return null;
   }
 
