@@ -27,38 +27,41 @@ const Earth = () => {
     <group scale={1.4}>
       {/* Núcleo Negro Absoluto para garantizar opacidad total */}
       <mesh>
-        <sphereGeometry args={[0.995, 64, 64]} />
+        <sphereGeometry args={[0.99, 32, 32]} />
         <meshBasicMaterial color="#000000" />
       </mesh>
 
-      {/* Superficie de la Tierra con material Standard para mejor realismo y opacidad */}
+      {/* Superficie de la Tierra con material Phong (más brillante y ajustable) */}
       <Sphere ref={earthRef} args={[1, 64, 64]}>
-        <meshStandardMaterial
+        <meshPhongMaterial
           map={colorMap}
           normalMap={normalMap}
-          roughnessMap={specularMap}
-          roughness={0.7}
-          metalness={0.2}
+          specularMap={specularMap}
+          specular={new THREE.Color(0x333333)}
+          shininess={25}
           emissiveMap={lightsMap}
           emissive={new THREE.Color(0xffffea)}
-          emissiveIntensity={1.5}
+          emissiveIntensity={2.5}
+          transparent={false}
+          side={THREE.FrontSide}
         />
       </Sphere>
 
-      {/* Capa de Nubes con transparencia clásica (evitando AdditiveBlending que puede transparentar el fondo) */}
+      {/* Capa de Nubes */}
       <Sphere args={[1.01, 64, 64]}>
-        <meshStandardMaterial
+        <meshPhongMaterial
           map={cloudsMap}
           transparent={true}
-          opacity={0.4}
+          opacity={0.5}
+          blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
       </Sphere>
 
-      {/* Iluminación Cinematográfica */}
-      <ambientLight intensity={0.2} />
-      <pointLight position={[10, 10, 10]} intensity={1.5} color="#ffffff" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#0088ff" />
+      {/* Iluminación Global Reforzada para evitar que sea muy oscura */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 3, 5]} intensity={2.5} color="#ffffff" />
+      <pointLight position={[-5, -3, -5]} intensity={1.0} color="#0088ff" />
     </group>
   );
 };
@@ -68,7 +71,7 @@ export const EarthBackground: React.FC = () => {
     <div className="fixed inset-0 z-0 bg-transparent overflow-hidden pointer-events-none">
       <Canvas 
         camera={{ position: [0, 0, 3.5], fov: 45 }}
-        gl={{ antialias: true, alpha: false, stencil: false, depth: true }}
+        gl={{ antialias: true, alpha: false }}
       >
         <color attach="background" args={['#050505']} />
         
