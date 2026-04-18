@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, UseGuards } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
@@ -24,5 +24,17 @@ export class UsersController {
   @Roles('SUPERADMIN', 'ADMIN')
   create(@Body() createUserDto: any) {
     return this.usersService.create(createUserDto);
+  }
+
+  @Patch(':id')
+  @Roles('SUPERADMIN', 'ADMIN')
+  update(@Param('id') id: string, @Body() updateUserDto: any) {
+    return this.usersService.update(id, updateUserDto);
+  }
+
+  @Delete(':id')
+  @Roles('SUPERADMIN', 'ADMIN')
+  remove(@Param('id') id: string) {
+    return this.usersService.remove(id);
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DatabaseService } from '../../database/database.service';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -31,8 +32,14 @@ export class UsersService {
   }
 
   async create(data: any) {
+    const { password, ...userData } = data;
+    const passwordHash = await bcrypt.hash(password, 10);
+
     return this.prisma.tenant.user.create({
-      data,
+      data: {
+        ...userData,
+        passwordHash,
+      },
       select: {
         id: true,
         email: true,
@@ -40,6 +47,33 @@ export class UsersService {
         isActive: true,
         createdAt: true,
       },
+    });
+  }
+
+  async update(id: string, data: any) {
+    const { password, ...userData } = data;
+    const updateData = { ...userData };
+
+    if (password) {
+      updateData.passwordHash = await bcrypt.hash(password, 10);
+    }
+
+    return this.prisma.tenant.user.update({
+      where: { id },
+      data: updateData,
+      select: {
+        id: true,
+        email: true,
+        role: true,
+        isActive: true,
+        createdAt: true,
+      },
+    });
+  }
+
+  async remove(id: string) {
+    return this.prisma.tenant.user.delete({
+      where: { id },
     });
   }
 }
