@@ -32,15 +32,29 @@ export class AuthService {
   }
 
   async login(user: any) {
-    const payload = { 
-      sub: user.id, 
-      email: user.email, 
-      orgId: user.organizationId, 
-      role: user.role 
+    const payload = {
+      sub: user.id,
+      email: user.email,
+      orgId: user.organizationId,
+      role: user.role,
     };
     return {
       access_token: this.jwtService.sign(payload),
       refresh_token: this.jwtService.sign(payload, { expiresIn: '7d' }),
+      user: {
+        id: user.id,
+        email: user.email,
+        role: user.role,
+        organizationId: user.organizationId,
+        organization: user.organization
+          ? {
+              id: user.organization.id,
+              name: user.organization.name,
+              slug: user.organization.slug,
+              plan: user.organization.plan,
+            }
+          : undefined,
+      },
     };
   }
 

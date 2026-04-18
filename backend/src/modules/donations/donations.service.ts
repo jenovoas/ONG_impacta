@@ -65,6 +65,12 @@ export class DonationsService {
             email: true,
           },
         },
+        campaign: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
       },
       orderBy: { createdAt: 'desc' },
     });
