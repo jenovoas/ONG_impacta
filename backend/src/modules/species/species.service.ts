@@ -30,7 +30,7 @@ export class SpeciesService {
       data: {
         ...dto,
         imageUrl,
-      } as any,
+      } as any, // Prisma extension inyecta organizationId en runtime (ver prisma-multi-tenant.extension.ts)
     });
   }
 

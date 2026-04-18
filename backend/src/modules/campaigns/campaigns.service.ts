@@ -8,7 +8,7 @@ export class CampaignsService {
 
   async create(dto: CreateCampaignDto) {
     return this.prisma.tenant.campaign.create({
-      data: dto as any,
+      data: dto as any, // Prisma extension inyecta organizationId en runtime (ver prisma-multi-tenant.extension.ts)
     });
   }
 

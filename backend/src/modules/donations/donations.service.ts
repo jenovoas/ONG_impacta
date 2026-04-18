@@ -38,7 +38,7 @@ export class DonationsService {
         amount: dto.amount,
         currency: dto.currency || 'CLP',
         status: 'PENDING',
-      } as any,
+      } as any, // Prisma extension inyecta organizationId en runtime (ver prisma-multi-tenant.extension.ts)
     });
 
     // Aquí se llamaría a la pasarela de pago para obtener un link/token

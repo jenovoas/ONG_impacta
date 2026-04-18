@@ -1,18 +1,18 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 import { DatabaseService } from './database.service';
 
 describe('DatabaseService', () => {
   let service: DatabaseService;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const mod = await Test.createTestingModule({
       providers: [DatabaseService],
     }).compile();
-
-    service = module.get<DatabaseService>(DatabaseService);
+    service = mod.get(DatabaseService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  it('should have tenant and base defined', () => {
+    expect(service.tenant).toBeDefined();
+    expect(service.base).toBeDefined();
   });
 });
