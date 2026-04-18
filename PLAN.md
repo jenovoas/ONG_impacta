@@ -4,18 +4,32 @@ Documento autosuficiente: cualquier agente puede recoger este plan sin depender 
 
 ---
 
-## 0. Estado actual (2026-04-17)
+## 0. Estado actual (2026-04-18)
 
 **Infra:** servidor compartido `fenix` (Rocky 9, podman rootless). Traefik v3 con `proxy` network externa, wildcard `*.pinguinoseguro.cl` vía `powerdns` DNS-01. **NO TOCAR infra existente** de los otros proyectos (sentinel, pinguinoseguro, laespiguita, portfolio, minio). Solo agregar servicios.
 
-**Stack:**
-- `backend/` — NestJS 11 + Prisma 5 + class-validator. Global `ValidationPipe`. Expuesto solo internamente en `impacta-backend:3001`.
-- `landing/` — Next.js 16.2.4 (standalone) + Tailwind v4 + Manrope/Inter. **Desplegado** en `https://impacta.pinguinoseguro.cl` con diseño "Digital Steward / New Identity 2026" aplicado.
-- `frontend/` — Vite + React 19 (scaffold default, sin diseño aplicado). Será la app `app.impacta.pinguinoseguro.cl`.
-- `docker-compose.yml` — servicios `postgres` (puerto 5435), `redis` (6381), `backend` (solo red interna), `landing` (traefik labels + https-redirect + wildcard cert).
-- **Prisma schema:** modelos `Organization`, `User`, `Member`. DB corriendo, migraciones pendientes de generar.
+**Despliegues vivos:**
+- `https://impacta.pinguinoseguro.cl` — landing (Next.js, diseño "New Identity 2026").
+- `https://api-impacta.pinguinoseguro.cl` — backend (JWT global guard, `/health` público OK).
+- `https://app-impacta.pinguinoseguro.cl` — frontend (app SPA servida por nginx).
 
-**Módulos backend existentes:** `organizations` (CRUD básico con DTO tipado). Nada más.
+**Stack:**
+- `backend/` — NestJS 11 + Prisma 5 + class-validator. Global `ValidationPipe`. Multi-tenant vía Prisma client extension + AsyncLocalStorage (ver `backend/src/database/prisma-multi-tenant.extension.ts`).
+- `landing/` — Next.js 16.2.4 (standalone) + Tailwind v4 + Manrope/Inter.
+- `frontend/` — Vite + React 19 + Tailwind v4 + React Router. Páginas implementadas: Login, Overview, Members, Donations, Campaigns, Species, Missions, OrganizationProfile.
+- `docker-compose.yml` — postgres (5435), redis (6381), backend (traefik → api-impacta), frontend (traefik → app-impacta), landing (traefik → impacta).
+- **Prisma schema + migraciones:** `init`, `add_donations`, `add_campaigns`, `add_species`, `add_missions` aplicadas. Seed en `prisma/seed.ts` (org demo + admin).
+
+**Módulos backend implementados:** `auth` (login + refresh + @Public), `organizations`, `users`, `members`, `donations`, `campaigns`, `species`, `missions`, `storage` (MinIO). Todos usan `prisma.tenant.*` (extensión inyecta `organizationId` automáticamente desde contexto de request).
+
+**Fases completadas:**
+- **Fase A** (A1–A5) — migración, auth, tenant middleware, users, members. ✅
+- **Fase B** (B1–B4) — donations (con callback mock), campaigns, species (con MinIO), missions. ✅
+- **Fase C** — C1 bootstrap frontend ✅, C2 pantallas ✅ (pendiente verificar cableado real a API), C3 exponer backend traefik + `/health` público ✅.
+
+**Pendiente:**
+- Verificar que las pantallas del frontend realmente consuman la API y funcionen end-to-end (login → dashboard con datos reales).
+- **Fase D** completa (tests, CI, observabilidad, README operativo).
 
 ---
 

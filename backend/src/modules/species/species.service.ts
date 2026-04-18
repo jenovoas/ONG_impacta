@@ -30,7 +30,7 @@ export class SpeciesService {
       data: {
         ...dto,
         imageUrl,
-      },
+      } as any,
     });
   }
 

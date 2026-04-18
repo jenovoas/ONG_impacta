@@ -38,7 +38,7 @@ export class DonationsService {
         amount: dto.amount,
         currency: dto.currency || 'CLP',
         status: 'PENDING',
-      },
+      } as any,
     });
 
     // Aquí se llamaría a la pasarela de pago para obtener un link/token

@@ -15,7 +15,7 @@ export class MissionsService {
         tasks: tasks ? {
           create: tasks,
         } : undefined,
-      },
+      } as any,
       include: { tasks: true },
     });
   }

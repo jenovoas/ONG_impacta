@@ -8,7 +8,7 @@ export class CampaignsService {
 
   async create(dto: CreateCampaignDto) {
     return this.prisma.tenant.campaign.create({
-      data: dto,
+      data: dto as any,
     });
   }
 
