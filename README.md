@@ -1,61 +1,78 @@
-# Impacta+
+# Impacta+ — The Digital Steward 🌿
 
-SaaS multi-tenant para ONGs — gestión de socios, donaciones, campañas, especies y misiones.
-Detalle del producto: [Impacta+PRD.md](Impacta+PRD.md). Arquitectura: [ARQUITECTURA_TECNICA.md](ARQUITECTURA_TECNICA.md).
+[![Tech Stack](https://img.shields.io/badge/Stack-NestJS%20|%20Next.js%20|%20Prisma-000?style=for-the-badge&logo=nestjs&logoColor=white)](https://impacta.pinguinoseguro.cl)
+[![Status](https://img.shields.io/badge/Status-Beta%20V1.0-green?style=for-the-badge)](https://api-impacta.pinguinoseguro.cl/health)
 
-## Stack
-- **Backend** — NestJS 11 + Prisma 5 + Postgres 16. Multi-tenant por AsyncLocalStorage + Prisma extension.
-- **Landing** — Next.js 16 (standalone) + Tailwind v4.
-- **Frontend** — Vite + React 19 + TanStack Query + React Router 7.
-- **Infra** — podman rootless + traefik v3 en fenix (Rocky 9).
+![Hero Banner](https://api-impacta.pinguinoseguro.cl/assets/organizations/demo/species/puma.png)
 
-## Estructura
-| Carpeta | Descripción |
-|---|---|
-| `backend/` | Servidor NestJS con lógica de negocio y API |
-| `frontend/` | Aplicación de dashboard para ONGs |
-| `landing/` | Sitio público de presentación |
-| `prisma/` | Esquemas y migraciones de base de datos |
+> **Impacta+** es una plataforma SaaS multi-tenant diseñada para escalar el impacto de las ONGs. Centraliza la gestión de socios, donaciones, misiones de conservación y campañas de recaudación bajo una identidad visual premium y una infraestructura robusta.
 
-## Levantar local
-```bash
-docker-compose up -d postgres redis
-cd backend && npm install && npx prisma migrate deploy && npm run prisma:seed && npm run start:dev
-# otra terminal:
-cd frontend && npm install && npm run dev
+---
+
+## 🚀 Ecosistema Productivo
+
+| Servicio | Enlace Directo | Estado |
+| :--- | :--- | :--- |
+| **🌐 Landing Page** | [impacta.pinguinoseguro.cl](https://impacta.pinguinoseguro.cl) | `Operational` |
+| **📱 Dashboard App** | [app-impacta.pinguinoseguro.cl](https://app-impacta.pinguinoseguro.cl) | `Development` |
+| **⚙️ Backend API** | [api-impacta.pinguinoseguro.cl](https://api-impacta.pinguinoseguro.cl) | `Stable` |
+| **📡 Health Check** | [/health](https://api-impacta.pinguinoseguro.cl/health) | `Pass` |
+
+---
+
+## 💎 Identidad Visual & Assets de Alta Fidelidad
+
+En Impacta+, la estética no es un accesorio, es una herramienta de confianza. Utilizamos un sistema de **Asset Proxy** que sirve imágenes generadas por IA de alta resolución para representar la biodiversidad que protegemos.
+
+| Puma Chileno | Zorro Chilla | Monito del Monte | Cóndor Andino |
+| :---: | :---: | :---: | :---: |
+| ![Puma](https://api-impacta.pinguinoseguro.cl/assets/organizations/demo/species/puma.png) | ![Zorro](https://api-impacta.pinguinoseguro.cl/assets/organizations/demo/species/zorro.png) | ![Monito](https://api-impacta.pinguinoseguro.cl/assets/organizations/demo/species/monito.png) | ![Condor](https://api-impacta.pinguinoseguro.cl/assets/organizations/demo/species/condor.png) |
+
+---
+
+## 🛠️ Stack Tecnológico
+
+### Core
+- **Backend**: NestJS 11 (Node 20+) con arquitectura modular.
+- **Frontend**: Vite + React 19 (Dashboard) y Next.js 16 (Landing).
+- **ORM**: Prisma 5 con extensiones para Multi-tenancy transparente.
+- **Database**: PostgreSQL 16 + Redis 7 (Caching & BullMQ).
+
+### Infraestructura (Servidor Fenix)
+- **Runtime**: Podman Rootless (Rocky Linux 9).
+- **Orquestación**: Podman Compose.
+- **Edge**: Traefik v3 con resolución DNS-01 (PowerDNS) para certificados wildcard SSL.
+- **Storage**: MinIO (S3 Compatible) para la gestión de assets multimedia.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+├── backend/     # API RESTful, Lógica de negocio y Tenants
+├── frontend/    # Aplicación React 19 (Dashboard administrativo)
+├── landing/     # Sitio público optimizado (SEO & Performance)
+├── prisma/      # Esquemas de datos y migraciones
+└── docs/        # Guías técnicas y documentación de diseño
 ```
-Frontend: http://localhost:5173 · Backend: http://localhost:3000
 
-## Credenciales demo (solo dev)
-- Org slug: `demo`
-- Email: `admin@demo.impacta.cl`
-- Password: `admin123`
+---
 
-## Endpoints productivos
-| Servicio | URL |
-|---|---|
-| Landing | https://impacta.pinguinoseguro.cl |
-| App | https://app-impacta.pinguinoseguro.cl |
-| API | https://api-impacta.pinguinoseguro.cl |
-| Health | https://api-impacta.pinguinoseguro.cl/health |
+## 📖 Documentación Relacionada
 
-## Deploy (fenix)
-```bash
-podman build --network=host -t impacta-backend:latest backend/
-podman-compose up -d backend
-curl -s -o /dev/null -w "%{http_code}\n" https://api-impacta.pinguinoseguro.cl/health
-```
-(idem para `frontend` y `landing`).
+- 📈 **[PLAN.md](PLAN.md)**: Roadmap detallado de fases A, B, C y D.
+- 🏗️ **[ARQUITECTURA_TECNICA.md](ARQUITECTURA_TECNICA.md)**: Detalles sobre el aislamiento de datos (Tenants).
+- 🎨 **[DISENO_IDENTIDAD_VISUAL.md](DISENO_IDENTIDAD_VISUAL.md)**: Tokens de diseño y guía de estilo.
+- 🤖 **[AGENTS.md](AGENTS.md)**: Guía para agentes de IA que operan en este monorepo.
 
-## Tests
-```bash
-cd backend
-npm run test           # unit
-npm run test:setup     # aplica migraciones en schema "test"
-npm run test:e2e       # integración
-```
+---
 
-## Links
-- Plan vivo: [PLAN.md](PLAN.md)
-- Guía agentes: [AGENTS.md](AGENTS.md)
-- Diseño: [DISENO_IDENTIDAD_VISUAL.md](DISENO_IDENTIDAD_VISUAL.md)
+## 🛠️ Desarrollo Local
+
+1. Levantar dependencias: `podman-compose up -d postgres redis`
+2. Configurar entorno: `cp .env.example .env`
+3. Backend: `cd backend && npm i && npx prisma migrate dev && npm run start:dev`
+4. Dashboard: `cd frontend && npm i && npm run dev`
+
+---
+*Desarrollado con ❤️ para el ecosistema de conservación por el equipo de **PinguinoSeguro**.*
